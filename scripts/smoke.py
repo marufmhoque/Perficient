@@ -22,6 +22,7 @@ sys.path.insert(0, str(ROOT))
 from biointel.citations import SourceRegistry, cited_keys  # noqa: E402
 from biointel.config import get_settings  # noqa: E402
 from biointel.history import report_to_json  # noqa: E402
+from biointel.llm import LLMAccountError  # noqa: E402
 from biointel.orchestrator import run_briefing  # noqa: E402
 from biointel.schemas import Briefing, ConditionInput  # noqa: E402
 from biointel.sources import ClinicalTrialsAdapter, Http, PubMedAdapter  # noqa: E402
@@ -83,7 +84,11 @@ async def main() -> int:
         print(f"[{time.monotonic() - t0:6.1f}s] {stage:<10} {state:<8} {msg}")
 
     inp = ConditionInput(condition_term=args.condition, icd10_code=args.icd10, mesh_id=args.mesh)
-    b = await run_briefing(inp, settings=settings, progress=progress)
+    try:
+        b = await run_briefing(inp, settings=settings, progress=progress)
+    except LLMAccountError as exc:
+        print(f"\nSMOKE TEST NOT RUN - Claude account problem: {exc}")
+        return 2
 
     print("\n=== Timings (s) ===", b.timings)
     print("=== Token usage ===", b.usage)
@@ -100,6 +105,11 @@ async def main() -> int:
     print("errors:", [f"{e.module}: {e.message}" for e in b.errors] or "none")
     v = b.validation
     print(f"validation: {v.ids_valid}/{v.ids_checked} ids valid, {v.ids_resolved_live} resolved live, {v.statements_dropped} items dropped")
+    if b.fact_check:
+        print(f"fact check: {b.fact_check.counts()} over {len(b.fact_check.claims)} claims; "
+              f"source issues: {[(i.key, i.severity) for i in b.fact_check.source_issues]}")
+    else:
+        print("fact check: MISSING")
 
     checked, ok, failures = await verify_live(b)
     print(f"live re-resolution of cited sources: {ok}/{checked}" + (f"  FAILED: {failures[:10]}" if failures else ""))
