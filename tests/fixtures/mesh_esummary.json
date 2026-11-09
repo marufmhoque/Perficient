@@ -1,0 +1,82 @@
+{
+ "header": {
+  "type": "esummary",
+  "version": "0.3"
+ },
+ "result": {
+  "uids": [
+   "68011565"
+  ],
+  "68011565": {
+   "uid": "68011565",
+   "ds_yearintroduced": "",
+   "ds_scopenote": "A common genetically determined, chronic, inflammatory skin disease characterized by rounded erythematous, dry, scaling patches. The lesions have a predilection for nails, scalp, genitalia, extensor surfaces, and the lumbosacral region. Accelerated epidermopoiesis is considered to be the fundamental pathologic feature in psoriasis.",
+   "ds_registrynumber": "",
+   "ds_headingmappedto": "",
+   "ds_meshterms": [
+    "Psoriasis",
+    "Psoriases",
+    "Pustulosis of Palms and Soles",
+    "Pustulosis Palmaris et Plantaris",
+    "Palmoplantaris Pustulosis",
+    "Pustular Psoriasis of Palms and Soles"
+   ],
+   "ds_subheading": [
+    "blood",
+    "cerebrospinal fluid",
+    "chemically induced",
+    "classification",
+    "complications",
+    "congenital",
+    "diagnosis",
+    "diagnostic imaging",
+    "diet therapy",
+    "drug therapy",
+    "economics",
+    "embryology",
+    "enzymology",
+    "epidemiology",
+    "ethnology",
+    "etiology",
+    "genetics",
+    "history",
+    "immunology",
+    "metabolism",
+    "microbiology",
+    "mortality",
+    "nursing",
+    "parasitology",
+    "pathology",
+    "physiopathology",
+    "prevention and control",
+    "psychology",
+    "radiotherapy",
+    "rehabilitation",
+    "surgery",
+    "therapy",
+    "urine",
+    "veterinary",
+    "virology"
+   ],
+   "ds_papx": [],
+   "ds_previousindexing": [],
+   "ds_seerelated": [],
+   "ds_palist": [],
+   "ds_idxlinks": [
+    {
+     "parent": 68017444,
+     "treenum": "C17.800.859.675",
+     "children": [
+      "68015535",
+      "2108145"
+     ]
+    }
+   ],
+   "ds_entrydate": "1/01/01 00:00",
+   "ds_revisiondate": "1/01/01 00:00",
+   "ds_headingmappedtolist": [],
+   "ds_recordtype": "descriptor",
+   "ds_meshui": "D011565"
+  }
+ }
+}

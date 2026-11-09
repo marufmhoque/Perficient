@@ -1,0 +1,258 @@
+[
+ 87,
+ [
+  "E11.00",
+  "E11.01",
+  "E11.10",
+  "E11.11",
+  "E11.21",
+  "E11.22",
+  "E11.29",
+  "E11.311",
+  "E11.319",
+  "E11.3211",
+  "E11.3212",
+  "E11.3213",
+  "E11.3219",
+  "E11.3291",
+  "E11.3292",
+  "E11.3293",
+  "E11.3299",
+  "E11.3311",
+  "E11.3312",
+  "E11.3313",
+  "E11.3319",
+  "E11.3391",
+  "E11.3392",
+  "E11.3393",
+  "E11.3399",
+  "E11.3411",
+  "E11.3412",
+  "E11.3413",
+  "E11.3419",
+  "E11.3491",
+  "E11.3492",
+  "E11.3493",
+  "E11.3499",
+  "E11.3511",
+  "E11.3512",
+  "E11.3513",
+  "E11.3519",
+  "E11.3521",
+  "E11.3522",
+  "E11.3523",
+  "E11.3529",
+  "E11.3531",
+  "E11.3532",
+  "E11.3533",
+  "E11.3539",
+  "E11.3541",
+  "E11.3542",
+  "E11.3543",
+  "E11.3549",
+  "E11.3551"
+ ],
+ null,
+ [
+  [
+   "E11.00",
+   "Type 2 diabetes mellitus with hyperosmolarity without nonketotic hyperglycemic-hyperosmolar coma (NKHHC)"
+  ],
+  [
+   "E11.01",
+   "Type 2 diabetes mellitus with hyperosmolarity with coma"
+  ],
+  [
+   "E11.10",
+   "Type 2 diabetes mellitus with ketoacidosis without coma"
+  ],
+  [
+   "E11.11",
+   "Type 2 diabetes mellitus with ketoacidosis with coma"
+  ],
+  [
+   "E11.21",
+   "Type 2 diabetes mellitus with diabetic nephropathy"
+  ],
+  [
+   "E11.22",
+   "Type 2 diabetes mellitus with diabetic chronic kidney disease"
+  ],
+  [
+   "E11.29",
+   "Type 2 diabetes mellitus with other diabetic kidney complication"
+  ],
+  [
+   "E11.311",
+   "Type 2 diabetes mellitus with unspecified diabetic retinopathy with macular edema"
+  ],
+  [
+   "E11.319",
+   "Type 2 diabetes mellitus with unspecified diabetic retinopathy without macular edema"
+  ],
+  [
+   "E11.3211",
+   "Type 2 diabetes mellitus with mild nonproliferative diabetic retinopathy with macular edema, right eye"
+  ],
+  [
+   "E11.3212",
+   "Type 2 diabetes mellitus with mild nonproliferative diabetic retinopathy with macular edema, left eye"
+  ],
+  [
+   "E11.3213",
+   "Type 2 diabetes mellitus with mild nonproliferative diabetic retinopathy with macular edema, bilateral"
+  ],
+  [
+   "E11.3219",
+   "Type 2 diabetes mellitus with mild nonproliferative diabetic retinopathy with macular edema, unspecified eye"
+  ],
+  [
+   "E11.3291",
+   "Type 2 diabetes mellitus with mild nonproliferative diabetic retinopathy without macular edema, right eye"
+  ],
+  [
+   "E11.3292",
+   "Type 2 diabetes mellitus with mild nonproliferative diabetic retinopathy without macular edema, left eye"
+  ],
+  [
+   "E11.3293",
+   "Type 2 diabetes mellitus with mild nonproliferative diabetic retinopathy without macular edema, bilateral"
+  ],
+  [
+   "E11.3299",
+   "Type 2 diabetes mellitus with mild nonproliferative diabetic retinopathy without macular edema, unspecified eye"
+  ],
+  [
+   "E11.3311",
+   "Type 2 diabetes mellitus with moderate nonproliferative diabetic retinopathy with macular edema, right eye"
+  ],
+  [
+   "E11.3312",
+   "Type 2 diabetes mellitus with moderate nonproliferative diabetic retinopathy with macular edema, left eye"
+  ],
+  [
+   "E11.3313",
+   "Type 2 diabetes mellitus with moderate nonproliferative diabetic retinopathy with macular edema, bilateral"
+  ],
+  [
+   "E11.3319",
+   "Type 2 diabetes mellitus with moderate nonproliferative diabetic retinopathy with macular edema, unspecified eye"
+  ],
+  [
+   "E11.3391",
+   "Type 2 diabetes mellitus with moderate nonproliferative diabetic retinopathy without macular edema, right eye"
+  ],
+  [
+   "E11.3392",
+   "Type 2 diabetes mellitus with moderate nonproliferative diabetic retinopathy without macular edema, left eye"
+  ],
+  [
+   "E11.3393",
+   "Type 2 diabetes mellitus with moderate nonproliferative diabetic retinopathy without macular edema, bilateral"
+  ],
+  [
+   "E11.3399",
+   "Type 2 diabetes mellitus with moderate nonproliferative diabetic retinopathy without macular edema, unspecified eye"
+  ],
+  [
+   "E11.3411",
+   "Type 2 diabetes mellitus with severe nonproliferative diabetic retinopathy with macular edema, right eye"
+  ],
+  [
+   "E11.3412",
+   "Type 2 diabetes mellitus with severe nonproliferative diabetic retinopathy with macular edema, left eye"
+  ],
+  [
+   "E11.3413",
+   "Type 2 diabetes mellitus with severe nonproliferative diabetic retinopathy with macular edema, bilateral"
+  ],
+  [
+   "E11.3419",
+   "Type 2 diabetes mellitus with severe nonproliferative diabetic retinopathy with macular edema, unspecified eye"
+  ],
+  [
+   "E11.3491",
+   "Type 2 diabetes mellitus with severe nonproliferative diabetic retinopathy without macular edema, right eye"
+  ],
+  [
+   "E11.3492",
+   "Type 2 diabetes mellitus with severe nonproliferative diabetic retinopathy without macular edema, left eye"
+  ],
+  [
+   "E11.3493",
+   "Type 2 diabetes mellitus with severe nonproliferative diabetic retinopathy without macular edema, bilateral"
+  ],
+  [
+   "E11.3499",
+   "Type 2 diabetes mellitus with severe nonproliferative diabetic retinopathy without macular edema, unspecified eye"
+  ],
+  [
+   "E11.3511",
+   "Type 2 diabetes mellitus with proliferative diabetic retinopathy with macular edema, right eye"
+  ],
+  [
+   "E11.3512",
+   "Type 2 diabetes mellitus with proliferative diabetic retinopathy with macular edema, left eye"
+  ],
+  [
+   "E11.3513",
+   "Type 2 diabetes mellitus with proliferative diabetic retinopathy with macular edema, bilateral"
+  ],
+  [
+   "E11.3519",
+   "Type 2 diabetes mellitus with proliferative diabetic retinopathy with macular edema, unspecified eye"
+  ],
+  [
+   "E11.3521",
+   "Type 2 diabetes mellitus with proliferative diabetic retinopathy with traction retinal detachment involving the macula, right eye"
+  ],
+  [
+   "E11.3522",
+   "Type 2 diabetes mellitus with proliferative diabetic retinopathy with traction retinal detachment involving the macula, left eye"
+  ],
+  [
+   "E11.3523",
+   "Type 2 diabetes mellitus with proliferative diabetic retinopathy with traction retinal detachment involving the macula, bilateral"
+  ],
+  [
+   "E11.3529",
+   "Type 2 diabetes mellitus with proliferative diabetic retinopathy with traction retinal detachment involving the macula, unspecified eye"
+  ],
+  [
+   "E11.3531",
+   "Type 2 diabetes mellitus with proliferative diabetic retinopathy with traction retinal detachment not involving the macula, right eye"
+  ],
+  [
+   "E11.3532",
+   "Type 2 diabetes mellitus with proliferative diabetic retinopathy with traction retinal detachment not involving the macula, left eye"
+  ],
+  [
+   "E11.3533",
+   "Type 2 diabetes mellitus with proliferative diabetic retinopathy with traction retinal detachment not involving the macula, bilateral"
+  ],
+  [
+   "E11.3539",
+   "Type 2 diabetes mellitus with proliferative diabetic retinopathy with traction retinal detachment not involving the macula, unspecified eye"
+  ],
+  [
+   "E11.3541",
+   "Type 2 diabetes mellitus with proliferative diabetic retinopathy with combined traction retinal detachment and rhegmatogenous retinal detachment, right eye"
+  ],
+  [
+   "E11.3542",
+   "Type 2 diabetes mellitus with proliferative diabetic retinopathy with combined traction retinal detachment and rhegmatogenous retinal detachment, left eye"
+  ],
+  [
+   "E11.3543",
+   "Type 2 diabetes mellitus with proliferative diabetic retinopathy with combined traction retinal detachment and rhegmatogenous retinal detachment, bilateral"
+  ],
+  [
+   "E11.3549",
+   "Type 2 diabetes mellitus with proliferative diabetic retinopathy with combined traction retinal detachment and rhegmatogenous retinal detachment, unspecified eye"
+  ],
+  [
+   "E11.3551",
+   "Type 2 diabetes mellitus with stable proliferative diabetic retinopathy, right eye"
+  ]
+ ]
+]

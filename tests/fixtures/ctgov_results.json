@@ -1,0 +1,4674 @@
+{
+ "totalCount": 300,
+ "studies": [
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT02326298",
+     "briefTitle": "An Efficacy and Safety Study of Two Dose Levels of Certolizumab Pegol (CZP) in Subjects With Plaque Psoriasis (PSO)",
+     "acronym": "CIMPASI-1"
+    },
+    "statusModule": {
+     "overallStatus": "COMPLETED",
+     "startDateStruct": {
+      "date": "2014-12-16"
+     },
+     "primaryCompletionDateStruct": {
+      "date": "2016-03-08"
+     },
+     "completionDateStruct": {
+      "date": "2018-10-24"
+     },
+     "lastUpdatePostDateStruct": {
+      "date": "2019-11-07"
+     }
+    },
+    "sponsorCollaboratorsModule": {
+     "leadSponsor": {
+      "name": "UCB Biopharma S.P.R.L.",
+      "class": "INDUSTRY"
+     }
+    },
+    "conditionsModule": {
+     "conditions": [
+      "Psoriasis",
+      "Plaque Psoriasis"
+     ]
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL",
+     "phases": [
+      "PHASE3"
+     ],
+     "designInfo": {
+      "allocation": "RANDOMIZED"
+     },
+     "enrollmentInfo": {
+      "count": 234
+     }
+    },
+    "armsInterventionsModule": {
+     "armGroups": [
+      {
+       "label": "CZP 200 mg",
+       "type": "EXPERIMENTAL",
+       "description": "CZP 400 mg at Weeks 0, 2, 4, followed by CZP 200 mg every two weeks (Q2W) from Week 6 to Week 14.\n\nTreatment received from Week 16-48 is based on initial treatment and response to treatment:\n\n* PASI50 responders at Week 16 continue to receive CZP 200 mg Q2W.\n* PASI50 non-responders at Week 16 will be removed from blinded study medication and escape to unblinded CZP 400 mg Q2W. Subjects who receive unblinded CZP 400 mg Q2W for 16 weeks and do not achieve a PASI50 response will be withdrawn from the study.\n* PASI50 non-responders at Week 32 or a later time point will be withdrawn from the study.\n\nSubjects who complete the Maintenance Period (with PASI50 response at Week 48) enter the Open-label Extension Period on CZP 200 mg Q2W.\n\nWeek 48 completers in the escape arm continue to receive CZP 400 mg Q2W or may switch to CZP 200 mg Q2W.\n\nDepending on PASI50 or PASI75 responses at Week 60 or a later time point, subjects may switch to CZP 400 mg Q2W or withdraw from the study.",
+       "interventionNames": [
+        "Biological: Certolizumab Pegol"
+       ]
+      },
+      {
+       "label": "CZP 400 mg",
+       "type": "EXPERIMENTAL",
+       "description": "CZP 400 mg every two weeks (Q2W) through Week 14.\n\nTreatment received from Week 16 - 48 is based on initial treatment and response to treatment:\n\n* PASI50 responders at Week 16 continue to receive CZP 400 mg Q2W.\n* PASI50 non-responders at Week 16 will be removed from blinded study medication and escape to CZP 400 mg Q2W. Subjects who receive unblinded CZP 400 mg Q2W for 16 weeks and do not achieve a PASI50 response will be withdrawn from the study.\n* PASI50 non-responders at Week 32 or a later time point will be withdrawn from the study.\n\nSubjects who complete the Maintenance Period (with PASI50 response at Week 48) enter the Open-label Extension (OLE) Period on CZP 200 mg Q2W. Week 48 completers in the escape arm continue to receive CZP 400 mg Q2W or may switch to CZP 200 mg Q2W.\n\nSubjects who achieve a PASI75 response during the OLE Phase may switch to CZP 200 mg Q2W.",
+       "interventionNames": [
+        "Biological: Certolizumab Pegol"
+       ]
+      },
+      {
+       "label": "Placebo",
+       "type": "PLACEBO_COMPARATOR",
+       "description": "Placebo subcutaneous (sc) injection every two weeks (Q2W).\n\nTreatment received from Week 16 - 48 is based on initial treatment and response to treatment:\n\n* PASI50 responders at Week 16, who do not achieve a PASI75 response at Week 16 receive CZP 400 mg at Weeks 16, 18 and 20 (loading doses) followed by CZP 200 mg Q2W starting at Week 22.\n* PASI75 responders at Week 16 continue to receive Placebo.\n* PASI50 non-responders at Week 16 will be removed from blinded study medication and escape to CZP 400 mg Q2W. Subjects who receive unblinded CZP 400 mg Q2W for 16 weeks and do not achieve a PASI50 response will be withdrawn from the study.\n* PASI50 non-responders at Week 32 or a later time point will be withdrawn from the study.\n\nSubjects who complete the Maintenance Period (with PASI50 response at Week 48) enter the Open-label Extension Period on CZP 200 mg Q2W. Week 48 completers in the escape arm continue to receive CZP 400 mg Q2W or may switch to CZP 200 mg Q2W.",
+       "interventionNames": [
+        "Other: Placebo"
+       ]
+      }
+     ],
+     "interventions": [
+      {
+       "type": "BIOLOGICAL",
+       "name": "Certolizumab Pegol",
+       "description": "* Active Substance: Certolizumab Pegol\n* Pharmaceutical Form: Solution for injection in pre-filled syringe\n* Concentration: 200 mg/mL\n* Route of Administration: Subcutaneous use"
+      },
+      {
+       "type": "OTHER",
+       "name": "Placebo",
+       "description": "* Active Substance: Placebo\n* Pharmaceutical Form: Solution for injection in pre-filled syringe\n* Concentration: 0.9 % saline\n* Route of Administration: Subcutaneous use"
+      }
+     ]
+    },
+    "outcomesModule": {
+     "primaryOutcomes": [
+      {
+       "measure": "Proportion of Subjects Who Achieve a Psoriasis Activity and Severity Index (PASI75) Response at Week 16"
+      },
+      {
+       "measure": "Proportion of Subjects Who Achieve a Physician's Global Assessment (PGA) Clear or Almost Clear (With at Least 2-category Improvement) Response at Week 16"
+      }
+     ]
+    },
+    "contactsLocationsModule": {
+     "overallOfficials": [
+      {
+       "name": "UCB Cares",
+       "affiliation": "+1 844 599 2273 (UCB)",
+       "role": "STUDY_DIRECTOR"
+      }
+     ],
+     "locations": [
+      {
+       "facility": "Ps0005 504",
+       "city": "San Diego",
+       "country": "United States"
+      },
+      {
+       "facility": "Ps0005 502",
+       "city": "West Des Moines",
+       "country": "United States"
+      },
+      {
+       "facility": "Ps0005 500",
+       "city": "Baton Rouge",
+       "country": "United States"
+      },
+      {
+       "facility": "Ps0005 506",
+       "city": "Boston",
+       "country": "United States"
+      },
+      {
+       "facility": "Ps0005 505",
+       "city": "St Louis",
+       "country": "United States"
+      },
+      {
+       "facility": "Ps0005 507",
+       "city": "Albuquerque",
+       "country": "United States"
+      },
+      {
+       "facility": "Ps0005 508",
+       "city": "Nashville",
+       "country": "United States"
+      },
+      {
+       "facility": "Ps0005 501",
+       "city": "Houston",
+       "country": "United States"
+      },
+      {
+       "facility": "Ps0005 597",
+       "city": "Edmonton",
+       "country": "Canada"
+      },
+      {
+       "facility": "Ps0005 591",
+       "city": "Surrey",
+       "country": "Canada"
+      },
+      {
+       "facility": "Ps0005 596",
+       "city": "Ajax",
+       "country": "Canada"
+      },
+      {
+       "facility": "Ps0005 590",
+       "city": "Hamilton",
+       "country": "Canada"
+      },
+      {
+       "facility": "Ps0005 593",
+       "city": "Toronto",
+       "country": "Canada"
+      },
+      {
+       "facility": "Ps0005 595",
+       "city": "Drummondville",
+       "country": "Canada"
+      },
+      {
+       "facility": "Ps0005 594",
+       "city": "Québec",
+       "country": "Canada"
+      },
+      {
+       "facility": "Ps0005 553",
+       "city": "Náchod",
+       "country": "Czechia"
+      },
+      {
+       "facility": "Ps0005 550",
+       "city": "Olomouc",
+       "country": "Czechia"
+      },
+      {
+       "facility": "Ps0005 551",
+       "city": "Ostrava-Poruba",
+       "country": "Czechia"
+      },
+      {
+       "facility": "Ps0005 552",
+       "city": "Prague",
+       "country": "Czechia"
+      },
+      {
+       "facility": "Ps0005 562",
+       "city": "Mahlow",
+       "country": "Germany"
+      },
+      {
+       "facility": "Ps0005 565",
+       "city": "Witten",
+       "country": "Germany"
+      },
+      {
+       "facility": "Ps0005 569",
+       "city": "Lübeck",
+       "country": "Germany"
+      },
+      {
+       "facility": "Ps0005 560",
+       "city": "Berlin",
+       "country": "Germany"
+      },
+      {
+       "facility": "Ps0005 561",
+       "city": "Dresden",
+       "country": "Germany"
+      },
+      {
+       "facility": "Ps0005 563",
+       "city": "Hamburg",
+       "country": "Germany"
+      },
+      {
+       "facility": "Ps0005 568",
+       "city": "Hamburg",
+       "country": "Germany"
+      },
+      {
+       "facility": "Ps0005 566",
+       "city": "Kiel",
+       "country": "Germany"
+      },
+      {
+       "facility": "Ps0005 580",
+       "city": "Orosháza",
+       "country": "Hungary"
+      },
+      {
+       "facility": "Ps0005 582",
+       "city": "Budapest",
+       "country": "Hungary"
+      },
+      {
+       "facility": "Ps0005 581",
+       "city": "Pécs",
+       "country": "Hungary"
+      }
+     ]
+    }
+   },
+   "resultsSection": {
+    "outcomeMeasuresModule": {
+     "outcomeMeasures": [
+      {
+       "type": "PRIMARY",
+       "title": "Proportion of Subjects Who Achieve a Psoriasis Activity and Severity Index (PASI75) Response at Week 16",
+       "description": "The PASI75 response assessments are based on at least 75% improvement in the PASI score from Baseline. This is a scoring system that averages the redness, thickness, and scaliness of the psoriatic lesions (on a 0-4 scale), and weights the resulting score by the area of skin involved. Body divided into 4 areas: head, arms, trunk to groin, and legs to top of buttocks. Assignment of an average score for the redness, thickness, and scaling for each of the 4 body areas with a score of 0 (clear) to 4 (very marked). Determining the percentage of skin covered with PSO for each of the body areas and converting to a 0 to 6 scale. Final PASI= average redness, thickness, and scaliness of the psoriatic skin lesions, multiplied by the involved psoriasis area score of the respective section, and weighted by the percentage of the person's affected skin for the respective section. The minimum possible PASI score is 0= no disease, the maximum score is 72= maximal disease.",
+       "populationDescription": "The Randomized Set included all participants randomized into the study. Missing data were handled using the Markov Chain Monte Carlo (MCMC) method for multiple imputation.",
+       "reportingStatus": "POSTED",
+       "paramType": "NUMBER",
+       "unitOfMeasure": "percentage of participants",
+       "timeFrame": "At Week 16",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Placebo Q2W (RS)",
+         "description": "Placebo sc injection Q2W.\n\nTreatment received from Week 16 - 48 was based on initial treatment and response to treatment:\n\n* PASI50 responders at Week 16, who did not achieve a PASI75 response at Week 16 received CZP 400 mg at Weeks 16, 18 and 20 (loading doses) followed by CZP 200 mg Q2W starting at Week 22.\n* PASI75 responders at Week 16 continued to receive Placebo.\n* PASI50 non-responders at Week 16 were removed from blinded study medication and escaped to unblinded CZP 400 mg Q2W. Participants who received unblinded CZP 400 mg Q2W for 16 weeks and did not achieve a PASI50 response were withdrawn from the study.\n* PASI50 non-responders at Week 32 or a later time point were withdrawn from the study.\n\nParticipants who completed the Maintenance Period (with PASI50 response at Week 48) entered the OLE Period on CZP 200 mg Q2W. Week 48 completers in the escape arm continued to receive CZP 400 mg Q2W or may have switched to CZP 200 mg Q2W.\n\nParticipants formed the Randomized Set (RS)."
+        },
+        {
+         "id": "OG001",
+         "title": "CZP 200 mg Q2W (RS)",
+         "description": "CZP 400 mg at Weeks 0, 2, 4, followed by CZP 200 mg Q2W from Week 6 to Week 14.\n\nTreatment received from Week 16 - 48 was based on initial treatment and response to treatment:\n\n* PASI50 responders at Week 16 continued to receive CZP 200 mg Q2W.\n* PASI50 non-responders at Week 16 were removed from blinded study medication and escaped to unblinded CZP 400 mg Q2W. Participants who received unblinded CZP 400 mg Q2W for 16 weeks and did not achieve a PASI50 response were withdrawn from the study.\n* PASI50 non-responders at Week 32 or a later time point were withdrawn from the study.\n\nParticipants who completed the Maintenance Period (with PASI50 response at Week 48) entered the OLE Period on CZP 200 mg Q2W.\n\nWeek 48 completers in the escape arm continued to receive CZP 400 mg Q2W or may have switched to CZP 200 mg Q2W.\n\nDepending on PASI50 or PASI75 responses at Week 60 or a later time point, participants may have switched to CZP 400 mg Q2W or withdrew from the study.\n\nParticipants formed the RS."
+        },
+        {
+         "id": "OG002",
+         "title": "CZP 400 mg Q2W (RS)",
+         "description": "CZP 400 mg Q2W through Week 14.\n\nTreatment received from Week 16 - 48 was based on initial treatment and response to treatment:\n\n* PASI50 responders at Week 16 continued to receive CZP 400 mg Q2W.\n* PASI50 non-responders at Week 16 were removed from blinded study medication and escaped to unblinded CZP 400 mg Q2W. Participants who received unblinded CZP 400 mg Q2W for 16 weeks and did not achieve a PASI50 response were withdrawn from the study.\n* PASI50 non-responders at Week 32 or a later time point were withdrawn from the study.\n\nParticipants who completed the Maintenance Period (with PASI50 response at Week 48) entered the OLE Period on CZP 200 mg Q2W. Week 48 completers in the escape arm continued to receive CZP 400 mg Q2W or may have switched to CZP 200 mg Q2W.\n\nParticipants who achieved a PASI75 response during the OLE Period may have switched to CZP 200 mg Q2W.\n\nParticipants formed the RS."
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "51"
+          },
+          {
+           "groupId": "OG001",
+           "value": "95"
+          },
+          {
+           "groupId": "OG002",
+           "value": "88"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "6.5"
+            },
+            {
+             "groupId": "OG001",
+             "value": "66.5"
+            },
+            {
+             "groupId": "OG002",
+             "value": "75.8"
+            }
+           ]
+          }
+         ]
+        }
+       ],
+       "analyses": [
+        {
+         "groupIds": [
+          "OG000",
+          "OG001"
+         ],
+         "groupDescription": "The statistical analysis of the co-primary efficacy variables and key secondary efficacy variables accounted for multiplicity by using a fixed sequence testing procedure.",
+         "nonInferiorityType": "SUPERIORITY",
+         "pValue": "<0.0001",
+         "pValueComment": "The p-value for the primary analysis was evaluated at a 2-sided significance level of 0.025 for each CZP dose versus (vs) PBO.",
+         "statisticalMethod": "Regression, Logistic",
+         "statisticalComment": "Estimated responder rate, odds ratios, CIs, p-values based on a logistic regression model with factors for treatment, region, prior biologic exposure.",
+         "paramType": "Odds Ratio (OR)",
+         "paramValue": "28.962",
+         "ciPctValue": "97.5",
+         "ciNumSides": "TWO_SIDED",
+         "ciLowerLimit": "6.968",
+         "ciUpperLimit": "120.371"
+        },
+        {
+         "groupIds": [
+          "OG000",
+          "OG002"
+         ],
+         "groupDescription": "The statistical analysis of the co-primary efficacy variables and key secondary efficacy variables accounted for multiplicity by using a fixed sequence testing procedure.",
+         "nonInferiorityType": "SUPERIORITY",
+         "pValue": "<0.0001",
+         "pValueComment": "The p-value for the primary analysis was evaluated at a 2-sided significance level of 0.025 for each CZP dose vs PBO.",
+         "statisticalMethod": "Regression, Logistic",
+         "statisticalComment": "Estimated responder rate, odds ratios, CIs, p-values based on a logistic regression model with factors for treatment, region, prior biologic exposure.",
+         "paramType": "Odds Ratio (OR)",
+         "paramValue": "45.660",
+         "ciPctValue": "97.5",
+         "ciNumSides": "TWO_SIDED",
+         "ciLowerLimit": "10.657",
+         "ciUpperLimit": "195.634"
+        },
+        {
+         "groupIds": [
+          "OG000",
+          "OG001"
+         ],
+         "groupDescription": "The statistical analysis of the co-primary efficacy variables and key secondary efficacy variables accounted for multiplicity by using a fixed sequence testing procedure.",
+         "nonInferiorityType": "SUPERIORITY",
+         "statisticalMethod": "Regression, Logistic",
+         "statisticalComment": "Estimated responder rate, odds ratios, CIs, p-values based on a logistic regression model with factors for treatment, region, prior biologic exposure.",
+         "paramType": "Estimated difference in responder rate",
+         "paramValue": "60.0",
+         "ciPctValue": "95",
+         "ciNumSides": "TWO_SIDED",
+         "ciLowerLimit": "47.92",
+         "ciUpperLimit": "72.17",
+         "estimateComment": "Estimate and 95% CI for difference in proportion of responders for CZP 200 mg Q2W (RS) versus Placebo Q2W (RS)."
+        },
+        {
+         "groupIds": [
+          "OG000",
+          "OG002"
+         ],
+         "groupDescription": "The statistical analysis of the co-primary efficacy variables and key secondary efficacy variables accounted for multiplicity by using a fixed sequence testing procedure.",
+         "nonInferiorityType": "SUPERIORITY",
+         "statisticalMethod": "Regression, Logistic",
+         "statisticalComment": "Estimated responder rate, odds ratios, CIs, p-values based on a logistic regression model with factors for treatment, region, prior biologic exposure.",
+         "paramType": "Estimated difference in responder rate",
+         "paramValue": "69.3",
+         "ciPctValue": "95",
+         "ciNumSides": "TWO_SIDED",
+         "ciLowerLimit": "57.65",
+         "ciUpperLimit": "80.99",
+         "estimateComment": "Estimate and 95% CI for difference in proportion of responders for CZP 400 mg Q2W (RS) versus Placebo Q2W (RS)."
+        }
+       ]
+      },
+      {
+       "type": "PRIMARY",
+       "title": "Proportion of Subjects Who Achieve a Physician's Global Assessment (PGA) Clear or Almost Clear (With at Least 2-category Improvement) Response at Week 16",
+       "description": "The Investigator assessed the overall severity of Psoriasis (PSO) using the following 5-point scale: 0=clear, 1=almost clear, 2=mild, 3=moderate, 4=severe.",
+       "populationDescription": "The Randomized Set included all participants randomized into the study. Missing data were handled using the Markov Chain Monte Carlo (MCMC) method for multiple imputation.",
+       "reportingStatus": "POSTED",
+       "paramType": "NUMBER",
+       "unitOfMeasure": "percentage of participants",
+       "timeFrame": "At Week 16",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Placebo Q2W (RS)",
+         "description": "Placebo sc injection Q2W.\n\nTreatment received from Week 16 - 48 was based on initial treatment and response to treatment:\n\n* PASI50 responders at Week 16, who did not achieve a PASI75 response at Week 16 received CZP 400 mg at Weeks 16, 18 and 20 (loading doses) followed by CZP 200 mg Q2W starting at Week 22.\n* PASI75 responders at Week 16 continued to receive Placebo.\n* PASI50 non-responders at Week 16 were removed from blinded study medication and escaped to unblinded CZP 400 mg Q2W. Participants who received unblinded CZP 400 mg Q2W for 16 weeks and did not achieve a PASI50 response were withdrawn from the study.\n* PASI50 non-responders at Week 32 or a later time point were withdrawn from the study.\n\nParticipants who completed the Maintenance Period (with PASI50 response at Week 48) entered the OLE Period on CZP 200 mg Q2W. Week 48 completers in the escape arm continued to receive CZP 400 mg Q2W or may have switched to CZP 200 mg Q2W.\n\nParticipants formed the Randomized Set (RS)."
+        },
+        {
+         "id": "OG001",
+         "title": "CZP 200 mg Q2W (RS)",
+         "description": "CZP 400 mg at Weeks 0, 2, 4, followed by CZP 200 mg Q2W from Week 6 to Week 14.\n\nTreatment received from Week 16 - 48 was based on initial treatment and response to treatment:\n\n* PASI50 responders at Week 16 continued to receive CZP 200 mg Q2W.\n* PASI50 non-responders at Week 16 were removed from blinded study medication and escaped to unblinded CZP 400 mg Q2W. Participants who received unblinded CZP 400 mg Q2W for 16 weeks and did not achieve a PASI50 response were withdrawn from the study.\n* PASI50 non-responders at Week 32 or a later time point were withdrawn from the study.\n\nParticipants who completed the Maintenance Period (with PASI50 response at Week 48) entered the OLE Period on CZP 200 mg Q2W.\n\nWeek 48 completers in the escape arm continued to receive CZP 400 mg Q2W or may have switched to CZP 200 mg Q2W.\n\nDepending on PASI50 or PASI75 responses at Week 60 or a later time point, participants may have switched to CZP 400 mg Q2W or withdrew from the study.\n\nParticipants formed the RS."
+        },
+        {
+         "id": "OG002",
+         "title": "CZP 400 mg Q2W (RS)",
+         "description": "CZP 400 mg Q2W through Week 14.\n\nTreatment received from Week 16 - 48 was based on initial treatment and response to treatment:\n\n* PASI50 responders at Week 16 continued to receive CZP 400 mg Q2W.\n* PASI50 non-responders at Week 16 were removed from blinded study medication and escaped to unblinded CZP 400 mg Q2W. Participants who received unblinded CZP 400 mg Q2W for 16 weeks and did not achieve a PASI50 response were withdrawn from the study.\n* PASI50 non-responders at Week 32 or a later time point were withdrawn from the study.\n\nParticipants who completed the Maintenance Period (with PASI50 response at Week 48) entered the OLE Period on CZP 200 mg Q2W. Week 48 completers in the escape arm continued to receive CZP 400 mg Q2W or may have switched to CZP 200 mg Q2W.\n\nParticipants who achieved a PASI75 response during the OLE Period may have switched to CZP 200 mg Q2W.\n\nParticipants formed the RS."
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "51"
+          },
+          {
+           "groupId": "OG001",
+           "value": "95"
+          },
+          {
+           "groupId": "OG002",
+           "value": "88"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "4.2"
+            },
+            {
+             "groupId": "OG001",
+             "value": "47.0"
+            },
+            {
+             "groupId": "OG002",
+             "value": "57.9"
+            }
+           ]
+          }
+         ]
+        }
+       ],
+       "analyses": [
+        {
+         "groupIds": [
+          "OG000",
+          "OG001"
+         ],
+         "groupDescription": "The statistical analysis of the co-primary efficacy variables and key secondary efficacy variables accounted for multiplicity by using a fixed sequence testing procedure.",
+         "nonInferiorityType": "SUPERIORITY",
+         "pValue": "<0.0001",
+         "pValueComment": "The p-value for the primary analysis was evaluated at a 2-sided significance level of 0.025 for each CZP dose vs PBO.",
+         "statisticalMethod": "Regression, Logistic",
+         "statisticalComment": "Estimated responder rate, odds ratios, CIs, p-values based on a logistic regression model with factors for treatment, region, prior biologic exposure.",
+         "paramType": "Odds Ratio (OR)",
+         "paramValue": "20.116",
+         "ciPctValue": "97.5",
+         "ciNumSides": "TWO_SIDED",
+         "ciLowerLimit": "3.699",
+         "ciUpperLimit": "109.399"
+        },
+        {
+         "groupIds": [
+          "OG000",
+          "OG002"
+         ],
+         "groupDescription": "The statistical analysis of the co-primary efficacy variables and key secondary efficacy variables accounted for multiplicity by using a fixed sequence testing procedure.",
+         "nonInferiorityType": "SUPERIORITY",
+         "pValue": "<0.0001",
+         "pValueComment": "The p-value for the primary analysis was evaluated at a 2-sided significance level of 0.025 for each CZP dose vs PBO.",
+         "statisticalMethod": "Regression, Logistic",
+         "statisticalComment": "Estimated responder rate, odds ratios, CIs, p-values based on a logistic regression model with factors for treatment, region, prior biologic exposure.",
+         "paramType": "Odds Ratio (OR)",
+         "paramValue": "31.143",
+         "ciPctValue": "97.5",
+         "ciNumSides": "TWO_SIDED",
+         "ciLowerLimit": "5.687",
+         "ciUpperLimit": "170.548"
+        },
+        {
+         "groupIds": [
+          "OG000",
+          "OG001"
+         ],
+         "groupDescription": "The statistical analysis of the co-primary efficacy variables and key secondary efficacy variables accounted for multiplicity by using a fixed sequence testing procedure.",
+         "nonInferiorityType": "SUPERIORITY",
+         "statisticalMethod": "Regression, Logistic",
+         "statisticalComment": "Estimated responder rate, odds ratios, CIs, p-values based on a logistic regression model with factors for treatment, region, prior biologic exposure.",
+         "paramType": "Estimated difference in responder rate",
+         "paramValue": "42.8",
+         "ciPctValue": "95",
+         "ciNumSides": "TWO_SIDED",
+         "ciLowerLimit": "30.70",
+         "ciUpperLimit": "54.86",
+         "estimateComment": "Estimate and 95% CI for difference in proportion of responders for CZP 200 mg Q2W (RS) versus Placebo Q2W (RS)."
+        },
+        {
+         "groupIds": [
+          "OG000",
+          "OG002"
+         ],
+         "groupDescription": "The statistical analysis of the co-primary efficacy variables and key secondary efficacy variables accounted for multiplicity by using a fixed sequence testing procedure.",
+         "nonInferiorityType": "SUPERIORITY",
+         "statisticalMethod": "Regression, Logistic",
+         "statisticalComment": "Estimated responder rate, odds ratios, CIs, p-values based on a logistic regression model with factors for treatment, region, prior biologic exposure.",
+         "paramType": "Estimated difference in responder rate",
+         "paramValue": "53.6",
+         "ciPctValue": "95",
+         "ciNumSides": "TWO_SIDED",
+         "ciLowerLimit": "41.33",
+         "ciUpperLimit": "65.94",
+         "estimateComment": "Estimate and 95% CI for difference in proportion of responders for CZP 400 mg Q2W (RS) versus Placebo Q2W (RS)."
+        }
+       ]
+      },
+      {
+       "type": "SECONDARY",
+       "title": "Proportion of Subjects Who Achieve a Psoriasis Activity and Severity Index (PASI90) Response at Week 16",
+       "description": "The PASI90 response assessments are based on at least 90% improvement in the PASI score from Baseline. This is a scoring system that averages the redness, thickness, and scaliness of the psoriatic lesions (on a 0-4 scale), and weights the resulting score by the area of skin involved. Body divided into 4 areas: head, arms, trunk to groin, and legs to top of buttocks. Assignment of an average score for the redness, thickness, and scaling for each of the 4 body areas with a score of 0 (clear) to 4 (very marked). Determining the percentage of skin covered with PSO for each of the body areas and converting to a 0 to 6 scale. Final PASI= average redness, thickness, and scaliness of the psoriatic skin lesions, multiplied by the involved psoriasis area score of the respective section, and weighted by the percentage of the person's affected skin for the respective section. The minimum possible PASI score is 0= no disease, the maximum score is 72= maximal disease.",
+       "populationDescription": "The Randomized Set included all participants randomized into the study. Missing data were handled using the Markov Chain Monte Carlo (MCMC) method for multiple imputation.",
+       "reportingStatus": "POSTED",
+       "paramType": "NUMBER",
+       "unitOfMeasure": "percentage of participants",
+       "timeFrame": "At Week 16",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Placebo Q2W (RS)",
+         "description": "Placebo sc injection Q2W.\n\nTreatment received from Week 16 - 48 was based on initial treatment and response to treatment:\n\n* PASI50 responders at Week 16, who did not achieve a PASI75 response at Week 16 received CZP 400 mg at Weeks 16, 18 and 20 (loading doses) followed by CZP 200 mg Q2W starting at Week 22.\n* PASI75 responders at Week 16 continued to receive Placebo.\n* PASI50 non-responders at Week 16 were removed from blinded study medication and escaped to unblinded CZP 400 mg Q2W. Participants who received unblinded CZP 400 mg Q2W for 16 weeks and did not achieve a PASI50 response were withdrawn from the study.\n* PASI50 non-responders at Week 32 or a later time point were withdrawn from the study.\n\nParticipants who completed the Maintenance Period (with PASI50 response at Week 48) entered the OLE Period on CZP 200 mg Q2W. Week 48 completers in the escape arm continued to receive CZP 400 mg Q2W or may have switched to CZP 200 mg Q2W.\n\nParticipants formed the Randomized Set (RS)."
+        },
+        {
+         "id": "OG001",
+         "title": "CZP 200 mg Q2W (RS)",
+         "description": "CZP 400 mg at Weeks 0, 2, 4, followed by CZP 200 mg Q2W from Week 6 to Week 14.\n\nTreatment received from Week 16 - 48 was based on initial treatment and response to treatment:\n\n* PASI50 responders at Week 16 continued to receive CZP 200 mg Q2W.\n* PASI50 non-responders at Week 16 were removed from blinded study medication and escaped to unblinded CZP 400 mg Q2W. Participants who received unblinded CZP 400 mg Q2W for 16 weeks and did not achieve a PASI50 response were withdrawn from the study.\n* PASI50 non-responders at Week 32 or a later time point were withdrawn from the study.\n\nParticipants who completed the Maintenance Period (with PASI50 response at Week 48) entered the OLE Period on CZP 200 mg Q2W.\n\nWeek 48 completers in the escape arm continued to receive CZP 400 mg Q2W or may have switched to CZP 200 mg Q2W.\n\nDepending on PASI50 or PASI75 responses at Week 60 or a later time point, participants may have switched to CZP 400 mg Q2W or withdrew from the study.\n\nParticipants formed the RS."
+        },
+        {
+         "id": "OG002",
+         "title": "CZP 400 mg Q2W (RS)",
+         "description": "CZP 400 mg Q2W through Week 14.\n\nTreatment received from Week 16 - 48 was based on initial treatment and response to treatment:\n\n* PASI50 responders at Week 16 continued to receive CZP 400 mg Q2W.\n* PASI50 non-responders at Week 16 were removed from blinded study medication and escaped to unblinded CZP 400 mg Q2W. Participants who received unblinded CZP 400 mg Q2W for 16 weeks and did not achieve a PASI50 response were withdrawn from the study.\n* PASI50 non-responders at Week 32 or a later time point were withdrawn from the study.\n\nParticipants who completed the Maintenance Period (with PASI50 response at Week 48) entered the OLE Period on CZP 200 mg Q2W. Week 48 completers in the escape arm continued to receive CZP 400 mg Q2W or may have switched to CZP 200 mg Q2W.\n\nParticipants who achieved a PASI75 response during the OLE Period may have switched to CZP 200 mg Q2W.\n\nParticipants formed the RS."
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "51"
+          },
+          {
+           "groupId": "OG001",
+           "value": "95"
+          },
+          {
+           "groupId": "OG002",
+           "value": "88"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "0.4"
+            },
+            {
+             "groupId": "OG001",
+             "value": "35.8"
+            },
+            {
+             "groupId": "OG002",
+             "value": "43.6"
+            }
+           ]
+          }
+         ]
+        }
+       ],
+       "analyses": [
+        {
+         "groupIds": [
+          "OG000",
+          "OG001"
+         ],
+         "groupDescription": "The statistical analysis of the co-primary efficacy variables and key secondary efficacy variables accounted for multiplicity by using a fixed sequence testing procedure.",
+         "nonInferiorityType": "SUPERIORITY",
+         "pValue": "<0.0001",
+         "pValueComment": "The p-value for this analysis as used in the fixed sequence testing procedure was evaluated at a 2-sided significance level of 0.025 for each CZP dose vs PBO.",
+         "statisticalMethod": "Regression, Logistic",
+         "statisticalComment": "Estimated responder rate, odds ratios, CIs, p-values based on a logistic regression model with factors for treatment,region, prior biologic exposure.",
+         "paramType": "Odds Ratio (OR)",
+         "paramValue": "36.668",
+         "ciPctValue": "97.5",
+         "ciNumSides": "TWO_SIDED",
+         "ciLowerLimit": "5.717",
+         "ciUpperLimit": "235.193"
+        },
+        {
+         "groupIds": [
+          "OG000",
+          "OG002"
+         ],
+         "groupDescription": "The statistical analysis of the co-primary efficacy variables and key secondary efficacy variables accounted for multiplicity by using a fixed sequence testing procedure.",
+         "nonInferiorityType": "SUPERIORITY",
+         "pValue": "<0.0001",
+         "pValueComment": "The p-value for this analysis as used in the fixed sequence testing procedure was evaluated at a 2-sided significance level of 0.025 for each CZP dose vs PBO.",
+         "statisticalMethod": "Regression, Logistic",
+         "statisticalComment": "Estimated responder rate, odds ratios, CIs, p-values based on a logistic regression model with factors for treatment, region, prior biologic exposure.",
+         "paramType": "Odds Ratio (OR)",
+         "paramValue": "50.606",
+         "ciPctValue": "97.5",
+         "ciNumSides": "TWO_SIDED",
+         "ciLowerLimit": "7.880",
+         "ciUpperLimit": "324.988"
+        },
+        {
+         "groupIds": [
+          "OG000",
+          "OG001"
+         ],
+         "groupDescription": "The statistical analysis of the co-primary efficacy variables and key secondary efficacy variables accounted for multiplicity by using a fixed sequence testing procedure.",
+         "nonInferiorityType": "SUPERIORITY",
+         "statisticalMethod": "Regression, Logistic",
+         "statisticalComment": "Estimated responder rate, odds ratios, CIs, p-values based on a logistic regression model with factors for treatment, region, prior biologic exposure.",
+         "paramType": "Estimated difference in responder rate",
+         "paramValue": "35.4",
+         "ciPctValue": "95",
+         "ciNumSides": "TWO_SIDED",
+         "ciLowerLimit": "20.85",
+         "ciUpperLimit": "49.87",
+         "estimateComment": "Estimate and 95% CI for difference in proportion of responders for CZP 200 mg Q2W (RS) versus Placebo Q2W (RS)."
+        },
+        {
+         "groupIds": [
+          "OG000",
+          "OG002"
+         ],
+         "groupDescription": "The statistical analysis of the co-primary efficacy variables and key secondary efficacy variables accounted for multiplicity by using a fixed sequence testing procedure.",
+         "nonInferiorityType": "SUPERIORITY",
+         "statisticalMethod": "Regression, Logistic",
+         "statisticalComment": "Estimated responder rate, odds ratios, CIs, p-values based on a logistic regression model with factors for treatment, region, prior biologic exposure.",
+         "paramType": "Estimated difference in responder rate",
+         "paramValue": "43.1",
+         "ciPctValue": "95",
+         "ciNumSides": "TWO_SIDED",
+         "ciLowerLimit": "27.56",
+         "ciUpperLimit": "58.71",
+         "estimateComment": "Estimate and 95% CI for difference in proportion of responders for CZP 400 mg Q2W (RS) versus Placebo Q2W (RS)."
+        }
+       ]
+      },
+      {
+       "type": "SECONDARY",
+       "title": "Change From Baseline in Dermatology Life Quality Index (DLQI) at Week 16",
+       "description": "The DLQI is a subject-reported questionnaire designed for use in adult participants with PSO. The DLQI is a skin disease-specific questionnaire aimed at the evaluation of how symptoms and treatment affect patients' health related quality of life (HRQoL). This instrument asks participants about symptoms and feelings, daily activities, leisure, work and school, personal relationships, and treatment. It has been shown to be valid and reproducible in PSO patients. The DLQI score ranges from 0 to 30 with higher scores indicating lower HRQoL. A higher than of equal to (\\>=) 4-point change in the DLQI score (DLQI response) has been reported to be meaningful for the patient (within-patient minimal important difference Basra et al, 2015) a DLQI absolute score of lower than or equal to (=\\<) 1 indicates DLQI remission (i.e., no or small impact of the disease on HRQoL).",
+       "populationDescription": "The Randomized Set included all participants randomized into the study. Missing data were handled using the last observation carried forward (LOCF) method for the DLQI.",
+       "reportingStatus": "POSTED",
+       "paramType": "LEAST_SQUARES_MEAN",
+       "dispersionType": "Standard Error",
+       "unitOfMeasure": "Scores on a scale",
+       "timeFrame": "At Week 16",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Placebo Q2W (RS)",
+         "description": "Placebo sc injection Q2W.\n\nTreatment received from Week 16 - 48 was based on initial treatment and response to treatment:\n\n* PASI50 responders at Week 16, who did not achieve a PASI75 response at Week 16 received CZP 400 mg at Weeks 16, 18 and 20 (loading doses) followed by CZP 200 mg Q2W starting at Week 22.\n* PASI75 responders at Week 16 continued to receive Placebo.\n* PASI50 non-responders at Week 16 were removed from blinded study medication and escaped to unblinded CZP 400 mg Q2W. Participants who received unblinded CZP 400 mg Q2W for 16 weeks and did not achieve a PASI50 response were withdrawn from the study.\n* PASI50 non-responders at Week 32 or a later time point were withdrawn from the study.\n\nParticipants who completed the Maintenance Period (with PASI50 response at Week 48) entered the OLE Period on CZP 200 mg Q2W. Week 48 completers in the escape arm continued to receive CZP 400 mg Q2W or may have switched to CZP 200 mg Q2W.\n\nParticipants formed the Randomized Set (RS)."
+        },
+        {
+         "id": "OG001",
+         "title": "CZP 200 mg Q2W (RS)",
+         "description": "CZP 400 mg at Weeks 0, 2, 4, followed by CZP 200 mg Q2W from Week 6 to Week 14.\n\nTreatment received from Week 16 - 48 was based on initial treatment and response to treatment:\n\n* PASI50 responders at Week 16 continued to receive CZP 200 mg Q2W.\n* PASI50 non-responders at Week 16 were removed from blinded study medication and escaped to unblinded CZP 400 mg Q2W. Participants who received unblinded CZP 400 mg Q2W for 16 weeks and did not achieve a PASI50 response were withdrawn from the study.\n* PASI50 non-responders at Week 32 or a later time point were withdrawn from the study.\n\nParticipants who completed the Maintenance Period (with PASI50 response at Week 48) entered the OLE Period on CZP 200 mg Q2W.\n\nWeek 48 completers in the escape arm continued to receive CZP 400 mg Q2W or may have switched to CZP 200 mg Q2W.\n\nDepending on PASI50 or PASI75 responses at Week 60 or a later time point, participants may have switched to CZP 400 mg Q2W or withdrew from the study.\n\nParticipants formed the RS."
+        },
+        {
+         "id": "OG002",
+         "title": "CZP 400 mg Q2W (RS)",
+         "description": "CZP 400 mg Q2W through Week 14.\n\nTreatment received from Week 16 - 48 was based on initial treatment and response to treatment:\n\n* PASI50 responders at Week 16 continued to receive CZP 400 mg Q2W.\n* PASI50 non-responders at Week 16 were removed from blinded study medication and escaped to unblinded CZP 400 mg Q2W. Participants who received unblinded CZP 400 mg Q2W for 16 weeks and did not achieve a PASI50 response were withdrawn from the study.\n* PASI50 non-responders at Week 32 or a later time point were withdrawn from the study.\n\nParticipants who completed the Maintenance Period (with PASI50 response at Week 48) entered the OLE Period on CZP 200 mg Q2W. Week 48 completers in the escape arm continued to receive CZP 400 mg Q2W or may have switched to CZP 200 mg Q2W.\n\nParticipants who achieved a PASI75 response during the OLE Period may have switched to CZP 200 mg Q2W.\n\nParticipants formed the RS."
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "51"
+          },
+          {
+           "groupId": "OG001",
+           "value": "95"
+          },
+          {
+           "groupId": "OG002",
+           "value": "88"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "-3.3",
+             "spread": "0.80"
+            },
+            {
+             "groupId": "OG001",
+             "value": "-9.3",
+             "spread": "0.58"
+            },
+            {
+             "groupId": "OG002",
+             "value": "-10.2",
+             "spread": "0.60"
+            }
+           ]
+          }
+         ]
+        }
+       ],
+       "analyses": [
+        {
+         "groupIds": [
+          "OG000",
+          "OG001"
+         ],
+         "groupDescription": "The statistical analysis of the co-primary efficacy variables and key secondary efficacy variables accounted for multiplicity by using a fixed sequence testing procedure.",
+         "nonInferiorityType": "SUPERIORITY",
+         "pValue": "<0.0001",
+         "pValueComment": "P-value obtained for each treatment group comparison tested at a significance level of 0.025 in the fixed sequence testing procedure.",
+         "statisticalMethod": "ANCOVA",
+         "statisticalComment": "ANCOVA model of change from Baseline DLQI score with treatment group, region, prior biologic exposure as factors; Baseline DLQI score as a covariate.",
+         "paramType": "Adjusted Mean Treatment Differences",
+         "paramValue": "-6.00",
+         "ciPctValue": "97.5",
+         "ciNumSides": "TWO_SIDED",
+         "ciLowerLimit": "-8.18",
+         "ciUpperLimit": "-3.81"
+        },
+        {
+         "groupIds": [
+          "OG000",
+          "OG002"
+         ],
+         "groupDescription": "The statistical analysis of the co-primary efficacy variables and key secondary efficacy variables accounted for multiplicity by using a fixed sequence testing procedure.",
+         "nonInferiorityType": "SUPERIORITY",
+         "pValue": "<0.0001",
+         "pValueComment": "P-value obtained for each treatment group comparison tested at a significance level of 0.025 in the fixed sequence testing procedure.",
+         "statisticalMethod": "ANCOVA",
+         "statisticalComment": "ANCOVA model of change from Baseline DLQI score with treatment group, region, prior biologic exposure as factors; Baseline DLQI score as a covariate.",
+         "paramType": "Ajusted Mean Treatment Differences",
+         "paramValue": "-6.84",
+         "ciPctValue": "97.5",
+         "ciNumSides": "TWO_SIDED",
+         "ciLowerLimit": "-9.05",
+         "ciUpperLimit": "-4.62"
+        }
+       ]
+      },
+      {
+       "type": "SECONDARY",
+       "title": "Proportion of Subjects Who Achieve a Physician's Global Assessment (PGA) Clear or Almost Clear (With at Least 2-category Improvement) Response at Week 48",
+       "description": "The Investigator assessed the overall severity of Psoriasis (PSO) using the following 5-point scale: 0= clear, 1= almost clear, 2= mild, 3= moderate, 4= severe.",
+       "populationDescription": "The Randomized Set included all participants randomized into the study. Missing data were handled using the Markov Chain Monte Carlo (MCMC) method for multiple imputation.",
+       "reportingStatus": "POSTED",
+       "paramType": "NUMBER",
+       "dispersionType": "95% Confidence Interval",
+       "unitOfMeasure": "percentage of participants",
+       "timeFrame": "At Week 48",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "CZP 200 mg Q2W (RS)",
+         "description": "CZP 400 mg at Weeks 0, 2, 4, followed by CZP 200 mg Q2W from Week 6 to Week 14.\n\nTreatment received from Week 16 - 48 was based on initial treatment and response to treatment:\n\n* PASI50 responders at Week 16 continued to receive CZP 200 mg Q2W.\n* PASI50 non-responders at Week 16 were removed from blinded study medication and escaped to unblinded CZP 400 mg Q2W. Participants who received unblinded CZP 400 mg Q2W for 16 weeks and did not achieve a PASI50 response were withdrawn from the study.\n* PASI50 non-responders at Week 32 or a later time point were withdrawn from the study.\n\nParticipants who completed the Maintenance Period (with PASI50 response at Week 48) entered the OLE Period on CZP 200 mg Q2W.\n\nWeek 48 completers in the escape arm continued to receive CZP 400 mg Q2W or may have switched to CZP 200 mg Q2W.\n\nDepending on PASI50 or PASI75 responses at Week 60 or a later time point, participants may have switched to CZP 400 mg Q2W or withdrew from the study.\n\nParticipants formed the RS."
+        },
+        {
+         "id": "OG001",
+         "title": "CZP 400 mg Q2W (RS)",
+         "description": "CZP 400 mg Q2W through Week 14.\n\nTreatment received from Week 16 - 48 was based on initial treatment and response to treatment:\n\n* PASI50 responders at Week 16 continued to receive CZP 400 mg Q2W.\n* PASI50 non-responders at Week 16 were removed from blinded study medication and escaped to unblinded CZP 400 mg Q2W. Participants who received unblinded CZP 400 mg Q2W for 16 weeks and did not achieve a PASI50 response were withdrawn from the study.\n* PASI50 non-responders at Week 32 or a later time point were withdrawn from the study.\n\nParticipants who completed the Maintenance Period (with PASI50 response at Week 48) entered the OLE Period on CZP 200 mg Q2W. Week 48 completers in the escape arm continued to receive CZP 400 mg Q2W or may have switched to CZP 200 mg Q2W.\n\nParticipants who achieved a PASI75 response during the OLE Period may have switched to CZP 200 mg Q2W.\n\nParticipants formed the RS."
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "95"
+          },
+          {
+           "groupId": "OG001",
+           "value": "88"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "52.7",
+             "lowerLimit": "41.99",
+             "upperLimit": "63.32"
+            },
+            {
+             "groupId": "OG001",
+             "value": "69.5",
+             "lowerLimit": "59.24",
+             "upperLimit": "79.77"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "type": "SECONDARY",
+       "title": "Proportion of Subjects Who Achieve a Psoriasis Activity and Severity Index (PASI75) Response at Week 48",
+       "description": "The PASI75 response assessments are based on at least 75% improvement in the PASI score from Baseline. This is a scoring system that averages the redness, thickness, and scaliness of the psoriatic lesions (on a 0-4 scale), and weights the resulting score by the area of skin involved. Body divided into 4 areas: head, arms, trunk to groin, and legs to top of buttocks. Assignment of an average score for the redness, thickness, and scaling for each of the 4 body areas with a score of 0 (clear) to 4 (very marked). Determining the percentage of skin covered with PSO for each of the body areas and converting to a 0 to 6 scale. Final PASI= average redness, thickness, and scaliness of the psoriatic skin lesions, multiplied by the involved psoriasis area score of the respective section, and weighted by the percentage of the person's affected skin for the respective section. The minimum possible PASI score is 0= no disease, the maximum score is 72= maximal disease.",
+       "populationDescription": "The Randomized Set included all participants randomized into the study. Missing data were handled using the Markov Chain Monte Carlo (MCMC) method for multiple imputation.",
+       "reportingStatus": "POSTED",
+       "paramType": "NUMBER",
+       "dispersionType": "95% Confidence Interval",
+       "unitOfMeasure": "percentage of participants",
+       "timeFrame": "At Week 48",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "CZP 200 mg Q2W (RS)",
+         "description": "CZP 400 mg at Weeks 0, 2, 4, followed by CZP 200 mg Q2W from Week 6 to Week 14.\n\nTreatment received from Week 16 - 48 was based on initial treatment and response to treatment:\n\n* PASI50 responders at Week 16 continued to receive CZP 200 mg Q2W.\n* PASI50 non-responders at Week 16 were removed from blinded study medication and escaped to unblinded CZP 400 mg Q2W. Participants who received unblinded CZP 400 mg Q2W for 16 weeks and did not achieve a PASI50 response were withdrawn from the study.\n* PASI50 non-responders at Week 32 or a later time point were withdrawn from the study.\n\nParticipants who completed the Maintenance Period (with PASI50 response at Week 48) entered the OLE Period on CZP 200 mg Q2W.\n\nWeek 48 completers in the escape arm continued to receive CZP 400 mg Q2W or may have switched to CZP 200 mg Q2W.\n\nDepending on PASI50 or PASI75 responses at Week 60 or a later time point, participants may have switched to CZP 400 mg Q2W or withdrew from the study.\n\nParticipants formed the RS."
+        },
+        {
+         "id": "OG001",
+         "title": "CZP 400 mg Q2W (RS)",
+         "description": "CZP 400 mg Q2W through Week 14.\n\nTreatment received from Week 16 - 48 was based on initial treatment and response to treatment:\n\n* PASI50 responders at Week 16 continued to receive CZP 400 mg Q2W.\n* PASI50 non-responders at Week 16 were removed from blinded study medication and escaped to unblinded CZP 400 mg Q2W. Participants who received unblinded CZP 400 mg Q2W for 16 weeks and did not achieve a PASI50 response were withdrawn from the study.\n* PASI50 non-responders at Week 32 or a later time point were withdrawn from the study.\n\nParticipants who completed the Maintenance Period (with PASI50 response at Week 48) entered the OLE Period on CZP 200 mg Q2W. Week 48 completers in the escape arm continued to receive CZP 400 mg Q2W or may have switched to CZP 200 mg Q2W.\n\nParticipants who achieved a PASI75 response during the OLE Period may have switched to CZP 200 mg Q2W.\n\nParticipants formed the RS."
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "95"
+          },
+          {
+           "groupId": "OG001",
+           "value": "88"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "67.2",
+             "lowerLimit": "57.09",
+             "upperLimit": "77.39"
+            },
+            {
+             "groupId": "OG001",
+             "value": "87.1",
+             "lowerLimit": "79.81",
+             "upperLimit": "94.45"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   },
+   "hasResults": true
+  },
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT01206387",
+     "briefTitle": "Effects of Desoximetasone Spray 0.25% on Moderate to Severe Plaque Psoriasis"
+    },
+    "statusModule": {
+     "overallStatus": "COMPLETED",
+     "startDateStruct": {
+      "date": "2010-08"
+     },
+     "primaryCompletionDateStruct": {
+      "date": "2010-12"
+     },
+     "completionDateStruct": {
+      "date": "2011-01"
+     },
+     "lastUpdatePostDateStruct": {
+      "date": "2017-06-05"
+     }
+    },
+    "sponsorCollaboratorsModule": {
+     "leadSponsor": {
+      "name": "Sun Pharmaceutical Industries, Inc.",
+      "class": "INDUSTRY"
+     }
+    },
+    "conditionsModule": {
+     "conditions": [
+      "Psoriasis"
+     ]
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL",
+     "phases": [
+      "PHASE3"
+     ],
+     "designInfo": {
+      "allocation": "RANDOMIZED"
+     },
+     "enrollmentInfo": {
+      "count": 120
+     }
+    },
+    "armsInterventionsModule": {
+     "armGroups": [
+      {
+       "label": "active product",
+       "type": "EXPERIMENTAL",
+       "description": "Desoximetasone Spray 0.25%",
+       "interventionNames": [
+        "Drug: Desoximetasone Spray 0.25%"
+       ]
+      },
+      {
+       "label": "placebo comparator",
+       "type": "PLACEBO_COMPARATOR",
+       "description": "vehicle",
+       "interventionNames": [
+        "Drug: placebo comparator"
+       ]
+      }
+     ],
+     "interventions": [
+      {
+       "type": "DRUG",
+       "name": "Desoximetasone Spray 0.25%",
+       "description": "Desoximetasone topical spray 0.25% administered to affected area twice a day for 28 days"
+      },
+      {
+       "type": "DRUG",
+       "name": "placebo comparator",
+       "description": "Placebo administered to affected area twice a day for 28 days"
+      }
+     ]
+    },
+    "outcomesModule": {
+     "primaryOutcomes": [
+      {
+       "measure": "Clinical Success"
+      },
+      {
+       "measure": "Treatment Success"
+      }
+     ]
+    },
+    "contactsLocationsModule": {
+     "overallOfficials": [
+      {
+       "name": "Novum Pharmaceutical Research Services",
+       "affiliation": "http://www.novumprs.com/contact",
+       "role": "STUDY_CHAIR"
+      }
+     ]
+    }
+   },
+   "resultsSection": {
+    "outcomeMeasuresModule": {
+     "outcomeMeasures": [
+      {
+       "type": "PRIMARY",
+       "title": "Clinical Success",
+       "description": "A patient is considered a Clinical Success if the Physician's Global Assessment (PGA) is 0 (clear) or 1 (almost clear).",
+       "populationDescription": "Primary Efficacy Analysis at Day 28 Clinical Success (ITT)",
+       "reportingStatus": "POSTED",
+       "paramType": "NUMBER",
+       "unitOfMeasure": "participants",
+       "timeFrame": "28 days",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Desoximetasone Spray 0.25%",
+         "description": "Desoximetasone Spray 0.25%: Desoximetasone topical spray 0.25% administered to affected area twice a day for 28 days"
+        },
+        {
+         "id": "OG001",
+         "title": "Placebo",
+         "description": "placebo comparator: Placebo administered to affected area twice a day for 28 days"
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "59"
+          },
+          {
+           "groupId": "OG001",
+           "value": "60"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "18"
+            },
+            {
+             "groupId": "OG001",
+             "value": "3"
+            }
+           ]
+          }
+         ]
+        }
+       ],
+       "analyses": [
+        {
+         "groupIds": [
+          "OG000",
+          "OG001"
+         ],
+         "nonInferiorityType": "SUPERIORITY_OR_OTHER",
+         "pValue": "0.0003",
+         "statisticalMethod": "t-test, 2 sided"
+        }
+       ]
+      },
+      {
+       "type": "PRIMARY",
+       "title": "Treatment Success",
+       "description": "A patient is considered a Treatment Success for the Target Lesions if the target lesion has a score of 0 or 1 on the Target Lesion Severity Score (TLSS)for each of each of the three signs and symptoms (erythema, scaling and plaque elevation).",
+       "reportingStatus": "POSTED",
+       "paramType": "NUMBER",
+       "unitOfMeasure": "participants",
+       "timeFrame": "28 days",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Desoximetasone Spray 0.25%",
+         "description": "Desoximetasone Spray 0.25%: Desoximetasone topical spray 0.25% administered to affected area twice a day for 28 days"
+        },
+        {
+         "id": "OG001",
+         "title": "Placebo",
+         "description": "placebo comparator: Placebo administered to affected area twice a day for 28 days"
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "59"
+          },
+          {
+           "groupId": "OG001",
+           "value": "60"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "23"
+            },
+            {
+             "groupId": "OG001",
+             "value": "4"
+            }
+           ]
+          }
+         ]
+        }
+       ],
+       "analyses": [
+        {
+         "groupIds": [
+          "OG000",
+          "OG001"
+         ],
+         "nonInferiorityType": "SUPERIORITY_OR_OTHER",
+         "pValue": "<0.0001",
+         "statisticalMethod": "t-test, 2 sided"
+        }
+       ]
+      },
+      {
+       "type": "SECONDARY",
+       "title": "Mean Change From Baseline in Physician Global Assessment (PGA) Score at Day 28 Using ITT.",
+       "description": "In the Physician Global Assessment of psoriasis is a score based on physician assessment of overall disease severity for all lesions assessed at baseline and at Day 28. The PGA score range: from 0 (Clear=No Psoriatic lesions, i.e. no plaque formation; no erythema, no induration, no scaling) to 5 (Very Severe=Coarse scaling with pronounced cracking and fissures. Erythema is dark red with induration. Plaques are markedly elevated with sharp and hard edges).\n\nThe first evaluation was for the change from baseline in PGA, using a two-sided, α = 0.05 level of significance. If superiority of the test product over its vehicle was demonstrated (p\\<0.05), then PGA change from baseline values was examined.",
+       "populationDescription": "All participants enrolled in this study were included in this intent-to-treat (ITT) analysis. Results are presented as observed",
+       "reportingStatus": "POSTED",
+       "paramType": "MEAN",
+       "dispersionType": "Standard Deviation",
+       "unitOfMeasure": "units on a scale",
+       "timeFrame": "Baseline and day 28",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Desoximetasone Spray 0.25%",
+         "description": "Desoximetasone Spray 0.25%: Desoximetasone topical spray 0.25% administered to affected area twice a day for 28 days"
+        },
+        {
+         "id": "OG001",
+         "title": "Placebo",
+         "description": "placebo comparator: Placebo administered to affected area twice a day for 28 days"
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "59"
+          },
+          {
+           "groupId": "OG001",
+           "value": "60"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "1.14",
+             "spread": "0.9"
+            },
+            {
+             "groupId": "OG001",
+             "value": "0.50",
+             "spread": "0.68"
+            }
+           ]
+          }
+         ]
+        }
+       ],
+       "analyses": [
+        {
+         "groupIds": [
+          "OG000",
+          "OG001"
+         ],
+         "nonInferiorityType": "SUPERIORITY_OR_OTHER",
+         "pValue": "<0.0001",
+         "statisticalMethod": "t-test, 2 sided"
+        }
+       ]
+      },
+      {
+       "type": "SECONDARY",
+       "title": "Mean Change From Baseline in Total Lesion Severity Scale (TLSS) (ITT)",
+       "description": "Mean Change from Baseline in Lesion Severity Scale-TLSS (ITT)\n\nTLSS of psoriasis is a combined score based on physician assessment of disease severity for the Target Lesion assessed at baseline and at Day 28. The TLSS combined score included summary of individually scored induration (as 0=Clear or 1=Almost Clear, or 2=Mild, or 3=Moderate, or 4=Severe, or 5=Very Severe), erythema (as 0=Clear or 1=Almost Clear, or 2=Mild, or 3=Moderate, or 4=Severe, or 5=Very Severe), and scaling (as 0=Clear or 1=Almost Clear, or 2=Mild, or 3=Moderate, or 4=Severe, or 5=Very Severe). To be eligible for inclusion in the study, the combined score of all three signs for the Target Lesion must total at least 7 and the patient must have at least a score of 3=Moderate for plaque elevation\n\nThe first evaluation was for the change from baseline in TLSS, using a two-sided, α = 0.05 level of significance.",
+       "populationDescription": "Base on intention to treat. All participant with mean change from baseline in TLSS at Day 28",
+       "reportingStatus": "POSTED",
+       "paramType": "MEAN",
+       "dispersionType": "Standard Deviation",
+       "unitOfMeasure": "units on a scale",
+       "timeFrame": "Baseline and day 28",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Desoximetasone Spray 0.25%",
+         "description": "Desoximetasone Spray 0.25%: Desoximetasone topical spray 0.25% administered to affected area twice a day for 28 days"
+        },
+        {
+         "id": "OG001",
+         "title": "Placebo",
+         "description": "placebo comparator: Placebo administered to affected area twice a day for 28 days"
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "59"
+          },
+          {
+           "groupId": "OG001",
+           "value": "60"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "4.73",
+             "spread": "3.08"
+            },
+            {
+             "groupId": "OG001",
+             "value": "1.93",
+             "spread": "1.96"
+            }
+           ]
+          }
+         ]
+        }
+       ],
+       "analyses": [
+        {
+         "groupIds": [
+          "OG000",
+          "OG001"
+         ],
+         "nonInferiorityType": "SUPERIORITY_OR_OTHER",
+         "pValue": "<0.0001",
+         "statisticalMethod": "t-test, 2 sided"
+        }
+       ]
+      },
+      {
+       "type": "SECONDARY",
+       "title": "Mean Change From Baseline in Percent Body Surface Area (%BSA) Affected at Day 28",
+       "description": "Mean Change from Baseline in percent body surface area (%BSA) affected by Psoriasis\n\nThe Body Surface Area (BSA) is a numerical score used to measure the physician's assessment of the percentage of the participant's total BSA involved with psoriasis.\n\nBSA = SQRT ((height (cm) X weight (kg))/3600) BSA is in m2, W is weight in kg, and H is height in cm. Total body Surface Area (BSA) in meters squared\n\nFor the %Body Surface Area Affected the \"Rule of Nine\" was be used.\n\nChange From Baseline in Percent Body Surface Area i.e., difference of base percent values \\[Percent Body Surface Area at 28 days - Percent Body Surface Area at Baseline\\].",
+       "populationDescription": "Base on intention to treat. All participant with Mean Change from Baseline in %BSA affected at Day 28",
+       "reportingStatus": "POSTED",
+       "paramType": "MEAN",
+       "dispersionType": "Standard Deviation",
+       "unitOfMeasure": "percentage of body surface area affected",
+       "timeFrame": "Baseline and day 28",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Desoximetasone Spray 0.25%",
+         "description": "Desoximetasone Spray 0.25%: Desoximetasone topical spray 0.25% administered to affected area twice a day for 28 days"
+        },
+        {
+         "id": "OG001",
+         "title": "Placebo",
+         "description": "placebo comparator: Placebo administered to affected area twice a day for 28 days"
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "59"
+          },
+          {
+           "groupId": "OG001",
+           "value": "60"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "2.24",
+             "spread": "3.79"
+            },
+            {
+             "groupId": "OG001",
+             "value": "0.37",
+             "spread": "2.05"
+            }
+           ]
+          }
+         ]
+        }
+       ],
+       "analyses": [
+        {
+         "groupIds": [
+          "OG000",
+          "OG001"
+         ],
+         "nonInferiorityType": "SUPERIORITY_OR_OTHER",
+         "pValue": "0.0011",
+         "statisticalMethod": "t-test, 2 sided"
+        }
+       ]
+      }
+     ]
+    }
+   },
+   "hasResults": true
+  },
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT03000608",
+     "briefTitle": "A Trial of a Botanical Drug (EISO) for Treatment of Mild-to-Moderate Plaque Psoriasis"
+    },
+    "statusModule": {
+     "overallStatus": "COMPLETED",
+     "startDateStruct": {
+      "date": "2017-05-17"
+     },
+     "primaryCompletionDateStruct": {
+      "date": "2017-12-13"
+     },
+     "completionDateStruct": {
+      "date": "2017-12-14"
+     },
+     "lastUpdatePostDateStruct": {
+      "date": "2019-05-29"
+     }
+    },
+    "sponsorCollaboratorsModule": {
+     "leadSponsor": {
+      "name": "Santalis Pharmaceuticals, Inc.",
+      "class": "INDUSTRY"
+     },
+     "collaborators": [
+      {
+       "name": "ClinDatrix, Inc."
+      },
+      {
+       "name": "Clinical Trials of Texas, Inc."
+      },
+      {
+       "name": "Dermatology Research Center of San Antonio"
+      },
+      {
+       "name": "Derm Research, PLLC"
+      },
+      {
+       "name": "Progressive Clinical Research"
+      }
+     ]
+    },
+    "conditionsModule": {
+     "conditions": [
+      "Plaque Psoriasis"
+     ]
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL",
+     "phases": [
+      "PHASE2"
+     ],
+     "designInfo": {
+      "allocation": "RANDOMIZED"
+     },
+     "enrollmentInfo": {
+      "count": 69
+     }
+    },
+    "armsInterventionsModule": {
+     "armGroups": [
+      {
+       "label": "SAN021 Serum",
+       "type": "EXPERIMENTAL",
+       "description": "SAN021 is a serum containing 10% East Indian Sandalwood Oil. It is packaged in an amber glass bottle with a dropper top. The dose is 5 drops per 1% BSA involvement twice daily.",
+       "interventionNames": [
+        "Drug: SAN021 Serum"
+       ]
+      },
+      {
+       "label": "SAN021 Placebo",
+       "type": "PLACEBO_COMPARATOR",
+       "description": "SAN021 Placebo is a serum that does not contain East Indian Sandalwood Oil however, does contain a synthetic sandalwood fragrance. It is packaged in an amber glass bottle with a dropper top. The dose is 5 drops per 1% BSA involvement twice daily.",
+       "interventionNames": [
+        "Drug: SAN021 Placebo"
+       ]
+      }
+     ],
+     "interventions": [
+      {
+       "type": "DRUG",
+       "name": "SAN021 Serum",
+       "description": "SAN021 is a serum containing 10% East Indian Sandalwood Oil. It is packaged in an amber glass bottle with a dropper top. The dose is 5 drops per 1% BSA involvement twice daily."
+      },
+      {
+       "type": "DRUG",
+       "name": "SAN021 Placebo",
+       "description": "SAN021 Placebo is a serum that does not contain East Indian Sandalwood Oil however, does contain a synthetic sandalwood fragrance. It is packaged in an amber glass bottle with a dropper top. The dose is 5 drops per 1% BSA involvement twice daily."
+      }
+     ]
+    },
+    "outcomesModule": {
+     "primaryOutcomes": [
+      {
+       "measure": "Patients Achieving a Physician's Global Assessment of \"Clear\" or \"Almost Clear\" at Any Time-point From Baseline to Day 42 of the Study"
+      }
+     ]
+    },
+    "contactsLocationsModule": {
+     "locations": [
+      {
+       "facility": "DermResearch, Inc.",
+       "city": "Austin",
+       "country": "United States"
+      },
+      {
+       "facility": "Progressive Clinical Research",
+       "city": "San Antonio",
+       "country": "United States"
+      },
+      {
+       "facility": "Clinical Trial of Texas",
+       "city": "San Antonio",
+       "country": "United States"
+      },
+      {
+       "facility": "The Dermatology Clinical Research Center of San Antonio",
+       "city": "San Antonio",
+       "country": "United States"
+      }
+     ]
+    }
+   },
+   "resultsSection": {
+    "outcomeMeasuresModule": {
+     "outcomeMeasures": [
+      {
+       "type": "PRIMARY",
+       "title": "Patients Achieving a Physician's Global Assessment of \"Clear\" or \"Almost Clear\" at Any Time-point From Baseline to Day 42 of the Study",
+       "description": "The primary preliminary efficacy endpoint will be number of patients achieving a Physician's Global Assessment of \"clear\" or \"almost clear\" at any time-point during the 42 days of therapy.",
+       "populationDescription": "The analysis population for this outcome measure is the FAS set.",
+       "reportingStatus": "POSTED",
+       "paramType": "COUNT_OF_PARTICIPANTS",
+       "unitOfMeasure": "Participants",
+       "timeFrame": "Any time-point from Baseline to Day 42",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "SAN021 Serum",
+         "description": "SAN021 is a serum containing 10% East Indian Sandalwood Oil. It is packaged in an amber glass bottle with a dropper top. The dose is 5 drops per 1% BSA involvement twice daily.\n\nSAN021 Serum: SAN021 is a serum containing 10% East Indian Sandalwood Oil. It is packaged in an amber glass bottle with a dropper top. The dose is 5 drops per 1% BSA involvement twice daily."
+        },
+        {
+         "id": "OG001",
+         "title": "SAN021 Placebo",
+         "description": "SAN021 Placebo is a serum that does not contain East Indian Sandalwood Oil however, does contain a synthetic sandalwood fragrance. It is packaged in an amber glass bottle with a dropper top. The dose is 5 drops per 1% BSA involvement twice daily.\n\nSAN021 Placebo: SAN021 Placebo is a serum that does not contain East Indian Sandalwood Oil however, does contain a synthetic sandalwood fragrance. It is packaged in an amber glass bottle with a dropper top. The dose is 5 drops per 1% BSA involvement twice daily."
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "45"
+          },
+          {
+           "groupId": "OG001",
+           "value": "21"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "4"
+            },
+            {
+             "groupId": "OG001",
+             "value": "3"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "type": "SECONDARY",
+       "title": "Patients Achieving a Psoriasis Area and Severity Index Score Improvement ≥50% at Any Time-point From Baseline to Day 42 of the Study.",
+       "description": "Percentage of patients who have a ≥50% reduction in the Psoriasis Area Severity Index (PASI) score at any time-point from Baseline to Day 42 of the study.",
+       "populationDescription": "The analysis set used for this outcome measure is the FAS set.",
+       "reportingStatus": "POSTED",
+       "paramType": "COUNT_OF_PARTICIPANTS",
+       "unitOfMeasure": "Participants",
+       "timeFrame": "Any time-point from Baseline to Day 42 of the study.",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "SAN021 Serum",
+         "description": "SAN021 is a serum containing 10% East Indian Sandalwood Oil. It is packaged in an amber glass bottle with a dropper top. The dose is 5 drops per 1% BSA involvement twice daily.\n\nSAN021 Serum: SAN021 is a serum containing 10% East Indian Sandalwood Oil. It is packaged in an amber glass bottle with a dropper top. The dose is 5 drops per 1% BSA involvement twice daily."
+        },
+        {
+         "id": "OG001",
+         "title": "SAN021 Placebo",
+         "description": "SAN021 Placebo is a serum that does not contain East Indian Sandalwood Oil however, does contain a synthetic sandalwood fragrance. It is packaged in an amber glass bottle with a dropper top. The dose is 5 drops per 1% BSA involvement twice daily.\n\nSAN021 Placebo: SAN021 Placebo is a serum that does not contain East Indian Sandalwood Oil however, does contain a synthetic sandalwood fragrance. It is packaged in an amber glass bottle with a dropper top. The dose is 5 drops per 1% BSA involvement twice daily."
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "45"
+          },
+          {
+           "groupId": "OG001",
+           "value": "21"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "6"
+            },
+            {
+             "groupId": "OG001",
+             "value": "1"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   },
+   "hasResults": true
+  },
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT00141921",
+     "briefTitle": "Pediatric Open-Label Extension Study of Etanercept in Patients With Plaque Psoriasis"
+    },
+    "statusModule": {
+     "overallStatus": "COMPLETED",
+     "startDateStruct": {
+      "date": "2005-08-11"
+     },
+     "primaryCompletionDateStruct": {
+      "date": "2011-12-19"
+     },
+     "completionDateStruct": {
+      "date": "2017-08-16"
+     },
+     "lastUpdatePostDateStruct": {
+      "date": "2017-10-05"
+     }
+    },
+    "sponsorCollaboratorsModule": {
+     "leadSponsor": {
+      "name": "Amgen",
+      "class": "INDUSTRY"
+     }
+    },
+    "conditionsModule": {
+     "conditions": [
+      "Pediatric Plaque Psoriasis"
+     ]
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL",
+     "phases": [
+      "PHASE3"
+     ],
+     "designInfo": {
+      "allocation": "NA"
+     },
+     "enrollmentInfo": {
+      "count": 182
+     }
+    },
+    "armsInterventionsModule": {
+     "armGroups": [
+      {
+       "label": "Etanercept",
+       "type": "EXPERIMENTAL",
+       "description": "Participants received etanercept 0.8 mg/kg (up to a maximum dose of 50 mg) once weekly by subcutaneous injection for up to 264 weeks.",
+       "interventionNames": [
+        "Drug: Etanercept"
+       ]
+      }
+     ],
+     "interventions": [
+      {
+       "type": "DRUG",
+       "name": "Etanercept",
+       "description": "Open-label at a dose of 0.8 mg/kg (up to an intended dose of 50 mg) given once weekly by subcutaneous injection"
+      }
+     ]
+    },
+    "outcomesModule": {
+     "primaryOutcomes": [
+      {
+       "measure": "Number of Participants With Adverse Events"
+      }
+     ]
+    },
+    "contactsLocationsModule": {
+     "overallOfficials": [
+      {
+       "name": "MD",
+       "affiliation": "Amgen",
+       "role": "STUDY_DIRECTOR"
+      }
+     ]
+    }
+   },
+   "resultsSection": {
+    "outcomeMeasuresModule": {
+     "outcomeMeasures": [
+      {
+       "type": "PRIMARY",
+       "title": "Number of Participants With Adverse Events",
+       "description": "A serious adverse events is any AE that\n\n* is fatal\n* is life threatening\n* requires in-patient hospitalization or prolongation of existing hospitalization\n* results in persistent or significant disability/incapacity\n* is a congenital anomaly/birth defect\n* other significant medical hazard. The severity assessment for adverse events and infections (except injection site reactions) was done using the Common Toxicity Criteria (CTC) Version 2.0, where Grade 3 indicates a severe toxicity (incapacitating with inability to work or do usual activity).\n\nAn infectious event is an event that was considered by the investigator to be an infectious episode. An injection site reaction is a reaction at the site of the subcutaneous injection, commonly characterized, but not limited to symptoms of erythema (redness, usually raised), pruritis (itching), swelling, or pain that is persistent for 4 hours or longer.",
+       "populationDescription": "Participants who received at least one dose of investigational product.",
+       "reportingStatus": "POSTED",
+       "paramType": "NUMBER",
+       "unitOfMeasure": "participants",
+       "timeFrame": "264 Weeks",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Etanercept",
+         "description": "Participants received etanercept 0.8 mg/kg (up to a maximum dose of 50 mg) once weekly by subcutaneous injection for up to 264 weeks."
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "181"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "title": "Any adverse event",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "161"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Non-infectious adverse events",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "149"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Infections",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "140"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Grade 3 non-infectious adverse events",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "14"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Grade 3 infections",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "5"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Serious non-infectious adverse events",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "5"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Serious infections",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "2"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Non-infectious AEs leading to study withdrawal",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "5"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Infections leading to withdrawal from study",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "1"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Injection site reactions",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "16"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Deaths",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "0"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "type": "SECONDARY",
+       "title": "Number of Participants With Injection Site Reactions",
+       "description": "An injection site reaction is a reaction at the site of the subcutaneous injection, commonly characterized, but not limited to symptoms of erythema (redness, usually raised), pruritis (itching), swelling, or pain that is persistent for 4 hours or longer.",
+       "populationDescription": "Participants who received at least one dose of investigational product.",
+       "reportingStatus": "POSTED",
+       "paramType": "NUMBER",
+       "unitOfMeasure": "participants",
+       "timeFrame": "264 weeks",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Etanercept",
+         "description": "Participants received etanercept 0.8 mg/kg (up to a maximum dose of 50 mg) once weekly by subcutaneous injection for up to 264 weeks."
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "181"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "title": "Any injection site reaction",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "16"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Injection site erythema",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "6"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Injection site reaction",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "4"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Injection site pruritus",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "3"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Injection site haematoma",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "2"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Injection site swelling",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "2"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Injection site discolouration",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "1"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Injection site irritation",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "1"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Injection site pain",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "1"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "type": "SECONDARY",
+       "title": "Exposure-adjusted Adverse Event Rates",
+       "description": "The exposure adjusted event rate for a given event in a given time period is defined as the number of events reported in the given time period divided by total patient-years on investigational product during the period.\n\nExposure-adjusted event rate per 100 patient years = total number of events / patient years \\* 100.\n\nMultiple occurrences of the same event for a participant were counted as multiple events.",
+       "populationDescription": "Participants who received at least one dose of investigational product.",
+       "reportingStatus": "POSTED",
+       "paramType": "NUMBER",
+       "unitOfMeasure": "events per 100 patient years",
+       "timeFrame": "264 weeks",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Etanercept",
+         "description": "Participants received etanercept 0.8 mg/kg (up to a maximum dose of 50 mg) once weekly by subcutaneous injection for up to 264 weeks."
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "181"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "title": "All adverse events",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "215.8"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Non-infectious Adverse Events",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "115.9"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Infections",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "97.3"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Injection Site Reactions",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "2.6"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "type": "SECONDARY",
+       "title": "Number of Participants With Clinically Significant Changes in Vital Signs",
+       "populationDescription": "Participants who received at least one dose of investigational product.",
+       "reportingStatus": "POSTED",
+       "paramType": "NUMBER",
+       "unitOfMeasure": "participants",
+       "timeFrame": "264 weeks",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Etanercept",
+         "description": "Participants received etanercept 0.8 mg/kg (up to a maximum dose of 50 mg) once weekly by subcutaneous injection for up to 264 weeks."
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "181"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "0"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "type": "SECONDARY",
+       "title": "Number of Participants With Grade 3 and 4 Laboratory Toxicities",
+       "description": "The severity assessment for adverse events and infections (not including injection site reaction) used the Common Toxicity Criteria (CTC) Version 2.0, where Grade 1= Mild - aware of sign or symptom, but easily tolerated; Grade 2= Moderate - discomfort enough to cause interference with usual activity; Grade 3 = Severe - incapacitating with inability to work or do usual activity; Grade 4= Life-threatening - refers to an event in which the patient was, in the view of the investigator, at risk of immediate death at the time of event; Grade 5 = Fatal.",
+       "populationDescription": "Participants who received at least one dose of investigational product.",
+       "reportingStatus": "POSTED",
+       "paramType": "NUMBER",
+       "unitOfMeasure": "participants",
+       "timeFrame": "264 weeks",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Etanercept",
+         "description": "Participants received etanercept 0.8 mg/kg (up to a maximum dose of 50 mg) once weekly by subcutaneous injection for up to 264 weeks."
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "181"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "title": "Grade 3 high creatinine",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "1"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Grade 3 high hemoglobin",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "1"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Grade 3 low hemoglobin",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "1"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Grade 3 high alanine aminotransferase",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "1"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Grade 3 high white blood cells",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "1"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Any grade 4 toxicity",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "0"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "type": "SECONDARY",
+       "title": "Number of Participants Who Developed Anti-etanercept Antibodies",
+       "description": "Binding antibodies to etanercept were detected using an anti-etanercept immunoassay. The positive samples in the immunoassay were further analyzed for the presence of neutralizing antibodies using a bioassay.\n\nParticipants who developed anti-etanercept antibodies are those who were antibody positive post-baseline with a negative or no result at baseline.",
+       "populationDescription": "Participants who received at least one dose of investigational product and had a post-baseline antibody result.",
+       "reportingStatus": "POSTED",
+       "paramType": "NUMBER",
+       "unitOfMeasure": "participants",
+       "timeFrame": "264 weeks",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Etanercept",
+         "description": "Participants received etanercept 0.8 mg/kg (up to a maximum dose of 50 mg) once weekly by subcutaneous injection for up to 264 weeks."
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "169"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "title": "Binding antibody positive",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "18"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Neutralizing antibody positive",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "0"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "type": "SECONDARY",
+       "title": "Percentage of Participants With a Psoriasis Area and Severity Index 50 Response (PASI 50)",
+       "description": "A PASI 50 response is a 50% or greater improvement (reduction) from baseline in PASI score.\n\nThe PASI measures the average redness (erythema), thickness (induration), and scaliness (each graded on a 0 to 4 scale) of psoriasis lesions, weighted by the area of involvement in the four main body areas (i.e., head and neck, trunk, upper extremities, and lower extremities). PASI scores can range from 0.0 to 72.0, with higher scores indicating greater severity and/or more extensive psoriasis.",
+       "populationDescription": "Participants who received at least one dose of investigational product and with available data at each time point.",
+       "reportingStatus": "POSTED",
+       "paramType": "NUMBER",
+       "unitOfMeasure": "percentage of participants",
+       "timeFrame": "Baseline and weeks 12, 48, 96, 144, 192, 240 and 264",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Etanercept",
+         "description": "Participants received etanercept 0.8 mg/kg (up to a maximum dose of 50 mg) once weekly by subcutaneous injection for up to 264 weeks."
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "181"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "title": "Week 12 (N = 181)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "89.5"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 48 (N = 168)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "89.3"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 96 (N = 138)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "89.1"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 144 (N = 114)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "88.6"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 192 (n = 92)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "87.0"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 240 (N = 74)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "91.9"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 264 (N = 66)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "87.9"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "type": "SECONDARY",
+       "title": "Percentage of Participants With a PASI 75 Response",
+       "description": "A PASI 75 response is a 75% or greater improvement (reduction) from baseline in PASI score.\n\nThe PASI measures the average redness (erythema), thickness (induration), and scaliness (each graded on a 0 to 4 scale) of psoriasis lesions, weighted by the area of involvement in the four main body areas (i.e., head and neck, trunk, upper extremities, and lower extremities). PASI scores can range from 0.0 to 72.0, with higher scores indicating greater severity and/or more extensive psoriasis.",
+       "populationDescription": "Participants who received at least one dose of investigational product with available data at each time point.",
+       "reportingStatus": "POSTED",
+       "paramType": "NUMBER",
+       "unitOfMeasure": "percentage of participants",
+       "timeFrame": "Baseline and weeks 12, 48, 96, 144, 192, 240 and 264",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Etanercept",
+         "description": "Participants received etanercept 0.8 mg/kg (up to a maximum dose of 50 mg) once weekly by subcutaneous injection for up to 264 weeks."
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "181"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "title": "Week 12 (N = 181)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "67.4"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 48 (N = 168)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "67.3"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 96 (N = 138)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "60.9"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 144 (N = 114)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "62.3"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 192 (n = 92)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "69.6"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 240 (N = 74)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "64.9"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 264 (N = 66)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "63.6"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "type": "SECONDARY",
+       "title": "Percentage of Participants With a PASI 90 Response",
+       "description": "A PASI 90 response is a 90% or greater improvement (reduction) from baseline in PASI score.\n\nThe PASI measures the average redness (erythema), thickness (induration), and scaliness (each graded on a 0 to 4 scale) of psoriasis lesions, weighted by the area of involvement in the four main body areas (i.e., head and neck, trunk, upper extremities, and lower extremities). PASI scores can range from 0.0 to 72.0, with higher scores indicating greater severity and/or more extensive psoriasis.",
+       "populationDescription": "Participants who received at least one dose of investigational product with available data at each time point.",
+       "reportingStatus": "POSTED",
+       "paramType": "NUMBER",
+       "unitOfMeasure": "percentage of participants",
+       "timeFrame": "Baseline and weeks 12, 48, 96, 144, 192, 240 and 264",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Etanercept",
+         "description": "Participants received etanercept 0.8 mg/kg (up to a maximum dose of 50 mg) once weekly by subcutaneous injection for up to 264 weeks."
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "181"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "title": "Week 12 (N = 181)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "35.4"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 48 (N = 168)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "32.7"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 96 (N = 138)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "29.7"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 144 (N = 114)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "28.1"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 192 (n = 92)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "35.9"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 240 (N = 74)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "36.5"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 264 (N = 66)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "28.8"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "type": "SECONDARY",
+       "title": "Percent Improvement From Study 20030211 Baseline in PASI Score",
+       "description": "The PASI measures the average redness (erythema), thickness (induration), and scaliness (each graded on a 0 to 4 scale) of psoriasis lesions, weighted by the area of involvement in the four main body areas (i.e., head and neck, trunk, upper extremities, and lower extremities). PASI scores can range from 0.0 to 72.0, with higher scores indicating greater severity and/or more extensive psoriasis.\n\nPercent improvement from baseline = (Baseline Value - Post-baseline Value) / Baseline Value \\* 100.",
+       "populationDescription": "Participants who received at least one dose of investigational product with available data at each time point.",
+       "reportingStatus": "POSTED",
+       "paramType": "MEAN",
+       "dispersionType": "Standard Deviation",
+       "unitOfMeasure": "percent improvement",
+       "timeFrame": "Study 20030211 baseline, Study 20050111 baseline and weeks 12, 48, 96, 144, 192, 240 and 264",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Etanercept",
+         "description": "Participants received etanercept 0.8 mg/kg (up to a maximum dose of 50 mg) once weekly by subcutaneous injection for up to 264 weeks."
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "181"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "title": "Study 20050111 baseline (N = 179)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "74.429",
+             "spread": "22.146"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 12 (N = 181)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "78.286",
+             "spread": "21.079"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 48 (N = 168)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "77.546",
+             "spread": "20.682"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 96 (N = 138)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "75.355",
+             "spread": "24.139"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 144 (N = 114)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "75.052",
+             "spread": "23.839"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 192 (n = 92)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "77.815",
+             "spread": "23.965"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 240 (N = 74)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "78.924",
+             "spread": "23.497"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 264 (N = 66)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "74.605",
+             "spread": "29.327"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "type": "SECONDARY",
+       "title": "Percentage of Participants With a Static Physician's Global Assessment (sPGA) of Clear (0) or Almost Clear (1)",
+       "description": "The sPGA is a 6-point scale ranging from 0 (clear) to 5 (very severe) used to measure the severity of disease (induration, scaling, and erythema). A sPGA response is defined as a sPGA value of clear (score 0) or almost clear (score 1).",
+       "populationDescription": "Participants who received at least one dose of investigational product with available data at each time point.",
+       "reportingStatus": "POSTED",
+       "paramType": "NUMBER",
+       "unitOfMeasure": "percentage of participants",
+       "timeFrame": "Weeks 12, 48, 96, 144, 192, 240 and 264",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Etanercept",
+         "description": "Participants received etanercept 0.8 mg/kg (up to a maximum dose of 50 mg) once weekly by subcutaneous injection for up to 264 weeks."
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "181"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "title": "Week 12 (N = 181)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "53.6"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 48 (N = 168)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "48.8"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 96 (N = 139)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "47.5"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 144 (N = 114)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "45.6"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 192 (n = 92)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "47.8"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 240 (N = 74)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "50.0"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 264 (N = 66)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "37.9"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "type": "SECONDARY",
+       "title": "Percent Improvement From Study 20030211 Baseline in Children's Dermatology Life Quality Index (CDLQI) Total Score",
+       "description": "The Children's Dermatology Life Quality Index (CDLQI) was used to assess the impact of psoriasis on subject health-related quality of life. The CDLQI has 10 items assessing health-related quality of life (HRQOL) in patients with skin disease each measured on a scale from 0 (Not at all) to 3 (Very much). The total score ranges from 0 to 30, with lower scores indicating better quality of life. If participants were ≥ 13 years old, the text instrument was completed by the participants themselves. Participants ≥ 8 but \\< 13 years old used the cartoon version of the instrument and participants ≤ 7 years old used the cartoon version of the instrument completed with help from the parents or caregivers.\n\nPercent improvement from baseline = (Baseline Value - Post-baseline Value) / Baseline Value \\* 100.",
+       "populationDescription": "Participants who received at least one dose of investigational product with baseline data, and with available data at each time point.",
+       "reportingStatus": "POSTED",
+       "paramType": "MEAN",
+       "dispersionType": "Standard Deviation",
+       "unitOfMeasure": "percent improvement",
+       "timeFrame": "Study 20030211 baseline, Study 20050111 baseline and weeks 24, 48, 72, 96, 120, 144, 168, 192, 216, 240 and 264",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Etanercept",
+         "description": "Participants received etanercept 0.8 mg/kg (up to a maximum dose of 50 mg) once weekly by subcutaneous injection for up to 264 weeks."
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "173"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "title": "Study 20050111 baseline (N = 164)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "59.492",
+             "spread": "73.501"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 24 (N = 155)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "54.978",
+             "spread": "69.744"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 48 (N = 148)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "59.229",
+             "spread": "65.259"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 72 (N = 136)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "57.549",
+             "spread": "79.389"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 96 (N = 127)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "61.084",
+             "spread": "66.169"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 120 (N = 105)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "64.059",
+             "spread": "75.298"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 144 (N = 103)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "69.732",
+             "spread": "42.008"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 168 (N = 93)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "67.531",
+             "spread": "42.261"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 192 (N = 81)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "65.622",
+             "spread": "53.359"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 216 (N = 70)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "76.121",
+             "spread": "43.217"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 240 (N = 64)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "73.631",
+             "spread": "54.704"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 264 (N = 56)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "63.291",
+             "spread": "63.555"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "type": "SECONDARY",
+       "title": "Percent Improvement From Study 20030211 Baseline in CDLQI Symptoms and Feelings Score",
+       "description": "The Children's Dermatology Life Quality Index (CDLQI) was used to assess the impact of psoriasis on subject health-related quality of life. The CDLQI has 10 items assessing health-related quality of life (HRQOL) in patients with skin disease each measured on a scale from 0 (not at all) to 3 (Very much). The CDLQI Symptoms and Feelings Score includes 2 questions and ranges from 0 to 6, with lower scores indicating better quality of life.\n\nPercent improvement from baseline = (Baseline Value - Post-baseline Value) / Baseline Value \\* 100.",
+       "populationDescription": "Participants who received at least one dose of investigational product with baseline data and with available data at each time point.",
+       "reportingStatus": "POSTED",
+       "paramType": "MEAN",
+       "dispersionType": "Standard Deviation",
+       "unitOfMeasure": "percent improvement",
+       "timeFrame": "Study 20030211 baseline, Study 20050111 baseline and weeks 24, 48, 72, 96, 120, 144, 168, 192, 216, 240 and 264",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Etanercept",
+         "description": "Participants received etanercept 0.8 mg/kg (up to a maximum dose of 50 mg) once weekly by subcutaneous injection for up to 264 weeks."
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "173"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "title": "Study 20050111 baseline (N = 165)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "54.869",
+             "spread": "56.213"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 24 (N = 155)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "55.366",
+             "spread": "64.039"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 48 (N = 149)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "53.792",
+             "spread": "65.857"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 72 (N = 136)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "51.005",
+             "spread": "68.117"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 96 (N = 128)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "55.430",
+             "spread": "57.430"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 120 (N = 105)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "53.302",
+             "spread": "67.555"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 144 (N = 104)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "56.250",
+             "spread": "58.194"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 168 (N = 94)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "58.901",
+             "spread": "49.431"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 192 (N = 81)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "55.700",
+             "spread": "56.352"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 216 (N = 71)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "71.056",
+             "spread": "41.396"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 240 (N = 65)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "67.538",
+             "spread": "43.418"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 264 (N = 57)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "56.725",
+             "spread": "52.965"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "type": "SECONDARY",
+       "title": "Percent Improvement From Study 20030211 Baseline in CDLQI Leisure Score",
+       "description": "The Children's Dermatology Life Quality Index (CDLQI) was used to assess the impact of psoriasis on subject health-related quality of life. The CDLQI has 10 items assessing health-related quality of life (HRQOL) in patients with skin disease each measured on a scale from 0 (not at all) to 3 (Very much). The CDLQI Leisure Score includes 3 questions and ranges from 0 to 9, with lower scores indicating better quality of life.\n\nPercent improvement from baseline = (Baseline Value - Post-baseline Value) / Baseline Value \\* 100.",
+       "populationDescription": "Participants who received at least one dose of investigational product with baseline data and with available data at each time point.",
+       "reportingStatus": "POSTED",
+       "paramType": "MEAN",
+       "dispersionType": "Standard Deviation",
+       "unitOfMeasure": "percent improvement",
+       "timeFrame": "Study 20030211 baseline, Study 20050111 baseline and weeks 24, 48, 72, 96, 120, 144, 168, 192, 216, 240 and 264",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Etanercept",
+         "description": "Participants received etanercept 0.8 mg/kg (up to a maximum dose of 50 mg) once weekly by subcutaneous injection for up to 264 weeks."
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "173"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "title": "Study 20050111 baseline (N = 165)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "51.088",
+             "spread": "52.612"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 24 (N = 156)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "50.546",
+             "spread": "58.606"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 48 (N = 148)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "51.792",
+             "spread": "61.204"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 72 (N = 136)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "50.792",
+             "spread": "70.769"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 96 (N = 129)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "48.686",
+             "spread": "68.482"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 120 (N = 105)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "59.031",
+             "spread": "49.472"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 144 (N = 104)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "57.125",
+             "spread": "54.284"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 168 (N = 94)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "55.198",
+             "spread": "52.141"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 192 (N = 81)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "47.989",
+             "spread": "72.947"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 216 (N = 71)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "58.545",
+             "spread": "60.440"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 240 (N = 64)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "55.727",
+             "spread": "64.420"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 264 (N = 56)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "50.072",
+             "spread": "62.049"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "type": "SECONDARY",
+       "title": "Percent Improvement From Study 20030211 Baseline in CDLQI School or Holidays Score",
+       "description": "The Children's Dermatology Life Quality Index (CDLQI) was used to assess the impact of psoriasis on subject health-related quality of life. The CDLQI has 10 items assessing health-related quality of life (HRQOL) in patients with skin disease each measured on a scale from 0 (not at all) to 3 (Very much). The CDLQI School or Holidays Score includes 1 question (How much did your skin problem effect your school work/holiday plans over the last week?) and ranges from 0 to 3, with lower scores indicating better quality of life.\n\nPercent improvement from baseline = (Baseline Value - Post-baseline Value) / Baseline Value \\* 100.",
+       "populationDescription": "Participants who received at least one dose of investigational product with baseline data and with available data at each time point.",
+       "reportingStatus": "POSTED",
+       "paramType": "MEAN",
+       "dispersionType": "Standard Deviation",
+       "unitOfMeasure": "percent improvement",
+       "timeFrame": "Study 20030211 baseline, Study 20050111 baseline and weeks 24, 48, 72, 96, 120, 144, 168, 192, 216, 240 and 264",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Etanercept",
+         "description": "Participants received etanercept 0.8 mg/kg (up to a maximum dose of 50 mg) once weekly by subcutaneous injection for up to 264 weeks."
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "173"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "title": "Study 20050111 baseline (N = 165)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "31.616",
+             "spread": "51.981"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 24 (N = 156)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "32.585",
+             "spread": "52.750"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 48 (N = 148)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "36.149",
+             "spread": "51.778"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 72 (N = 133)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "29.825",
+             "spread": "53.025"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 96 (N = 129)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "29.457",
+             "spread": "55.805"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 120 (N = 105)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "32.063",
+             "spread": "55.166"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 144 (N = 105)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "33.333",
+             "spread": "48.371"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 168 (N = 94)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "32.979",
+             "spread": "50.563"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 192 (N = 81)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "31.070",
+             "spread": "52.886"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 216 (N = 71)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "35.211",
+             "spread": "48.103"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 240 (N = 65)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "26.923",
+             "spread": "56.649"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 264 (N = 57)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "27.193",
+             "spread": "51.815"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "type": "SECONDARY",
+       "title": "Percent Improvement From Study 20030211 Baseline in CDLQI Personal Relationships Score",
+       "description": "The Children's Dermatology Life Quality Index (CDLQI) was used to assess the impact of psoriasis on subject health-related quality of life. The CDLQI has 10 items assessing health-related quality of life (HRQOL) in patients with skin disease each measured on a scale from 0 (not at all) to 3 (Very much). The CDLQI Personal Relationships Score includes 2 questions and ranges from 0 to 6, with lower scores indicating better quality of life.\n\nPercent improvement from baseline = (Baseline Value - Post-baseline Value) / Baseline Value \\* 100.",
+       "populationDescription": "Participants who received at least one dose of investigational product with baseline data and with available data at each time point.",
+       "reportingStatus": "POSTED",
+       "paramType": "MEAN",
+       "dispersionType": "Standard Deviation",
+       "unitOfMeasure": "percent improvement",
+       "timeFrame": "Study 20030211 baseline, Study 20050111 baseline and weeks 24, 48, 72, 96, 120, 144, 168, 192, 216, 240 and 264",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Etanercept",
+         "description": "Participants received etanercept 0.8 mg/kg (up to a maximum dose of 50 mg) once weekly by subcutaneous injection for up to 264 weeks."
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "173"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "title": "Study 20050111 baseline (N = 166)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "45.452",
+             "spread": "65.038"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 24 (N = 156)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "49.797",
+             "spread": "59.328"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 48 (N = 149)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "50.895",
+             "spread": "60.179"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 72 (N = 136)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "54.669",
+             "spread": "54.519"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 96 (N = 129)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "48.346",
+             "spread": "60.414"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 120 (N = 105)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "51.206",
+             "spread": "54.435"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 144 (N = 105)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "50.365",
+             "spread": "49.636"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 168 (N = 94)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "44.557",
+             "spread": "72.287"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 192 (N = 81)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "52.284",
+             "spread": "56.125"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 216 (N = 71)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "61.737",
+             "spread": "48.255"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 240 (N = 65)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "56.282",
+             "spread": "52.042"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 264 (N = 57)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "56.140",
+             "spread": "52.481"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "type": "SECONDARY",
+       "title": "Percent Improvement From Study 20030211 Baseline in CDLQI Sleep Score",
+       "description": "The Children's Dermatology Life Quality Index (CDLQI) was used to assess the impact of psoriasis on subject health-related quality of life. The CDLQI has 10 items assessing health-related quality of life (HRQOL) in patients with skin disease each measured on a scale from 0 (not at all) to 3 (Very much). The CDLQI Sleep Score includes 1 question (How much has your sleep been affected by your skin problems over the last week?) and ranges from 0 to 3, with lower scores indicating better quality of life.\n\nPercent improvement from baseline = (Baseline Value - Post-baseline Value) / Baseline Value \\* 100.",
+       "populationDescription": "Participants who received at least one dose of investigational product with baseline data and with available data at each time point.",
+       "reportingStatus": "POSTED",
+       "paramType": "MEAN",
+       "dispersionType": "Standard Deviation",
+       "unitOfMeasure": "percent improvement",
+       "timeFrame": "Study 20030211 baseline, Study 20050111 baseline and weeks 24, 48, 72, 96, 120, 144, 168, 192, 216, 240 and 264",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Etanercept",
+         "description": "Participants received etanercept 0.8 mg/kg (up to a maximum dose of 50 mg) once weekly by subcutaneous injection for up to 264 weeks."
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "171"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "title": "Study 20050111 baseline (N = 161)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "36.646",
+             "spread": "56.851"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 24 (N = 153)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "36.057",
+             "spread": "60.349"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 48 (N = 144)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "31.597",
+             "spread": "56.329"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 72 (N = 132)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "34.596",
+             "spread": "57.390"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 96 (N = 127)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "32.940",
+             "spread": "55.216"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 120 (N = 101)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "29.538",
+             "spread": "61.503"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 144 (N = 102)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "41.013",
+             "spread": "50.229"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 168 (N = 93)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "37.814",
+             "spread": "49.888"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 192 (N = 81)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "34.774",
+             "spread": "54.658"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 216 (N = 71)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "35.681",
+             "spread": "50.811"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 240 (N = 65)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "39.231",
+             "spread": "48.808"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 264 (N = 56)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "36.012",
+             "spread": "57.890"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "type": "SECONDARY",
+       "title": "Percent Improvement From Study 20030211 Baseline in CDLQI Treatment Satisfaction Score",
+       "description": "The Children's Dermatology Life Quality Index (CDLQI) was used to assess the impact of psoriasis on subject health-related quality of life. The CDLQI has 10 items assessing health-related quality of life (HRQOL) in patients with skin disease each measured on a scale from 0 (not at all) to 3 (Very much). The CDLQI Treatment Satisfaction Score includes 1 question (How much of a problem has the treatment for your skin been over the last week?) and ranges from 0 to 3, with lower scores indicating better quality of life.\n\nPercent improvement from baseline = (Baseline Value - Post-baseline Value) / Baseline Value \\* 100.",
+       "populationDescription": "Participants who received at least one dose of investigational product with baseline data and with available data at each time point.",
+       "reportingStatus": "POSTED",
+       "paramType": "MEAN",
+       "dispersionType": "Standard Deviation",
+       "unitOfMeasure": "percent improvement",
+       "timeFrame": "Study 20030211 baseline, Study 20050111 baseline and weeks 24, 48, 72, 96, 120, 144, 168, 192, 216, 240 and 264",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Etanercept",
+         "description": "Participants received etanercept 0.8 mg/kg (up to a maximum dose of 50 mg) once weekly by subcutaneous injection for up to 264 weeks."
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "169"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "title": "Study 20050111 baseline (N = 161)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "23.085",
+             "spread": "64.713"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 24 (N = 152)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "13.268",
+             "spread": "74.987"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 48 (N = 144)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "18.634",
+             "spread": "67.750"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 72 (N = 134)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "23.383",
+             "spread": "73.210"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 96 (N = 128)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "17.969",
+             "spread": "72.561"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 120 (N = 105)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "17.778",
+             "spread": "65.709"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 144 (N = 104)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "21.795",
+             "spread": "62.924"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 168 (N = 93)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "20.430",
+             "spread": "73.849"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 192 (N = 81)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "26.955",
+             "spread": "68.443"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 216 (N = 71)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "31.455",
+             "spread": "59.598"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 240 (N = 65)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "30.513",
+             "spread": "57.703"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 264 (N = 56)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "37.500",
+             "spread": "64.842"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "type": "SECONDARY",
+       "title": "Improvement From Study 20030211 Baseline in Joint Pain",
+       "description": "Participants were asked to indicate how much joint pain they had experienced in the last 7 days on a visual analog scale (VAS) from no pain on the left end of the line (score = 0) to severe pain on the right side of the line (score = 10).\n\nImprovement from baseline = (Baseline Value - Post-baseline Value).",
+       "populationDescription": "Participants who received at least one dose of investigational product and who completed the joint pain assessment at Study 20030211 baseline, and with available data at each time point.",
+       "reportingStatus": "POSTED",
+       "paramType": "MEAN",
+       "dispersionType": "Standard Deviation",
+       "unitOfMeasure": "units on a scale",
+       "timeFrame": "Study 20030211 baseline, Study 20050111 baseline and weeks 12, 24, 36, 48, 60, 72, 84, 96, 108, 120, 132, 144, 156, 168, 180, 192, 204, 216, 228, 240, 252 and 264",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Etanercept",
+         "description": "Participants received etanercept 0.8 mg/kg (up to a maximum dose of 50 mg) once weekly by subcutaneous injection for up to 264 weeks."
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "41"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "title": "Study 20050111 baseline (N = 31)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "1.5",
+             "spread": "2.7"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 12 (N = 29)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "2.3",
+             "spread": "2.5"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 24 (N = 22)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "2.4",
+             "spread": "3.2"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 36 (N = 22)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "1.5",
+             "spread": "3.2"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 48 (N = 24)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "1.5",
+             "spread": "3.5"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 60 (N = 14)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "1.3",
+             "spread": "3.2"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 72 (N = 16)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "2.1",
+             "spread": "3.6"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 84 (N = 14)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "2.9",
+             "spread": "3.0"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 96 (N = 16)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "2.0",
+             "spread": "2.7"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 108 (N = 14)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "2.4",
+             "spread": "3.4"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 120 (N = 12)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "2.4",
+             "spread": "2.9"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 132 (N = 15)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "1.9",
+             "spread": "3.7"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 144 (N = 12)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "1.8",
+             "spread": "4.3"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 156 (N = 12)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "2.5",
+             "spread": "3.8"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 168 (N = 10)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "2.2",
+             "spread": "4.0"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 180 (N = 11)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "2.7",
+             "spread": "3.3"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 192 (N = 11)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "2.5",
+             "spread": "4.2"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 204 (N = 11)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "2.8",
+             "spread": "3.6"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 216 (N = 9)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "2.9",
+             "spread": "3.4"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 228 (N = 10)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "2.8",
+             "spread": "3.6"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 240 (N = 9)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "2.7",
+             "spread": "3.4"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 252 (N = 8)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "3.9",
+             "spread": "3.7"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Week 264 (N = 8)",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "3.9",
+             "spread": "3.3"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   },
+   "hasResults": true
+  }
+ ]
+}

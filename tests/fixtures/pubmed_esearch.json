@@ -1,0 +1,18 @@
+{
+ "header": {
+  "type": "esearch",
+  "version": "0.3"
+ },
+ "esearchresult": {
+  "count": "159",
+  "retmax": "3",
+  "retstart": "0",
+  "idlist": [
+   "42704198",
+   "42667799",
+   "42373464"
+  ],
+  "translationset": [],
+  "querytranslation": "\"Psoriasis\"[MeSH Terms] AND \"Practice Guideline\"[Publication Type]"
+ }
+}

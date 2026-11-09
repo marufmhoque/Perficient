@@ -1,0 +1,2025 @@
+{
+ "totalCount": 66,
+ "studies": [
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT06888193",
+     "briefTitle": "A Study to Assess the Concentration of Bimekizumab in Mature Breast Milk From Mothers Receiving Treatment With Bimzelx® (Bimekizumab)",
+     "acronym": "BE CARING"
+    },
+    "statusModule": {
+     "overallStatus": "RECRUITING",
+     "startDateStruct": {
+      "date": "2025-11-05"
+     },
+     "primaryCompletionDateStruct": {
+      "date": "2027-12-31"
+     },
+     "completionDateStruct": {
+      "date": "2027-12-31"
+     },
+     "lastUpdatePostDateStruct": {
+      "date": "2026-09-18"
+     }
+    },
+    "sponsorCollaboratorsModule": {
+     "leadSponsor": {
+      "name": "UCB Biopharma SRL",
+      "class": "INDUSTRY"
+     }
+    },
+    "conditionsModule": {
+     "conditions": [
+      "Moderate to Severe Plaque Psoriasis",
+      "Psoriatic Arthritis",
+      "Axial Spondyloarthritis",
+      "Hidradenitis Suppurativa"
+     ]
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL",
+     "phases": [
+      "PHASE1"
+     ],
+     "designInfo": {
+      "allocation": "NA"
+     },
+     "enrollmentInfo": {
+      "count": 20
+     }
+    },
+    "armsInterventionsModule": {
+     "armGroups": [
+      {
+       "label": "Bimekizumab",
+       "type": "EXPERIMENTAL",
+       "description": "Breastfeeding mothers who are already receiving commercial bimekizumab per locally approved prescribing information and in consultation and agreement with their treating physicians will participate in this study. Study participants will continue receiving commercially available bimekizumab under the care of their treating physician.",
+       "interventionNames": [
+        "Drug: Bimekizumab"
+       ]
+      }
+     ],
+     "interventions": [
+      {
+       "type": "DRUG",
+       "name": "Bimekizumab",
+       "description": "Bimekizumab under the care of their treating physician."
+      }
+     ]
+    },
+    "outcomesModule": {
+     "primaryOutcomes": [
+      {
+       "measure": "Concentration of bimekizumab in the breast milk on Day 1"
+      },
+      {
+       "measure": "Concentration of bimekizumab in the breast milk on Day 2"
+      },
+      {
+       "measure": "Concentration of bimekizumab in the breast milk on Day 3"
+      },
+      {
+       "measure": "Concentration of bimekizumab in the breast milk on Day 5"
+      },
+      {
+       "measure": "Concentration of bimekizumab in the breast milk on Day 7"
+      },
+      {
+       "measure": "Concentration of bimekizumab in the breast milk on Day 9"
+      },
+      {
+       "measure": "Concentration of bimekizumab in the breast milk on Day 11"
+      },
+      {
+       "measure": "Concentration of bimekizumab in the breast milk on Day 13"
+      },
+      {
+       "measure": "Concentration of bimekizumab in the breast milk on Day 15"
+      },
+      {
+       "measure": "Concentration of bimekizumab in the breast milk on Day 29"
+      },
+      {
+       "measure": "Concentration of bimekizumab in the breast milk on Day 57"
+      }
+     ]
+    },
+    "contactsLocationsModule": {
+     "overallOfficials": [
+      {
+       "name": "UCB Cares",
+       "affiliation": "001 844 599 2273",
+       "role": "STUDY_DIRECTOR"
+      }
+     ],
+     "locations": [
+      {
+       "facility": "Up0122 105",
+       "city": "Santa Monica",
+       "country": "United States"
+      },
+      {
+       "facility": "Up0122 103",
+       "city": "South Miami",
+       "country": "United States"
+      },
+      {
+       "facility": "Up0122 104",
+       "city": "Boston",
+       "country": "United States"
+      },
+      {
+       "facility": "Up0122 106",
+       "city": "Chapel Hill",
+       "country": "United States"
+      },
+      {
+       "facility": "Up0122 102",
+       "city": "Durham",
+       "country": "United States"
+      },
+      {
+       "facility": "Up0122 101",
+       "city": "Milwaukee",
+       "country": "United States"
+      },
+      {
+       "facility": "Up0122 202",
+       "city": "Calgary",
+       "country": "Canada"
+      },
+      {
+       "facility": "Up0122 201",
+       "city": "Vancouver",
+       "country": "Canada"
+      },
+      {
+       "facility": "Up0122 301",
+       "city": "Freiburg im Breisgau",
+       "country": "Germany"
+      },
+      {
+       "facility": "Up0122 303",
+       "city": "Herne",
+       "country": "Germany"
+      },
+      {
+       "facility": "Up0122 501",
+       "city": "Barcelona",
+       "country": "Spain"
+      },
+      {
+       "facility": "Up0122 502",
+       "city": "Barcelona",
+       "country": "Spain"
+      },
+      {
+       "facility": "Up0122 602",
+       "city": "Lausanne",
+       "country": "Switzerland"
+      },
+      {
+       "facility": "Up0122 601",
+       "city": "Sankt Gallen",
+       "country": "Switzerland"
+      }
+     ]
+    }
+   },
+   "hasResults": false
+  },
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT03240809",
+     "briefTitle": "An Open-label, Single-dose Study to Evaluate Safety, Tolerability, and Pharmacokinetics of Brodalumab in Pediatric Subjects"
+    },
+    "statusModule": {
+     "overallStatus": "ACTIVE_NOT_RECRUITING",
+     "startDateStruct": {
+      "date": "2020-01-24"
+     },
+     "primaryCompletionDateStruct": {
+      "date": "2028-12"
+     },
+     "completionDateStruct": {
+      "date": "2029-06"
+     },
+     "lastUpdatePostDateStruct": {
+      "date": "2025-09-16"
+     }
+    },
+    "sponsorCollaboratorsModule": {
+     "leadSponsor": {
+      "name": "Bausch Health Americas, Inc.",
+      "class": "INDUSTRY"
+     }
+    },
+    "conditionsModule": {
+     "conditions": [
+      "Psoriasis"
+     ]
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL",
+     "phases": [
+      "PHASE4"
+     ],
+     "designInfo": {
+      "allocation": "NON_RANDOMIZED"
+     },
+     "enrollmentInfo": {
+      "count": 2
+     }
+    },
+    "armsInterventionsModule": {
+     "armGroups": [
+      {
+       "label": "Cohort 1",
+       "type": "EXPERIMENTAL",
+       "description": "(ages 12 to \\<18 years): 140 mg SC dose of brodalumab",
+       "interventionNames": [
+        "Biological: Brodalumab"
+       ]
+      },
+      {
+       "label": "Cohort 2",
+       "type": "EXPERIMENTAL",
+       "description": "(ages 6 to \\<12 years): 70 mg SC dose of brodalumab",
+       "interventionNames": [
+        "Biological: Brodalumab"
+       ]
+      }
+     ],
+     "interventions": [
+      {
+       "type": "BIOLOGICAL",
+       "name": "Brodalumab",
+       "description": "140 mg SC dose"
+      },
+      {
+       "type": "BIOLOGICAL",
+       "name": "Brodalumab",
+       "description": "70 mg SC dose"
+      }
+     ]
+    },
+    "outcomesModule": {
+     "primaryOutcomes": [
+      {
+       "measure": "maximum observed concentration (Cmax)"
+      }
+     ]
+    },
+    "contactsLocationsModule": {
+     "overallOfficials": [
+      {
+       "name": "Varsha Bhatt",
+       "affiliation": "Bausch Health Americas, Inc.",
+       "role": "STUDY_DIRECTOR"
+      }
+     ],
+     "locations": [
+      {
+       "facility": "Bausch Site 003",
+       "city": "San Diego",
+       "country": "United States"
+      },
+      {
+       "facility": "Bausch Site 002",
+       "city": "Miami",
+       "country": "United States"
+      },
+      {
+       "facility": "Bausch Site 004",
+       "city": "Miami",
+       "country": "United States"
+      },
+      {
+       "facility": "Bausch Site 005",
+       "city": "Henderson",
+       "country": "United States"
+      },
+      {
+       "facility": "Bausch Site 001",
+       "city": "Las Vegas",
+       "country": "United States"
+      }
+     ]
+    }
+   },
+   "hasResults": false
+  },
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT07410793",
+     "briefTitle": "Acupuncture With Chinese Herbal Cream Compare With Acupuncture With Calcipotriol in Plaque Psoriasis."
+    },
+    "statusModule": {
+     "overallStatus": "RECRUITING",
+     "startDateStruct": {
+      "date": "2026-02-09"
+     },
+     "primaryCompletionDateStruct": {
+      "date": "2027-02-08"
+     },
+     "completionDateStruct": {
+      "date": "2027-02-08"
+     },
+     "lastUpdatePostDateStruct": {
+      "date": "2026-02-13"
+     }
+    },
+    "sponsorCollaboratorsModule": {
+     "leadSponsor": {
+      "name": "Mae Fah Luang University",
+      "class": "OTHER"
+     }
+    },
+    "conditionsModule": {
+     "conditions": [
+      "Plaque Type Psorisis"
+     ]
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL",
+     "phases": [
+      "PHASE2"
+     ],
+     "designInfo": {
+      "allocation": "RANDOMIZED"
+     },
+     "enrollmentInfo": {
+      "count": 28
+     }
+    },
+    "armsInterventionsModule": {
+     "armGroups": [
+      {
+       "label": "Acupucture + Calcipotriol",
+       "type": "ACTIVE_COMPARATOR",
+       "description": "Participant will receive 1 Acupuncture session per week for 8 weeks. And also receive Calcipotriol cream.",
+       "interventionNames": [
+        "Procedure: Acupuncture",
+        "Drug: Calcipotriol 0.005% ointment"
+       ]
+      },
+      {
+       "label": "Acupuncture + Chinese Herbal Cream",
+       "type": "EXPERIMENTAL",
+       "description": "Participant will receive 1 Acupuncture session per week for 8 weeks. And also receive Chinese Herbal cream.",
+       "interventionNames": [
+        "Procedure: Acupuncture",
+        "Drug: Chinese herb cream"
+       ]
+      }
+     ],
+     "interventions": [
+      {
+       "type": "PROCEDURE",
+       "name": "Acupuncture",
+       "description": "Bai-Hui (GV20), Fei-Shu (BL13), Ge-Shu (BL-17), Qu-Chi (LI11), Zu-San-Li (ST36), He-Gu (LI4), Tai-Chong (LR3), San-Yin-Jiao (SP6), Wei-Zhong (BL40)"
+      },
+      {
+       "type": "DRUG",
+       "name": "Calcipotriol 0.005% ointment",
+       "description": "Calcipotriol 0.005% ointment"
+      },
+      {
+       "type": "DRUG",
+       "name": "Chinese herb cream",
+       "description": "Main API : Sophora flavescens Ait. (Ku-Shen), Cnidium monnieri (L.) Cuss. (She-Chuang-Zi), Prunus mume (Sieb.) Sieb.et Zucc. (Wu-Mei), Dictamnus dasycarpus Turcz. (Bai-Xian-Pi), Rheum palmatum L. (Da-Huang)"
+      }
+     ]
+    },
+    "outcomesModule": {
+     "primaryOutcomes": [
+      {
+       "measure": "Psoriasis Area and Severity Index, PASI score"
+      }
+     ]
+    },
+    "contactsLocationsModule": {
+     "locations": [
+      {
+       "facility": "Mae Fah Luang University",
+       "city": "Muang",
+       "country": "Thailand"
+      }
+     ]
+    }
+   },
+   "hasResults": false
+  },
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT04862286",
+     "briefTitle": "Study to Evaluate Adverse Events and Change in Disease Activity in Participants Between 6 and 17 Years With Moderate to Severe Plaque Psoriasis Treated With Subcutaneous (SC) Injection of Risankizumab Who Have Completed Participation in Study M19-977",
+     "acronym": "OptIMMize-2"
+    },
+    "statusModule": {
+     "overallStatus": "ACTIVE_NOT_RECRUITING",
+     "startDateStruct": {
+      "date": "2021-07-24"
+     },
+     "primaryCompletionDateStruct": {
+      "date": "2028-04"
+     },
+     "completionDateStruct": {
+      "date": "2028-04"
+     },
+     "lastUpdatePostDateStruct": {
+      "date": "2025-08-12"
+     }
+    },
+    "sponsorCollaboratorsModule": {
+     "leadSponsor": {
+      "name": "AbbVie",
+      "class": "INDUSTRY"
+     }
+    },
+    "conditionsModule": {
+     "conditions": [
+      "Psoriasis"
+     ]
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL",
+     "phases": [
+      "PHASE3"
+     ],
+     "designInfo": {
+      "allocation": "NA"
+     },
+     "enrollmentInfo": {
+      "count": 132
+     }
+    },
+    "armsInterventionsModule": {
+     "armGroups": [
+      {
+       "label": "Risankizumab",
+       "type": "EXPERIMENTAL",
+       "description": "Participants will receive risankizumab subcutaneous (SC) injection every 12 weeks for 204 weeks.",
+       "interventionNames": [
+        "Drug: Risankizumab"
+       ]
+      }
+     ],
+     "interventions": [
+      {
+       "type": "DRUG",
+       "name": "Risankizumab",
+       "description": "Subcutaneous (SC) injection."
+      }
+     ]
+    },
+    "outcomesModule": {
+     "primaryOutcomes": [
+      {
+       "measure": "Number of Participants With Adverse Events"
+      }
+     ]
+    },
+    "contactsLocationsModule": {
+     "overallOfficials": [
+      {
+       "name": "ABBVIE INC.",
+       "affiliation": "AbbVie",
+       "role": "STUDY_DIRECTOR"
+      }
+     ],
+     "locations": [
+      {
+       "facility": "UAB Department of Dermatology /ID# 252305",
+       "city": "Birmingham",
+       "country": "United States"
+      },
+      {
+       "facility": "First OC Dermatology /ID# 226942",
+       "city": "Fountain Valley",
+       "country": "United States"
+      },
+      {
+       "facility": "Integrative Skin Science and Research /ID# 226108",
+       "city": "Sacramento",
+       "country": "United States"
+      },
+      {
+       "facility": "University of California San Diego - Rady Children's Hospital San Diego /ID# 252348",
+       "city": "San Diego",
+       "country": "United States"
+      },
+      {
+       "facility": "Solutions Through Adv Rch /ID# 226104",
+       "city": "Jacksonville",
+       "country": "United States"
+      },
+      {
+       "facility": "Olympian Clinical Research- St. Petersburg /ID# 226106",
+       "city": "St. Petersburg",
+       "country": "United States"
+      },
+      {
+       "facility": "Advanced Clinical Research Institute /ID# 248827",
+       "city": "Tampa",
+       "country": "United States"
+      },
+      {
+       "facility": "University Dermatology and Vein Clinic, LLC /ID# 226100",
+       "city": "Darien",
+       "country": "United States"
+      },
+      {
+       "facility": "Arlington Dermatology /ID# 226097",
+       "city": "Rolling Meadows",
+       "country": "United States"
+      },
+      {
+       "facility": "Skin Cancer and Dermatology Institute - Reno /ID# 248828",
+       "city": "Reno",
+       "country": "United States"
+      },
+      {
+       "facility": "Univ Hosp Cleveland /ID# 248825",
+       "city": "Cleveland",
+       "country": "United States"
+      },
+      {
+       "facility": "Apex Clinical Research Center /ID# 248830",
+       "city": "Mayfield Heights",
+       "country": "United States"
+      },
+      {
+       "facility": "Medical University of South Carolina /ID# 248831",
+       "city": "Charleston",
+       "country": "United States"
+      },
+      {
+       "facility": "West Virginia University Hospitals /ID# 263438",
+       "city": "Morgantown",
+       "country": "United States"
+      },
+      {
+       "facility": "Wisconsin Medical Center /ID# 263437",
+       "city": "Milwaukee",
+       "country": "United States"
+      },
+      {
+       "facility": "Karma Clinical Trials /ID# 233985",
+       "city": "St. John's",
+       "country": "Canada"
+      },
+      {
+       "facility": "Hospital for Sick Children /ID# 233986",
+       "city": "Toronto",
+       "country": "Canada"
+      },
+      {
+       "facility": "Fachklinik Bad Bentheim /ID# 243904",
+       "city": "Bad Bentheim",
+       "country": "Germany"
+      },
+      {
+       "facility": "Universitaetsklinikum Bonn /ID# 243910",
+       "city": "Bonn",
+       "country": "Germany"
+      },
+      {
+       "facility": "Universitaetsklinikum Muenster /ID# 243905",
+       "city": "Münster",
+       "country": "Germany"
+      },
+      {
+       "facility": "Universitaetsmedizin Mainz /ID# 243907",
+       "city": "Mainz",
+       "country": "Germany"
+      },
+      {
+       "facility": "Universitaetsklinikum Carl Gustav Carus Dresden /ID# 243908",
+       "city": "Dresden",
+       "country": "Germany"
+      },
+      {
+       "facility": "Universitaetsklinikum Schleswig-Holstein Campus Kiel /ID# 243883",
+       "city": "Kiel",
+       "country": "Germany"
+      },
+      {
+       "facility": "Nagoya City University Hospital /ID# 248429",
+       "city": "Nagoya",
+       "country": "Japan"
+      },
+      {
+       "facility": "Mie University Hospital /ID# 263008",
+       "city": "Tsu",
+       "country": "Japan"
+      },
+      {
+       "facility": "Kansai Medical University Hirakata Hospital /ID# 252332",
+       "city": "Hirakata-shi",
+       "country": "Japan"
+      },
+      {
+       "facility": "Tokyo Medical University Hospital /ID# 252331",
+       "city": "Shinjuku-ku",
+       "country": "Japan"
+      },
+      {
+       "facility": "High-Med Przychodnia Specjalistyczna /ID# 243846",
+       "city": "Warsaw",
+       "country": "Poland"
+      },
+      {
+       "facility": "Uniwersytecki Szpital Kliniczny im. F. Chopina w Rzeszowie /ID# 243850",
+       "city": "Rzeszów",
+       "country": "Poland"
+      },
+      {
+       "facility": "Centrum Badan Klinicznych PI-House sp. z o.o. /ID# 243849",
+       "city": "Gdansk",
+       "country": "Poland"
+      },
+      {
+       "facility": "Dermed Centrum Medyczne Sp. z o.o /ID# 243847",
+       "city": "Lodz",
+       "country": "Poland"
+      },
+      {
+       "facility": "Dermoklinika Medical Center /ID# 243848",
+       "city": "Lodz",
+       "country": "Poland"
+      },
+      {
+       "facility": "Hospital Sant Joan de Deu /ID# 241103",
+       "city": "Esplugues de Llobregat",
+       "country": "Spain"
+      },
+      {
+       "facility": "Hospital General Universitario Gregorio Maranon /ID# 241099",
+       "city": "Madrid",
+       "country": "Spain"
+      },
+      {
+       "facility": "Hospital Universitario Infanta Leonor /ID# 241100",
+       "city": "Madrid",
+       "country": "Spain"
+      },
+      {
+       "facility": "Hospital Universitario 12 de Octubre /ID# 241102",
+       "city": "Madrid",
+       "country": "Spain"
+      },
+      {
+       "facility": "Complejo Hospitalario Universitario de Pontevedra /ID# 241101",
+       "city": "Pontevedra",
+       "country": "Spain"
+      },
+      {
+       "facility": "Royal Devon & Exeter Hospital /ID# 245101",
+       "city": "Exeter",
+       "country": "United Kingdom"
+      },
+      {
+       "facility": "Derriford Hospital and the Royal Eye Infirmary /ID# 245104",
+       "city": "Plymouth",
+       "country": "United Kingdom"
+      },
+      {
+       "facility": "Dup_Guys and St Thomas NHS Foundation Trust - Guy's Hospital /ID# 245100",
+       "city": "London",
+       "country": "United Kingdom"
+      },
+      {
+       "facility": "Chelsea and Westminster Hospital /ID# 245102",
+       "city": "London",
+       "country": "United Kingdom"
+      }
+     ]
+    }
+   },
+   "hasResults": false
+  },
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT06842199",
+     "briefTitle": "Efficacy, Safety, Pharmacokinetics of ICP-488 in Patients With Moderate to Severe Plaque Psoriasis"
+    },
+    "statusModule": {
+     "overallStatus": "RECRUITING",
+     "startDateStruct": {
+      "date": "2025-03-20"
+     },
+     "primaryCompletionDateStruct": {
+      "date": "2026-05"
+     },
+     "completionDateStruct": {
+      "date": "2027-02"
+     },
+     "lastUpdatePostDateStruct": {
+      "date": "2026-02-09"
+     }
+    },
+    "sponsorCollaboratorsModule": {
+     "leadSponsor": {
+      "name": "Beijing InnoCare Pharma Tech Co., Ltd.",
+      "class": "INDUSTRY"
+     }
+    },
+    "conditionsModule": {
+     "conditions": [
+      "Plaque Psoriasis Patients"
+     ]
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL",
+     "phases": [
+      "PHASE3"
+     ],
+     "designInfo": {
+      "allocation": "RANDOMIZED"
+     },
+     "enrollmentInfo": {
+      "count": 383
+     }
+    },
+    "armsInterventionsModule": {
+     "armGroups": [
+      {
+       "label": "ICP-488 Tablets",
+       "type": "EXPERIMENTAL",
+       "interventionNames": [
+        "Drug: ICP-488 Tablets"
+       ]
+      },
+      {
+       "label": "ICP-488 Placebo",
+       "type": "PLACEBO_COMPARATOR",
+       "interventionNames": [
+        "Drug: ICP-488 Placebo"
+       ]
+      }
+     ],
+     "interventions": [
+      {
+       "type": "DRUG",
+       "name": "ICP-488 Tablets",
+       "description": "Eligible patients will receive ICP-488 orally as per the protocol"
+      },
+      {
+       "type": "DRUG",
+       "name": "ICP-488 Placebo",
+       "description": "Eligible patients will receive ICP-488 Placebo orally as per the protocol"
+      }
+     ]
+    },
+    "outcomesModule": {
+     "primaryOutcomes": [
+      {
+       "measure": "The proportion of subjects who achieve a score of clear (0) or almost clear (1) with an improvement of at least 2 points from baseline on the static Physician's Global Assessment (sPGA) at week 16"
+      },
+      {
+       "measure": "Percentage of subjects who achieved a PASI 75 response (a reduction of minimum 75% from baseline in PASI score) at Week 16"
+      }
+     ]
+    },
+    "contactsLocationsModule": {
+     "locations": [
+      {
+       "facility": "The First Affiliated Hospital of Anhui Medical University",
+       "city": "Hefei",
+       "country": "China"
+      },
+      {
+       "facility": "The Second Affiliated Hospital of Wannan Medical College",
+       "city": "Wuhu",
+       "country": "China"
+      },
+      {
+       "facility": "Beijing Chao-Yang Hospital，Capital Medical University",
+       "city": "Beijing",
+       "country": "China"
+      },
+      {
+       "facility": "Beijing Friendship Hospital, Capital Medical University",
+       "city": "Beijing",
+       "country": "China"
+      },
+      {
+       "facility": "Peking University Third Hospital",
+       "city": "Beijing",
+       "country": "China"
+      },
+      {
+       "facility": "Beijing Tongren Hospital,CMU",
+       "city": "Beijing",
+       "country": "China"
+      },
+      {
+       "facility": "The First Affiliated Hospital of Chongqing Medical University",
+       "city": "Chongqing",
+       "country": "China"
+      },
+      {
+       "facility": "Chongqing Traditional Chinese Medicine Hospital",
+       "city": "Chongqing",
+       "country": "China"
+      },
+      {
+       "facility": "Fujian Medical University Union Hospital",
+       "city": "Fuzhou",
+       "country": "China"
+      },
+      {
+       "facility": "The First Affiliated Hospital of Fujian Medical University",
+       "city": "Fuzhou",
+       "country": "China"
+      },
+      {
+       "facility": "Dermatology Hospital of Southern Medical University",
+       "city": "Guangzhou",
+       "country": "China"
+      },
+      {
+       "facility": "Sun Yat-sen Memorial Hospital, Sun Yat-sen University",
+       "city": "Guangzhou",
+       "country": "China"
+      },
+      {
+       "facility": "Liuzhou People's Hospital",
+       "city": "Liuzhou",
+       "country": "China"
+      },
+      {
+       "facility": "The Affiliated Hospital of Guizhou Medical University",
+       "city": "Guiyang",
+       "country": "China"
+      },
+      {
+       "facility": "Affiliated Hospital of Chengde Medical University",
+       "city": "Chengde",
+       "country": "China"
+      },
+      {
+       "facility": "The Second Hospital of Hebei Medical University",
+       "city": "Shijiazhuang",
+       "country": "China"
+      },
+      {
+       "facility": "The 2nd Affiliated Hospital of Harbin Medical University",
+       "city": "Harbin",
+       "country": "China"
+      },
+      {
+       "facility": "The Second Affiliated Hospital of Henan University of Science and technology",
+       "city": "Luoyang",
+       "country": "China"
+      },
+      {
+       "facility": "Nanyang Central Hospital",
+       "city": "Nanyang",
+       "country": "China"
+      },
+      {
+       "facility": "Sanmenxia Central Hospital",
+       "city": "Sanmenxia",
+       "country": "China"
+      },
+      {
+       "facility": "Henan Provincial People's Hospital",
+       "city": "Zhengzhou",
+       "country": "China"
+      },
+      {
+       "facility": "Jingzhou Central Hospital",
+       "city": "Jingzhou",
+       "country": "China"
+      },
+      {
+       "facility": "Wuhan Hospital Of Traditional Chinese and Western Medicine (Wuhan No.1 Hospital)",
+       "city": "Wuhan",
+       "country": "China"
+      },
+      {
+       "facility": "Xiangya Hospital of Central South University",
+       "city": "Changsha",
+       "country": "China"
+      },
+      {
+       "facility": "The Second Xiangya Hospital of Central South",
+       "city": "Changsha",
+       "country": "China"
+      },
+      {
+       "facility": "The First People's Hospital of Changzhou",
+       "city": "Changzhou",
+       "country": "China"
+      },
+      {
+       "facility": "The First People's Hospital of Lianyungang",
+       "city": "Lianyungang",
+       "country": "China"
+      },
+      {
+       "facility": "Hospital for skin diseases,Institute of dermatology chinese academy of medical sciences，peking union medical college",
+       "city": "Nanjing",
+       "country": "China"
+      },
+      {
+       "facility": "First Affiliated Hospital of Gannan Medical University",
+       "city": "Ganzhou",
+       "country": "China"
+      },
+      {
+       "facility": "Dermatology Hospital of Jiangxi Province",
+       "city": "Nanchang",
+       "country": "China"
+      },
+      {
+       "facility": "The First Hospital of Jilin University",
+       "city": "Changchun",
+       "country": "China"
+      },
+      {
+       "facility": "Northeast International Hospital",
+       "city": "Shenyang",
+       "country": "China"
+      },
+      {
+       "facility": "Qilu Hospital of Shandong University",
+       "city": "Jinan",
+       "country": "China"
+      },
+      {
+       "facility": "Huashan Hospital, Fudan University",
+       "city": "Shanghai",
+       "country": "China"
+      },
+      {
+       "facility": "Shanghai Skin Disease Hospital skin Disease of tongji University",
+       "city": "Shanghai",
+       "country": "China"
+      },
+      {
+       "facility": "Taiyuan Central Hospital",
+       "city": "Taiyuan",
+       "country": "China"
+      },
+      {
+       "facility": "The First Affiliated Hospital of Xi'an Jiaotong University",
+       "city": "Xi’an",
+       "country": "China"
+      },
+      {
+       "facility": "The Second Affiliated Hospital of Xi'an Jiaotong University",
+       "city": "Xi’an",
+       "country": "China"
+      },
+      {
+       "facility": "Chengdu Second People's Hospital",
+       "city": "Chengdu",
+       "country": "China"
+      },
+      {
+       "facility": "Sichuan Provincial People's Hospital",
+       "city": "Chengdu",
+       "country": "China"
+      },
+      {
+       "facility": "Tianjin Academy of Traditional Chinese Medicine Affiliated Hospital",
+       "city": "Tianjin",
+       "country": "China"
+      },
+      {
+       "facility": "The First Affiliated Hospital of Kunming Medical University",
+       "city": "Kunming",
+       "country": "China"
+      },
+      {
+       "facility": "The Second Affiliated Hospital Zhejiang University School of Medicine",
+       "city": "Hangzhou",
+       "country": "China"
+      },
+      {
+       "facility": "The Fourth Affiliated Hospital, Zhejiang University School of Medicine",
+       "city": "Jinhua",
+       "country": "China"
+      },
+      {
+       "facility": "The First Affiliated Hospital Of Ningbo University",
+       "city": "Ningbo",
+       "country": "China"
+      },
+      {
+       "facility": "The first Affiliated hospital of Wenzhou Medical University",
+       "city": "Wenzhou",
+       "country": "China"
+      }
+     ]
+    }
+   },
+   "hasResults": false
+  },
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT06857942",
+     "briefTitle": "A Study to Investigate the Effectiveness of Tirzepatide (LY3298176) Following Initiation of Ixekizumab (LY2439821) in Participants With Moderate-to-Severe Plaque PsO and Obesity or Overweight in Clinical Practice (TOGETHER AMPLIFY-PsO)"
+    },
+    "statusModule": {
+     "overallStatus": "RECRUITING",
+     "startDateStruct": {
+      "date": "2025-03-19"
+     },
+     "primaryCompletionDateStruct": {
+      "date": "2028-05"
+     },
+     "completionDateStruct": {
+      "date": "2028-05"
+     },
+     "lastUpdatePostDateStruct": {
+      "date": "2026-11-04"
+     }
+    },
+    "sponsorCollaboratorsModule": {
+     "leadSponsor": {
+      "name": "Eli Lilly and Company",
+      "class": "INDUSTRY"
+     }
+    },
+    "conditionsModule": {
+     "conditions": [
+      "Psoriasis",
+      "Overweight or Obesity"
+     ]
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL",
+     "phases": [
+      "PHASE4"
+     ],
+     "designInfo": {
+      "allocation": "NA"
+     },
+     "enrollmentInfo": {
+      "count": 200
+     }
+    },
+    "armsInterventionsModule": {
+     "armGroups": [
+      {
+       "label": "Tirzepatide",
+       "type": "EXPERIMENTAL",
+       "description": "Participants will continue to receive ixekizumab and take tirzepatide subcutaneously (SC) as per label.",
+       "interventionNames": [
+        "Drug: Tirzepatide"
+       ]
+      }
+     ],
+     "interventions": [
+      {
+       "type": "DRUG",
+       "name": "Tirzepatide",
+       "description": "Administered SC"
+      }
+     ]
+    },
+    "outcomesModule": {
+     "primaryOutcomes": [
+      {
+       "measure": "Percentage of Participants Achieving Dermatology Life Quality Index (DLQI) (0,1)"
+      },
+      {
+       "measure": "Percentage of Participants Achieving at least 10% Weight Reduction"
+      }
+     ]
+    },
+    "contactsLocationsModule": {
+     "overallOfficials": [
+      {
+       "name": "Call 1-877-CTLILLY (1-877-285-4559) or 1-317-615-4559 Mon - Fri 8 AM - 8 PM Eastern time (UTC/GMT - 5 hours, EST)",
+       "affiliation": "Eli Lilly and Company",
+       "role": "STUDY_DIRECTOR"
+      }
+     ],
+     "locations": [
+      {
+       "facility": "Medical Dermatology Specialists",
+       "city": "Phoenix",
+       "country": "United States"
+      },
+      {
+       "facility": "First OC Dermatology Research Inc",
+       "city": "Fountain Valley",
+       "country": "United States"
+      },
+      {
+       "facility": "Center For Dermatology Clinical Research, Inc.",
+       "city": "Fremont",
+       "country": "United States"
+      },
+      {
+       "facility": "Metropolis Dermatology",
+       "city": "Los Angeles",
+       "country": "United States"
+      },
+      {
+       "facility": "Northridge Clinical Trials",
+       "city": "Northridge",
+       "country": "United States"
+      },
+      {
+       "facility": "NeoClinical Research",
+       "city": "Hialeah",
+       "country": "United States"
+      },
+      {
+       "facility": "Skin Care Research",
+       "city": "Hollywood",
+       "country": "United States"
+      },
+      {
+       "facility": "Encore Medical Research",
+       "city": "Hollywood",
+       "country": "United States"
+      },
+      {
+       "facility": "MOORE Clinical Research, Inc. d/b/a TrueBlue Clinical Research",
+       "city": "Tampa",
+       "country": "United States"
+      },
+      {
+       "facility": "TruDerm & TruSpa",
+       "city": "Wellington",
+       "country": "United States"
+      },
+      {
+       "facility": "Southeast Research Specialists",
+       "city": "Douglasville",
+       "country": "United States"
+      },
+      {
+       "facility": "Dawes Fretzin Clinical Research Group, LLC",
+       "city": "Indianapolis",
+       "country": "United States"
+      },
+      {
+       "facility": "The Indiana Clinical Trials Center, PC",
+       "city": "Plainfield",
+       "country": "United States"
+      },
+      {
+       "facility": "Equity Medical - Bowling Green",
+       "city": "Bowling Green",
+       "country": "United States"
+      },
+      {
+       "facility": "Dermatology and Skin Cancer Specialists, LLC",
+       "city": "Rockville",
+       "country": "United States"
+      },
+      {
+       "facility": "Metro Boston Clinical Partners",
+       "city": "Brighton",
+       "country": "United States"
+      },
+      {
+       "facility": "David Fivenson, MD, PLC",
+       "city": "Ann Arbor",
+       "country": "United States"
+      },
+      {
+       "facility": "The Derm Institute of West Michigan",
+       "city": "Caledonia",
+       "country": "United States"
+      },
+      {
+       "facility": "Skin Cancer and Dermatology Institute - Reno",
+       "city": "Reno",
+       "country": "United States"
+      },
+      {
+       "facility": "Stracskin",
+       "city": "Portsmouth",
+       "country": "United States"
+      },
+      {
+       "facility": "Psoriasis Treatment Center of Central New Jersey",
+       "city": "East Windsor",
+       "country": "United States"
+      },
+      {
+       "facility": "Care Access - Hoboken",
+       "city": "Hoboken",
+       "country": "United States"
+      },
+      {
+       "facility": "Equity Medical",
+       "city": "New York",
+       "country": "United States"
+      },
+      {
+       "facility": "Revival Research Institute, LLC",
+       "city": "Cary",
+       "country": "United States"
+      },
+      {
+       "facility": "Onsite Clinical Solutions - Huntersville",
+       "city": "Huntersville",
+       "country": "United States"
+      },
+      {
+       "facility": "Optima Research - Boardman",
+       "city": "Boardman",
+       "country": "United States"
+      },
+      {
+       "facility": "Oregon Dermatology and Research Center",
+       "city": "Portland",
+       "country": "United States"
+      },
+      {
+       "facility": "Dermatology Associates of Plymouth Meeting",
+       "city": "Plymouth Meeting",
+       "country": "United States"
+      },
+      {
+       "facility": "Columbia Dermatology & Aesthetics",
+       "city": "Columbia",
+       "country": "United States"
+      },
+      {
+       "facility": "DelRicht Research - Thompson's Station",
+       "city": "Smyrna",
+       "country": "United States"
+      },
+      {
+       "facility": "Bellaire Dermatology Associates",
+       "city": "Bellaire",
+       "country": "United States"
+      },
+      {
+       "facility": "Modern Research Associates, PLLC",
+       "city": "Dallas",
+       "country": "United States"
+      },
+      {
+       "facility": "Center for Clinical Studies",
+       "city": "Houston",
+       "country": "United States"
+      },
+      {
+       "facility": "Austin Institute for Clinical Research",
+       "city": "Pflugerville",
+       "country": "United States"
+      },
+      {
+       "facility": "Texas Dermatology and Laser Specialists",
+       "city": "San Antonio",
+       "country": "United States"
+      },
+      {
+       "facility": "Center for Clinical Studies",
+       "city": "Webster",
+       "country": "United States"
+      },
+      {
+       "facility": "Tanner Clinic",
+       "city": "Layton",
+       "country": "United States"
+      },
+      {
+       "facility": "Bellevue Dermatology Clinic",
+       "city": "Bellevue",
+       "country": "United States"
+      }
+     ]
+    }
+   },
+   "hasResults": false
+  },
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT07532486",
+     "briefTitle": "A Study to Evaluate Comparative Efficacy and Safety of Guselkumab in High-dose and Extended-interval Versus Standard-dose in Chinese Participants of Moderate-to-severe Plaque Psoriasis"
+    },
+    "statusModule": {
+     "overallStatus": "RECRUITING",
+     "startDateStruct": {
+      "date": "2024-07-10"
+     },
+     "primaryCompletionDateStruct": {
+      "date": "2027-07-10"
+     },
+     "completionDateStruct": {
+      "date": "2027-07-10"
+     },
+     "lastUpdatePostDateStruct": {
+      "date": "2026-04-16"
+     }
+    },
+    "sponsorCollaboratorsModule": {
+     "leadSponsor": {
+      "name": "Second Affiliated Hospital, Zhejiang University, School of Medicine",
+      "class": "OTHER"
+     }
+    },
+    "conditionsModule": {
+     "conditions": [
+      "Psoriasis"
+     ]
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL",
+     "phases": [
+      "NA"
+     ],
+     "designInfo": {
+      "allocation": "NON_RANDOMIZED"
+     },
+     "enrollmentInfo": {
+      "count": 400
+     }
+    },
+    "armsInterventionsModule": {
+     "armGroups": [
+      {
+       "label": "Guselkumab in high-dose and extended-interval",
+       "type": "EXPERIMENTAL",
+       "description": "Participants will receive 2 injections of active guselkumab as 200 milligrams (mg) by subcutaneous (SC) injection at Weeks 0, 8, 20, 36, 56, and 76.",
+       "interventionNames": [
+        "Drug: Guselkumab"
+       ]
+      },
+      {
+       "label": "Guselkumab in standard-dose",
+       "type": "ACTIVE_COMPARATOR",
+       "description": "Participants will receive 1 injection of active guselkumab 100 mg SC at Weeks 0, 4, 12, and q8w thereafter through Week 86.",
+       "interventionNames": [
+        "Drug: Guselkumab"
+       ]
+      }
+     ],
+     "interventions": [
+      {
+       "type": "DRUG",
+       "name": "Guselkumab",
+       "description": "Participants will receive 2 injections of active guselkumab (as 200 mg, SC) at Weeks 0, 8, 20, 36, 56, and 76."
+      },
+      {
+       "type": "DRUG",
+       "name": "Guselkumab",
+       "description": "Participants will receive 1 injection of active guselkumab (100 mg, SC) at Weeks 0, 4, 12, 20, 28, 36, 44, 52, 60, 68, 76 and 84."
+      }
+     ]
+    },
+    "outcomesModule": {
+     "primaryOutcomes": [
+      {
+       "measure": "Percentage of Participants Who Achieved a Psoriasis Area and Severity Index (PASI)-90 Response at Week 86"
+      },
+      {
+       "measure": "Percentage of Participants Who Achieve an Investigator's Global Assessment (IGA) Score of Cleared (0) or Minimal (1) at Week 86"
+      },
+      {
+       "measure": "Number of Participants with Adverse Events (AE)"
+      },
+      {
+       "measure": "Number of Participants with Change from Baseline in Laboratory Abnormalities"
+      },
+      {
+       "measure": "Number of Participants with Abnormalities of Electrocardiogram (ECG)"
+      },
+      {
+       "measure": "Number of Participants with Change from Baseline in Vital Signs"
+      },
+      {
+       "measure": "Number of Participants with Change from Baseline in Physical Examination"
+      },
+      {
+       "measure": "Number of Participants with Change from Baseline in Concomitant Medications"
+      },
+      {
+       "measure": "Number of Patients with Injection-site Reactions"
+      },
+      {
+       "measure": "Number of Patients with Allergic Reactions"
+      },
+      {
+       "measure": "Number of Participants with Infections"
+      }
+     ]
+    },
+    "contactsLocationsModule": {
+     "locations": [
+      {
+       "facility": "The Second Affiliated Hospital Zhejiang University School of Medicine",
+       "city": "Hangzhou",
+       "country": "China"
+      }
+     ]
+    }
+   },
+   "hasResults": false
+  },
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT07261306",
+     "briefTitle": "Comparison Between Oral Methotrexate and Tofacitinib in Chronic Plaque Psoriasis",
+     "acronym": "MTX"
+    },
+    "statusModule": {
+     "overallStatus": "RECRUITING",
+     "startDateStruct": {
+      "date": "2025-08-29"
+     },
+     "primaryCompletionDateStruct": {
+      "date": "2025-12-10"
+     },
+     "completionDateStruct": {
+      "date": "2025-12-25"
+     },
+     "lastUpdatePostDateStruct": {
+      "date": "2025-12-03"
+     }
+    },
+    "sponsorCollaboratorsModule": {
+     "leadSponsor": {
+      "name": "Lahore General Hospital",
+      "class": "OTHER_GOV"
+     }
+    },
+    "conditionsModule": {
+     "conditions": [
+      "Psoriasis"
+     ]
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL",
+     "phases": [
+      "EARLY_PHASE1"
+     ],
+     "designInfo": {
+      "allocation": "RANDOMIZED"
+     },
+     "enrollmentInfo": {
+      "count": 75
+     }
+    },
+    "armsInterventionsModule": {
+     "armGroups": [
+      {
+       "label": "Group mTX",
+       "type": "ACTIVE_COMPARATOR",
+       "description": "Methotrexate is a modified antirheumatic drug work by inhibiting dihydrofolate reductase",
+       "interventionNames": [
+        "Drug: Methotrexate"
+       ]
+      },
+      {
+       "label": "Tofacitinib",
+       "type": "ACTIVE_COMPARATOR",
+       "description": "Tofacitinib is janus kinase inhibitor and had a role in treatment of psoriasis and psoriatic arthritis",
+       "interventionNames": [
+        "Drug: Tofacitinib"
+       ]
+      }
+     ],
+     "interventions": [
+      {
+       "type": "DRUG",
+       "name": "Methotrexate",
+       "description": "Methotrexate is an antifolate drug work by inhibiting enzyme dihydrofolate reductase and inhibit cell proliferation and play a role in psoriasis treatment"
+      },
+      {
+       "type": "DRUG",
+       "name": "Tofacitinib",
+       "description": "Tofacitinib is janus kinase inhibitor and have role in psoriasis"
+      }
+     ]
+    },
+    "outcomesModule": {
+     "primaryOutcomes": [
+      {
+       "measure": "Efficacy Achievement"
+      }
+     ]
+    },
+    "contactsLocationsModule": {
+     "overallOfficials": [
+      {
+       "name": "Maryam Fatima",
+       "affiliation": "Lahore General Hospital, Lahore",
+       "role": "PRINCIPAL_INVESTIGATOR"
+      }
+     ],
+     "locations": [
+      {
+       "facility": "Lahore general hospital",
+       "city": "Lahore",
+       "country": "Pakistan"
+      }
+     ]
+    }
+   },
+   "hasResults": false
+  },
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT07129382",
+     "briefTitle": "A Study to Evaluate the Efficacy and Safety of CS32582 in Participants With Moderate to Severe Plaque Psoriasis",
+     "acronym": "MECAP"
+    },
+    "statusModule": {
+     "overallStatus": "RECRUITING",
+     "startDateStruct": {
+      "date": "2025-09-08"
+     },
+     "primaryCompletionDateStruct": {
+      "date": "2027-09-18"
+     },
+     "completionDateStruct": {
+      "date": "2027-09-18"
+     },
+     "lastUpdatePostDateStruct": {
+      "date": "2026-11-05"
+     }
+    },
+    "sponsorCollaboratorsModule": {
+     "leadSponsor": {
+      "name": "Chipscreen Biosciences, Ltd.",
+      "class": "INDUSTRY"
+     }
+    },
+    "conditionsModule": {
+     "conditions": [
+      "Plaque Psoriasis"
+     ]
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL",
+     "phases": [
+      "PHASE1",
+      "PHASE2"
+     ],
+     "designInfo": {
+      "allocation": "RANDOMIZED"
+     },
+     "enrollmentInfo": {
+      "count": 220
+     }
+    },
+    "armsInterventionsModule": {
+     "armGroups": [
+      {
+       "label": "Part 1：Low dose CS32582",
+       "type": "EXPERIMENTAL",
+       "description": "The patient received low-dose CS32582 capsules BID or placebo for 4 weeks",
+       "interventionNames": [
+        "Drug: CS32582 capsule（low dose） or matched placebo"
+       ]
+      },
+      {
+       "label": "Part 1：Hgh dose CS32582",
+       "type": "EXPERIMENTAL",
+       "description": "The patient received high-dose CS32582 capsules BID or placebo for 4 weeks",
+       "interventionNames": [
+        "Drug: CS32582 capsule（high dose） or matched placebo"
+       ]
+      },
+      {
+       "label": "Part 2：Low dose CS32582",
+       "type": "EXPERIMENTAL",
+       "description": "The patient received low-dose CS32582 capsules BID or placebo for 12 weeks",
+       "interventionNames": [
+        "Drug: CS32582 capsule（low dose）"
+       ]
+      },
+      {
+       "label": "Part 2：Medium dose CS32582",
+       "type": "EXPERIMENTAL",
+       "description": "The patient received medium-dose CS32582 capsules BID or placebo for 12 weeks",
+       "interventionNames": [
+        "Drug: CS32582 capsule（medium dose）"
+       ]
+      },
+      {
+       "label": "Part 2：High dose CS32582",
+       "type": "EXPERIMENTAL",
+       "description": "The patient received high-dose CS32582 capsules BID or placebo for 12 weeks",
+       "interventionNames": [
+        "Drug: CS32582 capsule（high dose）"
+       ]
+      }
+     ],
+     "interventions": [
+      {
+       "type": "DRUG",
+       "name": "CS32582 capsule（low dose） or matched placebo",
+       "description": "CS32582 capsule（low dose） or matched placebo，4 weeks"
+      },
+      {
+       "type": "DRUG",
+       "name": "CS32582 capsule（high dose） or matched placebo",
+       "description": "CS32582 capsule（high dose） or matched placebo，4 weeks"
+      },
+      {
+       "type": "DRUG",
+       "name": "CS32582 capsule（low dose）",
+       "description": "CS32582 capsule（low dose），12 weeks"
+      },
+      {
+       "type": "DRUG",
+       "name": "CS32582 capsule（medium dose）",
+       "description": "CS32582 capsule（medium dose），12 weeks"
+      },
+      {
+       "type": "DRUG",
+       "name": "CS32582 capsule（high dose）",
+       "description": "CS32582 capsule（high dose），12 weeks"
+      }
+     ]
+    },
+    "outcomesModule": {
+     "primaryOutcomes": [
+      {
+       "measure": "Part 1：Incidence and Severity of Adverse Events (AEs)"
+      },
+      {
+       "measure": "Part 2：Proportion of patients achieved Psoriasis Area Severity Index (PASI) 75 at Week 12"
+      }
+     ]
+    },
+    "contactsLocationsModule": {
+     "locations": [
+      {
+       "facility": "Beijing Friendship Hospital, Capital Medical University",
+       "city": "Beijing",
+       "country": "China"
+      },
+      {
+       "facility": "Peking University People's Hospital",
+       "city": "Beijing",
+       "country": "China"
+      },
+      {
+       "facility": "Affiliated Hospital of Chengde Medical University",
+       "city": "Chengde",
+       "country": "China"
+      },
+      {
+       "facility": "The First Hospital of Hebei Medical University",
+       "city": "Shijiazhuang",
+       "country": "China"
+      },
+      {
+       "facility": "Shiyan People's Hospital",
+       "city": "Shiyan",
+       "country": "China"
+      },
+      {
+       "facility": "Shandong Provincial Hospital for Skin Diseases",
+       "city": "Jinan",
+       "country": "China"
+      },
+      {
+       "facility": "First Hospital of Shanxi Medical University",
+       "city": "Taiyuan",
+       "country": "China"
+      },
+      {
+       "facility": "The Second Affiliated Hospital of Xi'an Jiaotong University(Xibei Hospital )",
+       "city": "Xi’an",
+       "country": "China"
+      },
+      {
+       "facility": "Affiliated Hangzhou First People's Hospital, School of Medicine, Westlake University",
+       "city": "Hangzhou",
+       "country": "China"
+      },
+      {
+       "facility": "The Fourth Affiliated Hospital of Zhejiang University School of Medicine",
+       "city": "Yiwu",
+       "country": "China"
+      },
+      {
+       "facility": "The First Affliated Hospital of Wenzhou Medical University",
+       "city": "Wenzhou",
+       "country": "China"
+      }
+     ]
+    }
+   },
+   "hasResults": false
+  },
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT04347473",
+     "briefTitle": "ILUMYA in Combination With HALOG Ointment 0.1% for Plaque Psoriasis."
+    },
+    "statusModule": {
+     "overallStatus": "RECRUITING",
+     "startDateStruct": {
+      "date": "2020-04-06"
+     },
+     "primaryCompletionDateStruct": {
+      "date": "2020-12-30"
+     },
+     "completionDateStruct": {
+      "date": "2021-03-01"
+     },
+     "lastUpdatePostDateStruct": {
+      "date": "2020-04-15"
+     }
+    },
+    "sponsorCollaboratorsModule": {
+     "leadSponsor": {
+      "name": "Psoriasis Treatment Center of Central New Jersey",
+      "class": "OTHER"
+     },
+     "collaborators": [
+      {
+       "name": "Sun Pharmaceutical Industries Limited"
+      }
+     ]
+    },
+    "conditionsModule": {
+     "conditions": [
+      "Psoriasis"
+     ]
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL",
+     "phases": [
+      "PHASE4"
+     ],
+     "designInfo": {
+      "allocation": "NA"
+     },
+     "enrollmentInfo": {
+      "count": 25
+     }
+    },
+    "armsInterventionsModule": {
+     "armGroups": [
+      {
+       "label": "Ilumya",
+       "type": "EXPERIMENTAL",
+       "description": "Ilumya 100mg subcutaneous at weeks 0, 4 and 16.",
+       "interventionNames": [
+        "Drug: Ilumya Injectable Product"
+       ]
+      }
+     ],
+     "interventions": [
+      {
+       "type": "DRUG",
+       "name": "Ilumya Injectable Product",
+       "description": "IL-23 injection"
+      }
+     ]
+    },
+    "outcomesModule": {
+     "primaryOutcomes": [
+      {
+       "measure": "Body surface area"
+      }
+     ]
+    },
+    "contactsLocationsModule": {
+     "locations": [
+      {
+       "facility": "Psoriasis Treatment Center of Central New Jersey",
+       "city": "East Windsor",
+       "country": "United States"
+      }
+     ]
+    }
+   },
+   "hasResults": false
+  },
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT07623486",
+     "briefTitle": "Trial of HSK44459 Cream for the Management Plaque Psoriasis"
+    },
+    "statusModule": {
+     "overallStatus": "ACTIVE_NOT_RECRUITING",
+     "startDateStruct": {
+      "date": "2026-05-22"
+     },
+     "primaryCompletionDateStruct": {
+      "date": "2027-03"
+     },
+     "completionDateStruct": {
+      "date": "2027-06"
+     },
+     "lastUpdatePostDateStruct": {
+      "date": "2026-06-08"
+     }
+    },
+    "sponsorCollaboratorsModule": {
+     "leadSponsor": {
+      "name": "Haisco Pharmaceutical Group Co., Ltd.",
+      "class": "INDUSTRY"
+     }
+    },
+    "conditionsModule": {
+     "conditions": [
+      "Psoriasis"
+     ]
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL",
+     "phases": [
+      "PHASE1",
+      "PHASE2"
+     ],
+     "designInfo": {
+      "allocation": "RANDOMIZED"
+     },
+     "enrollmentInfo": {
+      "count": 180
+     }
+    },
+    "armsInterventionsModule": {
+     "armGroups": [
+      {
+       "label": "HSK44459 Cream",
+       "type": "EXPERIMENTAL",
+       "description": "HSK44459 Cream",
+       "interventionNames": [
+        "Drug: HSK44459 Cream"
+       ]
+      },
+      {
+       "label": "Vehicle",
+       "type": "PLACEBO_COMPARATOR",
+       "interventionNames": [
+        "Drug: Vehicle"
+       ]
+      }
+     ],
+     "interventions": [
+      {
+       "type": "DRUG",
+       "name": "HSK44459 Cream",
+       "description": "HSK44459 Cream"
+      },
+      {
+       "type": "DRUG",
+       "name": "Vehicle",
+       "description": "HSK44459 Vehicle"
+      }
+     ]
+    },
+    "outcomesModule": {
+     "primaryOutcomes": [
+      {
+       "measure": "Number of Participants Achieving Psoriasis Area Severity Index 75 (PASI-75)"
+      }
+     ]
+    },
+    "contactsLocationsModule": {
+     "locations": [
+      {
+       "facility": "Hangzhou First People's Hospital",
+       "city": "Hangzhou",
+       "country": "China"
+      }
+     ]
+    }
+   },
+   "hasResults": false
+  },
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT07326813",
+     "briefTitle": "A Clinical Study to Evaluate the Efficacy and Safety of D-2570 in the Treatment of Moderate to Severe Plaque Psoriasis"
+    },
+    "statusModule": {
+     "overallStatus": "RECRUITING",
+     "startDateStruct": {
+      "date": "2026-01-12"
+     },
+     "primaryCompletionDateStruct": {
+      "date": "2027-07-12"
+     },
+     "completionDateStruct": {
+      "date": "2027-12-03"
+     },
+     "lastUpdatePostDateStruct": {
+      "date": "2026-04-29"
+     }
+    },
+    "sponsorCollaboratorsModule": {
+     "leadSponsor": {
+      "name": "InventisBio Co., Ltd",
+      "class": "INDUSTRY"
+     }
+    },
+    "conditionsModule": {
+     "conditions": [
+      "Plaque Psoriasis"
+     ]
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL",
+     "phases": [
+      "PHASE3"
+     ],
+     "designInfo": {
+      "allocation": "RANDOMIZED"
+     },
+     "enrollmentInfo": {
+      "count": 477
+     }
+    },
+    "armsInterventionsModule": {
+     "armGroups": [
+      {
+       "label": "Evaluate the efficacy of different doses of D-2570 compared with placebo",
+       "type": "EXPERIMENTAL",
+       "interventionNames": [
+        "Drug: D-2570 Tablet",
+        "Drug: Placebo"
+       ]
+      },
+      {
+       "label": "Evaluate the efficacy of different doses of D-2570 compared with BMS-98165",
+       "type": "ACTIVE_COMPARATOR",
+       "interventionNames": [
+        "Drug: D-2570 Tablet",
+        "Drug: BMS-986165 Tablet"
+       ]
+      },
+      {
+       "label": "Evaluate the safety of D-2570 treatment at different dosages",
+       "type": "EXPERIMENTAL",
+       "interventionNames": [
+        "Drug: D-2570 Tablet"
+       ]
+      },
+      {
+       "label": "Evaluate the pharmacokinetics and pharmacodynamics of D-2570 in patients with plaque psoriasis",
+       "type": "EXPERIMENTAL",
+       "interventionNames": [
+        "Drug: D-2570 Tablet"
+       ]
+      }
+     ],
+     "interventions": [
+      {
+       "type": "DRUG",
+       "name": "D-2570 Tablet",
+       "description": "D-2570 is a novel inhibitor targeting the TYK2 pseudokinase domain"
+      },
+      {
+       "type": "DRUG",
+       "name": "BMS-986165 Tablet",
+       "description": "BMS-986165 is a novel inhibitor targeting TYK2"
+      },
+      {
+       "type": "DRUG",
+       "name": "Placebo",
+       "description": "A placebo refers to a tablet that has no therapeutic effect on medication"
+      }
+     ]
+    },
+    "outcomesModule": {
+     "primaryOutcomes": [
+      {
+       "measure": "To evaluate the efficacy of different doses of D-2570 compared with placebo in the treatment of patients with moderate to severe plaque psoriasis"
+      },
+      {
+       "measure": "To evaluate the efficacy of different doses of D-2570 compared with placebo in the treatment of patients with moderate to severe plaque psoriasis"
+      },
+      {
+       "measure": "To evaluate the efficacy of different doses of D-2570 compared with placebo in the treatment of patients with moderate to severe plaque psoriasis"
+      }
+     ]
+    },
+    "contactsLocationsModule": {
+     "locations": [
+      {
+       "facility": "Shanghai Skin Disease Hospital",
+       "city": "Shanghai",
+       "country": "China"
+      }
+     ]
+    }
+   },
+   "hasResults": false
+  }
+ ]
+}

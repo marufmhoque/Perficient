@@ -1,0 +1,765 @@
+{
+ "totalCount": 73,
+ "studies": [
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT00833053",
+     "briefTitle": "Dose Optimization of Infliximab in Moderate to Severe Plaque Psoriasis (Study P05315)",
+     "acronym": "DOSE"
+    },
+    "statusModule": {
+     "overallStatus": "TERMINATED",
+     "whyStopped": "In Amendment 1 of P05319 \\[NCT 00779675\\], the option to enroll into this study, was discontinued due to low numbers of participants with suboptimal response.",
+     "startDateStruct": {
+      "date": "2009-10"
+     },
+     "primaryCompletionDateStruct": {
+      "date": "2011-04"
+     },
+     "completionDateStruct": {
+      "date": "2011-04"
+     },
+     "lastUpdatePostDateStruct": {
+      "date": "2017-04-12"
+     }
+    },
+    "sponsorCollaboratorsModule": {
+     "leadSponsor": {
+      "name": "Merck Sharp & Dohme LLC",
+      "class": "INDUSTRY"
+     }
+    },
+    "conditionsModule": {
+     "conditions": [
+      "Psoriasis"
+     ]
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL",
+     "phases": [
+      "PHASE3"
+     ],
+     "designInfo": {
+      "allocation": "RANDOMIZED"
+     },
+     "enrollmentInfo": {
+      "count": 39
+     }
+    },
+    "armsInterventionsModule": {
+     "armGroups": [
+      {
+       "label": "IFX q 6 weeks",
+       "type": "EXPERIMENTAL",
+       "interventionNames": [
+        "Drug: Infliximab"
+       ]
+      },
+      {
+       "label": "IFX + MTX",
+       "type": "EXPERIMENTAL",
+       "interventionNames": [
+        "Drug: Infliximab and methotrexate"
+       ]
+      }
+     ],
+     "interventions": [
+      {
+       "type": "DRUG",
+       "name": "Infliximab",
+       "description": "Infliximab 5 mg/kg body weight intravenous infusion given every 6 weeks"
+      },
+      {
+       "type": "DRUG",
+       "name": "Infliximab and methotrexate",
+       "description": "Infliximab 5 mg/kg body weight intravenous infusion (given every 8 weeks) plus methotrexate 7.5 mg orally (once weekly)"
+      }
+     ]
+    },
+    "outcomesModule": {
+     "primaryOutcomes": [
+      {
+       "measure": "Number of Participants With A Psoriasis Area and Sensitivity Index (PASI)-75 Response at Week 28"
+      }
+     ]
+    }
+   },
+   "hasResults": true
+  },
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT02970331",
+     "briefTitle": "A Phase 2, Multicenter, Open-label Study to Assess the Safety, Tolerability, Pharmacokinetics and Pharmacodynamics of Pefcalcitol Ointment, 0.005%, Applied Topically Twice Daily (BID) for 8 Weeks in Adolescent Subjects 12 to < 17 Years of Age With Plaque Psoriasis"
+    },
+    "statusModule": {
+     "overallStatus": "WITHDRAWN",
+     "whyStopped": "FDA requested us to stop the study",
+     "startDateStruct": {
+      "date": "2019-06"
+     },
+     "primaryCompletionDateStruct": {
+      "date": "2019-12"
+     },
+     "completionDateStruct": {
+      "date": "2019-12"
+     },
+     "lastUpdatePostDateStruct": {
+      "date": "2023-04-18"
+     }
+    },
+    "sponsorCollaboratorsModule": {
+     "leadSponsor": {
+      "name": "Maruho Co., Ltd.",
+      "class": "INDUSTRY"
+     }
+    },
+    "conditionsModule": {
+     "conditions": [
+      "Psoriasis"
+     ]
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL",
+     "phases": [
+      "PHASE2"
+     ],
+     "designInfo": {
+      "allocation": "NA"
+     },
+     "enrollmentInfo": {
+      "count": 0
+     }
+    },
+    "armsInterventionsModule": {
+     "armGroups": [
+      {
+       "label": "pefcalcitol",
+       "type": "EXPERIMENTAL",
+       "description": "pefcalcitol 0.005% BID for 8 weeks",
+       "interventionNames": [
+        "Drug: pefcalcitol ointment, 0.005%"
+       ]
+      }
+     ],
+     "interventions": [
+      {
+       "type": "DRUG",
+       "name": "pefcalcitol ointment, 0.005%",
+       "description": "pefcalcitol ointment, 0.005%"
+      }
+     ]
+    },
+    "outcomesModule": {
+     "primaryOutcomes": [
+      {
+       "measure": "Change in incidence and severity of application site adverse events"
+      },
+      {
+       "measure": "Change in incidence and severity of all AEs and their relationship to study drug"
+      },
+      {
+       "measure": "Changes from baseline (pre-dose, Day 1) in safety laboratory parameters"
+      },
+      {
+       "measure": "Changes from baseline (pre-dose, Day 1) in calcium homeostasis parameters (total serum calcium and albumin-corrected calcium levels, plasma parathyroid hormone (PTH), and serum alkaline phosphatase)"
+      },
+      {
+       "measure": "Determination of plasma concentrations of Pefcalcitol and its metabolites"
+      }
+     ]
+    }
+   },
+   "hasResults": false
+  },
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT00358670",
+     "briefTitle": "Long-Term Effects of Infliximab in the Treatment of Moderate to Severe Psoriasis [Extension of Study P04271, NCT00251641] (P04563)"
+    },
+    "statusModule": {
+     "overallStatus": "TERMINATED",
+     "whyStopped": "Infusion reactions during re-induction cycles after a period of no treatment. Please see \"Purpose\" section.",
+     "startDateStruct": {
+      "date": "2006-05"
+     },
+     "primaryCompletionDateStruct": {
+      "date": "2009-01"
+     },
+     "completionDateStruct": {
+      "date": "2009-01"
+     },
+     "lastUpdatePostDateStruct": {
+      "date": "2017-04-11"
+     }
+    },
+    "sponsorCollaboratorsModule": {
+     "leadSponsor": {
+      "name": "Merck Sharp & Dohme LLC",
+      "class": "INDUSTRY"
+     }
+    },
+    "conditionsModule": {
+     "conditions": [
+      "Psoriasis"
+     ]
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL",
+     "phases": [
+      "PHASE3"
+     ],
+     "designInfo": {
+      "allocation": "RANDOMIZED"
+     },
+     "enrollmentInfo": {
+      "count": 441
+     }
+    },
+    "armsInterventionsModule": {
+     "armGroups": [
+      {
+       "label": "Maintenance Infliximab",
+       "type": "ACTIVE_COMPARATOR",
+       "description": "Infliximab 5 mg/kg by body weight every 8 weeks",
+       "interventionNames": [
+        "Biological: infliximab"
+       ]
+      },
+      {
+       "label": "Intermittent Infliximab",
+       "type": "EXPERIMENTAL",
+       "description": "Infliximab 5 mg/kg by body weight at Weeks 0, 2, 6 and 14 following a 50% reduction in Psoriasis Area and Severity Index (PASI) from the Study P04271 Baseline",
+       "interventionNames": [
+        "Biological: infliximab"
+       ]
+      }
+     ],
+     "interventions": [
+      {
+       "type": "BIOLOGICAL",
+       "name": "infliximab",
+       "description": "Infliximab maintenance therapy\n\nintravenous (IV) infusion every 8 weeks, 5 mg/kg body weight (first infusion at Week 4/Visit 2)."
+      },
+      {
+       "type": "BIOLOGICAL",
+       "name": "infliximab",
+       "description": "Infliximab intermittent therapy:\n\nParicipants will receive no infliximab treatment until the Week 26 improvement in PASI from Baseline (original Study P04271 \\[NCT00251641\\] Baseline) is reduced by more than 50%. At that time, participants will receive an infliximab infusion, 5 mg/kg body weight. Participants may receive additional infusions at 0, 2, 6, and 14 weeks after the first infusion of the cycle (ie, a maximum of 4 infusions in each infusion cycle) as needed until they respond, defined as a \\>=75% improvement in PASI from the original Baseline in Study P04271. Subjects will receive no further treatment until they relapse again (ie, improvement in PASI from Baseline is reduced by more than 50%), at which time participants will receive another infusion cycle of up to 4 infusions, as described above. Throughout the study, intermittent treatment infusion cycles will be repeated whenever participants relapse."
+      }
+     ]
+    },
+    "outcomesModule": {
+     "primaryOutcomes": [
+      {
+       "measure": "Number of Participants Who Achieved Psoriasis Area and Severity Index 75 (PASI75) Response at Week 128"
+      }
+     ]
+    }
+   },
+   "hasResults": true
+  },
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT02408159",
+     "briefTitle": "Varicella Zoster Vaccine in Patients With Plaque Psoriasis Treated With Biologic Therapy"
+    },
+    "statusModule": {
+     "overallStatus": "TERMINATED",
+     "whyStopped": "Recruitment difficulties",
+     "startDateStruct": {
+      "date": "2016-06"
+     },
+     "primaryCompletionDateStruct": {
+      "date": "2017-01"
+     },
+     "completionDateStruct": {
+      "date": "2017-03"
+     },
+     "lastUpdatePostDateStruct": {
+      "date": "2017-07-02"
+     }
+    },
+    "sponsorCollaboratorsModule": {
+     "leadSponsor": {
+      "name": "Innovaderm Research Inc.",
+      "class": "OTHER"
+     },
+     "collaborators": [
+      {
+       "name": "Merck Sharp & Dohme LLC"
+      }
+     ]
+    },
+    "conditionsModule": {
+     "conditions": [
+      "Psoriasis"
+     ]
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL",
+     "phases": [
+      "PHASE4"
+     ],
+     "designInfo": {
+      "allocation": "RANDOMIZED"
+     },
+     "enrollmentInfo": {
+      "count": 3
+     }
+    },
+    "armsInterventionsModule": {
+     "armGroups": [
+      {
+       "label": "Varicella Zoster Vaccine",
+       "type": "EXPERIMENTAL",
+       "description": "Sterile, lyophilized white to off-white compact crystalline plug in a single-dose vial. Each vial contains one dose of lyophilized vaccine (approximately 0.65 mL when reconstituted as directed). The diluent (0.7 mL) is a sterile, clear, colorless fluid supplied separately in a 3 mL single-dose vial. A single dose will be administered to subjects at baseline.",
+       "interventionNames": [
+        "Drug: Varicella Zoster Vaccine"
+       ]
+      },
+      {
+       "label": "0.9% Sodium Chloride",
+       "type": "PLACEBO_COMPARATOR",
+       "description": "United States Pharmacopeia (USP), preservative free for injection supplied in a single dose vial.\n\nA single dose will be administered to subjects at baseline.",
+       "interventionNames": [
+        "Drug: Placebo"
+       ]
+      }
+     ],
+     "interventions": [
+      {
+       "type": "DRUG",
+       "name": "Varicella Zoster Vaccine"
+      },
+      {
+       "type": "DRUG",
+       "name": "Placebo"
+      }
+     ]
+    },
+    "outcomesModule": {
+     "primaryOutcomes": [
+      {
+       "measure": "Varicella Zoster Virus (VZV) antibody"
+      }
+     ]
+    },
+    "contactsLocationsModule": {
+     "overallOfficials": [
+      {
+       "name": "Lyn Guenther, MD, FRCPC",
+       "affiliation": "The Guenther Dermatology Research Center",
+       "role": "PRINCIPAL_INVESTIGATOR"
+      }
+     ],
+     "locations": [
+      {
+       "facility": "Inno-6041 study site",
+       "city": "London",
+       "country": "Canada"
+      },
+      {
+       "facility": "Inno-6041 study site",
+       "city": "Markham",
+       "country": "Canada"
+      },
+      {
+       "facility": "Innovaderm Research Inc.",
+       "city": "Montreal",
+       "country": "Canada"
+      }
+     ]
+    }
+   },
+   "hasResults": false
+  },
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT01018810",
+     "briefTitle": "A Study for Adults With Plaque Psoriasis"
+    },
+    "statusModule": {
+     "overallStatus": "TERMINATED",
+     "whyStopped": "The trial was terminated for several reasons, including complexities in development of LY2525623, but not because of safety concerns",
+     "startDateStruct": {
+      "date": "2009-12"
+     },
+     "primaryCompletionDateStruct": {
+      "date": "2010-05"
+     },
+     "completionDateStruct": {
+      "date": "2010-08"
+     },
+     "lastUpdatePostDateStruct": {
+      "date": "2011-07-29"
+     }
+    },
+    "sponsorCollaboratorsModule": {
+     "leadSponsor": {
+      "name": "Eli Lilly and Company",
+      "class": "INDUSTRY"
+     }
+    },
+    "conditionsModule": {
+     "conditions": [
+      "Psoriasis"
+     ]
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL",
+     "phases": [
+      "PHASE2"
+     ],
+     "designInfo": {
+      "allocation": "RANDOMIZED"
+     },
+     "enrollmentInfo": {
+      "count": 8
+     }
+    },
+    "armsInterventionsModule": {
+     "armGroups": [
+      {
+       "label": "180 mg LY2525623",
+       "type": "EXPERIMENTAL",
+       "interventionNames": [
+        "Drug: LY2525623 Intravenous"
+       ]
+      },
+      {
+       "label": "Intravenous Placebo",
+       "type": "PLACEBO_COMPARATOR",
+       "interventionNames": [
+        "Drug: Placebo Intravenous"
+       ]
+      },
+      {
+       "label": "Subcutaneous Placebo",
+       "type": "PLACEBO_COMPARATOR",
+       "interventionNames": [
+        "Drug: Placebo Subcutaneous"
+       ]
+      },
+      {
+       "label": "3 mg LY2525623",
+       "type": "EXPERIMENTAL",
+       "interventionNames": [
+        "Drug: LY2525623 Subcutaneous"
+       ]
+      },
+      {
+       "label": "10 mg LY2525623",
+       "type": "EXPERIMENTAL",
+       "interventionNames": [
+        "Drug: LY2525623 Subcutaneous"
+       ]
+      },
+      {
+       "label": "30 mg LY2525623",
+       "type": "EXPERIMENTAL",
+       "interventionNames": [
+        "Drug: LY2525623 Subcutaneous"
+       ]
+      },
+      {
+       "label": "90 mg LY2525623",
+       "type": "EXPERIMENTAL",
+       "interventionNames": [
+        "Drug: LY2525623 Subcutaneous"
+       ]
+      }
+     ],
+     "interventions": [
+      {
+       "type": "DRUG",
+       "name": "LY2525623 Intravenous",
+       "description": "administered intravenously at randomization and every 2 weeks for 6 weeks"
+      },
+      {
+       "type": "DRUG",
+       "name": "LY2525623 Subcutaneous",
+       "description": "administered subcutaneously at randomization and every 2 weeks for 6 weeks"
+      },
+      {
+       "type": "DRUG",
+       "name": "Placebo Intravenous",
+       "description": "administered intravenously at randomization and every 2 weeks for 6 weeks"
+      },
+      {
+       "type": "DRUG",
+       "name": "Placebo Subcutaneous",
+       "description": "administered subcutaneously at randomization and every 2 weeks for 6 weeks"
+      }
+     ]
+    },
+    "outcomesModule": {
+     "primaryOutcomes": [
+      {
+       "measure": "Percentage of Participants Achieving 75% Improvement in the Psoriasis Area and Severity Index (PASI) Scale by Week 12"
+      },
+      {
+       "measure": "Percent Improvement From Baseline in Psoriasis Area and Severity Index (PASI) Scale at Weeks 12 and 24"
+      }
+     ]
+    },
+    "contactsLocationsModule": {
+     "overallOfficials": [
+      {
+       "name": "Call 1-877-CTLILLY (1-877-285-4559) or 1-317-615-4559 Mon - Fri 9 AM - 5 PM Eastern time (UTC/GMT - 5 hours, EST)",
+       "affiliation": "Eli Lilly and Company",
+       "role": "STUDY_DIRECTOR"
+      }
+     ],
+     "locations": [
+      {
+       "facility": "For additional information regarding investigative sites for this trial, contact 1-877-CTLILLY (1-877-285-4559, 1-317-615-4559) Mon - Fri from 9 AM to 5 PM Eastern Time (UTC/GMT - 5 hours, EST), or speak with your personal physician.",
+       "city": "Mobile",
+       "country": "United States"
+      },
+      {
+       "facility": "For additional information regarding investigative sites for this trial, contact 1-877-CTLILLY (1-877-285-4559, 1-317-615-4559) Mon - Fri from 9 AM to 5 PM Eastern Time (UTC/GMT - 5 hours, EST), or speak with your personal physician.",
+       "city": "Peoria",
+       "country": "United States"
+      },
+      {
+       "facility": "For additional information regarding investigative sites for this trial, contact 1-877-CTLILLY (1-877-285-4559, 1-317-615-4559) Mon - Fri from 9 AM to 5 PM Eastern Time (UTC/GMT - 5 hours, EST), or speak with your personal physician.",
+       "city": "Hot Springs",
+       "country": "United States"
+      },
+      {
+       "facility": "For additional information regarding investigative sites for this trial, contact 1-877-CTLILLY (1-877-285-4559, 1-317-615-4559) Mon - Fri from 9 AM to 5 PM Eastern Time (UTC/GMT - 5 hours, EST), or speak with your personal physician.",
+       "city": "Fremont",
+       "country": "United States"
+      },
+      {
+       "facility": "For additional information regarding investigative sites for this trial, contact 1-877-CTLILLY (1-877-285-4559, 1-317-615-4559) Mon - Fri from 9 AM to 5 PM Eastern Time (UTC/GMT - 5 hours, EST), or speak with your personal physician.",
+       "city": "Los Angeles",
+       "country": "United States"
+      },
+      {
+       "facility": "For additional information regarding investigative sites for this trial, contact 1-877-CTLILLY (1-877-285-4559, 1-317-615-4559) Mon - Fri from 9 AM to 5 PM Eastern Time (UTC/GMT - 5 hours, EST), or speak with your personal physician.",
+       "city": "San Diego",
+       "country": "United States"
+      },
+      {
+       "facility": "For additional information regarding investigative sites for this trial, contact 1-877-CTLILLY (1-877-285-4559, 1-317-615-4559) Mon - Fri from 9 AM to 5 PM Eastern Time (UTC/GMT - 5 hours, EST), or speak with your personal physician.",
+       "city": "Santa Monica",
+       "country": "United States"
+      },
+      {
+       "facility": "For additional information regarding investigative sites for this trial, contact 1-877-CTLILLY (1-877-285-4559, 1-317-615-4559) Mon - Fri from 9 AM to 5 PM Eastern Time (UTC/GMT - 5 hours, EST), or speak with your personal physician.",
+       "city": "Jacksonville",
+       "country": "United States"
+      },
+      {
+       "facility": "For additional information regarding investigative sites for this trial, contact 1-877-CTLILLY (1-877-285-4559, 1-317-615-4559) Mon - Fri from 9 AM to 5 PM Eastern Time (UTC/GMT - 5 hours, EST), or speak with your personal physician.",
+       "city": "Ocala",
+       "country": "United States"
+      },
+      {
+       "facility": "For additional information regarding investigative sites for this trial, contact 1-877-CTLILLY (1-877-285-4559, 1-317-615-4559) Mon - Fri from 9 AM to 5 PM Eastern Time (UTC/GMT - 5 hours, EST), or speak with your personal physician.",
+       "city": "South Miami",
+       "country": "United States"
+      },
+      {
+       "facility": "For additional information regarding investigative sites for this trial, contact 1-877-CTLILLY (1-877-285-4559, 1-317-615-4559) Mon - Fri from 9 AM to 5 PM Eastern Time (UTC/GMT - 5 hours, EST), or speak with your personal physician.",
+       "city": "Normal",
+       "country": "United States"
+      },
+      {
+       "facility": "For additional information regarding investigative sites for this trial, contact 1-877-CTLILLY (1-877-285-4559, 1-317-615-4559) Mon - Fri from 9 AM to 5 PM Eastern Time (UTC/GMT - 5 hours, EST), or speak with your personal physician.",
+       "city": "Evansville",
+       "country": "United States"
+      },
+      {
+       "facility": "For additional information regarding investigative sites for this trial, contact 1-877-CTLILLY (1-877-285-4559, 1-317-615-4559) Mon - Fri from 9 AM to 5 PM Eastern Time (UTC/GMT - 5 hours, EST), or speak with your personal physician.",
+       "city": "Indianapolis",
+       "country": "United States"
+      },
+      {
+       "facility": "For additional information regarding investigative sites for this trial, contact 1-877-CTLILLY (1-877-285-4559, 1-317-615-4559) Mon - Fri from 9 AM to 5 PM Eastern Time (UTC/GMT - 5 hours, EST), or speak with your personal physician.",
+       "city": "Owensboro",
+       "country": "United States"
+      },
+      {
+       "facility": "For additional information regarding investigative sites for this trial, contact 1-877-CTLILLY (1-877-285-4559, 1-317-615-4559) Mon - Fri from 9 AM to 5 PM Eastern Time (UTC/GMT - 5 hours, EST), or speak with your personal physician.",
+       "city": "East Windsor",
+       "country": "United States"
+      },
+      {
+       "facility": "For additional information regarding investigative sites for this trial, contact 1-877-CTLILLY (1-877-285-4559, 1-317-615-4559) Mon - Fri from 9 AM to 5 PM Eastern Time (UTC/GMT - 5 hours, EST), or speak with your personal physician.",
+       "city": "South Euclid",
+       "country": "United States"
+      },
+      {
+       "facility": "For additional information regarding investigative sites for this trial, contact 1-877-CTLILLY (1-877-285-4559, 1-317-615-4559) Mon - Fri from 9 AM to 5 PM Eastern Time (UTC/GMT - 5 hours, EST), or speak with your personal physician.",
+       "city": "Johnston",
+       "country": "United States"
+      },
+      {
+       "facility": "For additional information regarding investigative sites for this trial, contact 1-877-CTLILLY (1-877-285-4559, 1-317-615-4559) Mon - Fri from 9 AM to 5 PM Eastern Time (UTC/GMT - 5 hours, EST), or speak with your personal physician.",
+       "city": "Simpsonville",
+       "country": "United States"
+      },
+      {
+       "facility": "For additional information regarding investigative sites for this trial, contact 1-877-CTLILLY (1-877-285-4559, 1-317-615-4559) Mon - Fri from 9 AM to 5 PM Eastern Time (UTC/GMT - 5 hours, EST), or speak with your personal physician.",
+       "city": "Houston",
+       "country": "United States"
+      },
+      {
+       "facility": "For additional information regarding investigative sites for this trial, contact 1-877-CTLILLY (1-877-285-4559, 1-317-615-4559) Mon - Fri from 9 AM to 5 PM Eastern Time (UTC/GMT - 5 hours, EST), or speak with your personal physician.",
+       "city": "Spokane",
+       "country": "United States"
+      },
+      {
+       "facility": "For additional information regarding investigative sites for this trial, contact 1-877-CTLILLY (1-877-285-4559, 1-317-615-4559) Mon - Fri from 9 AM to 5 PM Eastern Time (UTC/GMT - 5 hours, EST), or speak with your personal physician.",
+       "city": "Edmonton",
+       "country": "Canada"
+      },
+      {
+       "facility": "For additional information regarding investigative sites for this trial, contact 1-877-CTLILLY (1-877-285-4559, 1-317-615-4559) Mon - Fri from 9 AM to 5 PM Eastern Time (UTC/GMT - 5 hours, EST), or speak with your personal physician.",
+       "city": "Moncton",
+       "country": "Canada"
+      },
+      {
+       "facility": "For additional information regarding investigative sites for this trial, contact 1-877-CTLILLY (1-877-285-4559, 1-317-615-4559) Mon - Fri from 9 AM to 5 PM Eastern Time (UTC/GMT - 5 hours, EST), or speak with your personal physician.",
+       "city": "Barrie",
+       "country": "Canada"
+      },
+      {
+       "facility": "For additional information regarding investigative sites for this trial, contact 1-877-CTLILLY (1-877-285-4559, 1-317-615-4559) Mon - Fri from 9 AM to 5 PM Eastern Time (UTC/GMT - 5 hours, EST), or speak with your personal physician.",
+       "city": "Markham",
+       "country": "Canada"
+      },
+      {
+       "facility": "For additional information regarding investigative sites for this trial, contact 1-877-CTLILLY (1-877-285-4559, 1-317-615-4559) Mon - Fri from 9 AM to 5 PM Eastern Time (UTC/GMT - 5 hours, EST), or speak with your personal physician.",
+       "city": "Ottawa",
+       "country": "Canada"
+      },
+      {
+       "facility": "For additional information regarding investigative sites for this trial, contact 1-877-CTLILLY (1-877-285-4559, 1-317-615-4559) Mon - Fri from 9 AM to 5 PM Eastern Time (UTC/GMT - 5 hours, EST), or speak with your personal physician.",
+       "city": "Waterloo",
+       "country": "Canada"
+      },
+      {
+       "facility": "For additional information regarding investigative sites for this trial, contact 1-877-CTLILLY (1-877-285-4559, 1-317-615-4559) Mon - Fri from 9 AM to 5 PM Eastern Time (UTC/GMT - 5 hours, EST), or speak with your personal physician.",
+       "city": "Montreal",
+       "country": "Canada"
+      },
+      {
+       "facility": "For additional information regarding investigative sites for this trial, contact 1-877-CTLILLY (1-877-285-4559, 1-317-615-4559) Mon - Fri from 9 AM to 5 PM Eastern Time (UTC/GMT - 5 hours, EST), or speak with your personal physician.",
+       "city": "Québec",
+       "country": "Canada"
+      }
+     ]
+    }
+   },
+   "hasResults": true
+  },
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT00555646",
+     "briefTitle": "Topical PH-10 Aqueous Hydrogel and Photodynamic Therapy for Psoriasis"
+    },
+    "statusModule": {
+     "overallStatus": "TERMINATED",
+     "whyStopped": "Change of dose regimen (new protocol)",
+     "startDateStruct": {
+      "date": "2007-11"
+     },
+     "primaryCompletionDateStruct": {
+      "date": "2008-09"
+     },
+     "completionDateStruct": {
+      "date": "2008-09"
+     },
+     "lastUpdatePostDateStruct": {
+      "date": "2021-12-16"
+     }
+    },
+    "sponsorCollaboratorsModule": {
+     "leadSponsor": {
+      "name": "Provectus Pharmaceuticals",
+      "class": "INDUSTRY"
+     }
+    },
+    "conditionsModule": {
+     "conditions": [
+      "Plaque Psoriasis"
+     ]
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL",
+     "phases": [
+      "PHASE2"
+     ],
+     "designInfo": {
+      "allocation": "NA"
+     },
+     "enrollmentInfo": {
+      "count": 6
+     }
+    },
+    "armsInterventionsModule": {
+     "armGroups": [
+      {
+       "label": "1",
+       "type": "EXPERIMENTAL",
+       "description": "Each subject's study plaque areas will be assigned by the investigator to two PH-10 treatment plaque areas and one control plaque area.",
+       "interventionNames": [
+        "Drug: PH-10 (rose bengal disodium 0.001%)",
+        "Drug: Control"
+       ]
+      }
+     ],
+     "interventions": [
+      {
+       "type": "DRUG",
+       "name": "PH-10 (rose bengal disodium 0.001%)",
+       "description": "Treatment plaque area 1: PH-10 with 544 nm LED light illumination."
+      },
+      {
+       "type": "DRUG",
+       "name": "PH-10 (rose bengal disodium 0.001%)",
+       "description": "Treatment plaque area 2: PH-10 with ambient light illumination."
+      },
+      {
+       "type": "DRUG",
+       "name": "Control",
+       "description": "No treatment control."
+      }
+     ]
+    },
+    "outcomesModule": {
+     "primaryOutcomes": [
+      {
+       "measure": "Treatment Success, defined as 0 or 1 on all Psoriasis Severity Index components (erythema, induration, and scaling) and 0 or 1 on the Plaque Response scale."
+      }
+     ]
+    },
+    "contactsLocationsModule": {
+     "overallOfficials": [
+      {
+       "name": "Amir Larian, MD",
+       "affiliation": "Icahn School of Medicine at Mount Sinai",
+       "role": "PRINCIPAL_INVESTIGATOR"
+      }
+     ],
+     "locations": [
+      {
+       "facility": "Mount Sinai School of Medicine",
+       "city": "New York",
+       "country": "United States"
+      }
+     ]
+    }
+   },
+   "hasResults": false
+  }
+ ]
+}
