@@ -42,20 +42,37 @@ FORM_DEFAULTS = {
 
 @st.cache_resource
 def get_history() -> InMemoryHistory:
-    """One library per app process, shared by every viewer. Bundled example reports are preloaded."""
+    """One library per app process, shared by every viewer."""
     settings = get_settings()
     history = InMemoryHistory(max_reports=settings.history_max_reports, max_searches=settings.history_max_searches)
+    history.example_files = {}  # sample file name -> modified time already loaded
+    history.example_errors = {}  # sample file name -> load error (shown in the Report library)
+    return history
+
+
+def load_examples(history: InMemoryHistory) -> None:
+    """Add bundled example reports that this process hasn't loaded yet.
+
+    Runs on every page load (cheap: one stat per file) because Streamlit Cloud can update the code
+    without restarting the process, so a library cached before a sample was added would never see it."""
     for path in sorted(SAMPLES_DIR.glob("*.json")):
+        if path.name.startswith("_"):
+            continue  # local test artefacts
+        mtime = path.stat().st_mtime
+        if history.example_files.get(path.name) == mtime:
+            continue
         try:
             briefing = report_from_json(path.read_text(encoding="utf-8"))
             briefing.is_example = True
             history.save_report(briefing)
+            history.example_errors.pop(path.name, None)
         except Exception as exc:  # a bad sample must never break the app
-            print(f"Skipping sample {path.name}: {exc}")
-    return history
+            history.example_errors[path.name] = f"{type(exc).__name__}: {str(exc)[:300]}"
+        history.example_files[path.name] = mtime
 
 
 history = get_history()
+load_examples(history)
 settings = get_settings()
 
 
@@ -278,6 +295,8 @@ def briefing_page() -> None:
 def library_page() -> None:
     history_sidebar()
     st.title("📚 Report library")
+    for name, err in history.example_errors.items():
+        st.error(f"Bundled example `{name}` could not be loaded: {err}", icon="📦")
     st.info(
         "Reports are shared with everyone using this app and kept in memory: they reset when the app restarts or redeploys. "
         "Download the JSON of any report you want to keep, then import it here later.",
