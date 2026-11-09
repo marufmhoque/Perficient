@@ -76,7 +76,9 @@ def claim_text(obj) -> str | None:
     if isinstance(obj, DifferentiationEntry):
         return f"{obj.asset} ({obj.modality}; {obj.target_moa}): {obj.comparator_evidence}"
     if isinstance(obj, FailureRow):
-        return f"{obj.asset} ({obj.nct_id}) stopped for {obj.failure_category.lower()} reasons. {obj.takeaway}".strip()
+        what = ("did not meet its primary efficacy endpoint" if obj.evidence == "primary endpoint p-value"
+                else f"was {obj.status.lower()}")
+        return f"{obj.asset} ({obj.nct_id}) {what}; cause categorized as {obj.failure_category.lower()}. {obj.takeaway}".strip()
     if isinstance(obj, Catalyst):
         return f"{obj.asset} ({obj.nct_id}, {obj.phase}, primary completion {obj.primary_completion}): {obj.why_it_matters}"
     return None
@@ -147,6 +149,42 @@ def trial_evidence(t: TrialRecord) -> str:
         lines.append(f"Why stopped: {t.why_stopped}")
     for r in t.primary_results[:6]:
         lines.append(f"Primary endpoint result: {r.outcome} - {r.comparison}: p={r.p_value_raw}")
+    if t.officials:
+        lines.append("Investigators / officials: " + "; ".join(
+            f"{o.name} ({(o.role or '').replace('_', ' ').lower()}{', ' + o.affiliation if o.affiliation else ''})" for o in t.officials[:8]))
+    if t.facilities:
+        shown = "; ".join(f"{f.name}, {f.country or '?'}" for f in t.facilities[:25])
+        lines.append(f"Sites ({t.n_sites or len(t.facilities)} total{', first 25' if (t.n_sites or 0) > 25 else ''}): {shown}")
+    return "\n".join(lines)
+
+
+DERIVED_KEY = "DERIVED"
+DERIVED_MODULES = {"module4", "executive_summary", "module3a"}
+
+
+def derived_tables(briefing: Briefing) -> str:
+    """Counts computed by code over ALL retrieved records (rankings, pipeline tallies). Claims about these
+    aggregates cite only a few example records, so the judge needs the tables to verify them."""
+    from collections import Counter
+
+    lines: list[str] = []
+    m3a, m4 = briefing.module3a, briefing.module4
+    if m3a and m3a.trials:
+        lines.append(f"Active interventional trials retrieved: {len(m3a.trials)} (of {m3a.total_found} found).")
+        lines.append("By phase: " + ", ".join(f"{k} {v}" for k, v in Counter(t.phase_label for t in m3a.trials).most_common()))
+        lines.append("By comparator: " + ", ".join(f"{k} {v}" for k, v in Counter(t.comparator_class for t in m3a.trials).most_common()))
+        lines.append("By sponsor type: " + ", ".join(f"{(k or '?').lower()} {v}" for k, v in Counter(t.sponsor_class for t in m3a.trials).most_common()))
+    if m4:
+        if m4.sponsors:
+            lines.append("Sponsor ranking (active Phase 2/3 trials, all active trials): " + "; ".join(
+                f"{s.sponsor} {s.active_ph2_3}, {s.active_total}" for s in m4.sponsors))
+        if m4.centers:
+            lines.append("Trial centers (number of active trials): " + "; ".join(
+                f"{c.name} ({c.country or '?'}) {c.trial_count}" for c in m4.centers))
+        if m4.kols:
+            lines.append("Key opinion leaders (trials as investigator, key guideline/treatment publications, roles, affiliation): " + "; ".join(
+                f"{k.name} - {k.trial_count} trials, {k.publication_count} publications, {', '.join(k.roles)}, {k.affiliation or 'n/a'}"
+                for k in m4.kols))
     return "\n".join(lines)
 
 
@@ -207,22 +245,45 @@ def _norm_text(s: str) -> str:
     return re.sub(r"\s+", " ", s).strip()
 
 
+_SPACED_THOUSANDS_RE = re.compile(r"(?<=\d)[   \xa0](?=\d{3}(?!\d))")
+_DOTTED_THOUSANDS_RE = re.compile(r"(?<![\d.])(\d{1,3}(?:\.\d{3})+)(?![\d.])")
+
+
 def numbers_in(text: str) -> set[str]:
+    # "100 000" / "100 000" (thin-space thousands) -> "100000"
+    text = _SPACED_THOUSANDS_RE.sub("", text)
     out = set()
     for m in _NUM_RE.finditer(text):
         whole = m.group(1).replace(",", "") + (m.group(2) or "")
         out.add(whole)
+    # "100.000" may be a European thousands separator: accept both readings
+    for m in _DOTTED_THOUSANDS_RE.finditer(text):
+        out.add(m.group(1).replace(".", ""))
     return out
 
 
+def _rounds_to(claim_num: str, source_nums: set[str]) -> bool:
+    """'71' matches a source 70.8 ('near 71%'): rounding at the claim's own precision is not an error."""
+    decimals = len(claim_num.split(".")[1]) if "." in claim_num else 0
+    target = float(claim_num)
+    for s in source_nums:
+        try:
+            if round(float(s), decimals) == target:
+                return True
+        except ValueError:
+            continue
+    return False
+
+
 def unmatched_numbers(claim: str, evidence: str) -> list[str]:
-    """Numbers in the claim (ignoring small integers) that appear in none of the cited sources."""
+    """Numbers in the claim (ignoring small integers) that appear in none of the cited sources,
+    allowing for rounding."""
     have = numbers_in(evidence)
     missing = []
     for n in sorted(numbers_in(claim)):
         if "." not in n and int(n) < 10:
             continue  # 'IL-17', 'week 4', '2-3%' style small integers are too ambiguous to check
-        if n not in have and n not in missing:
+        if n not in have and not _rounds_to(n, have) and n not in missing:
             missing.append(n)
     return missing
 
@@ -289,12 +350,18 @@ ITS cited sources (only the keys listed for that claim) supports it. Use no outs
 that is true in general but not stated in its cited sources is not supported by them.
 
 Verdicts:
-- Supported: every factual element (numbers, populations, timepoints, drug names, direction of effect)
-  is stated in the cited source text.
-- Partially supported: the core assertion is supported but a detail (a number, timepoint, population,
-  qualifier, or one of several listed items) is missing from or differs from the sources.
+- Supported: the claim's factual content is stated in the cited source text. Faithful paraphrase,
+  reasonable rounding (70.8% -> "about 71%") and omitting secondary details all count as Supported.
+- Partially supported: use ONLY when a substantive element - a number, timepoint, population, drug,
+  trial design or direction of effect - is missing from or conflicts with the sources, while the core
+  assertion is supported. Do not downgrade for minor wording, unstated confidence intervals, or
+  analytical framing.
 - Not supported: the cited sources contradict the claim or contain nothing that supports it.
 - Cannot verify: the available source text is too thin to judge (title only, metadata only).
+
+A [DERIVED] block, when present, holds counts computed by code over ALL retrieved records (sponsor
+rankings, site and investigator tallies, pipeline counts). Claims about those aggregates may be judged
+against it (use evidence_source "DERIVED"), because the cited records are only examples.
 
 Analytical or forward-looking wording (e.g. "suggests an opportunity") is acceptable when the underlying
 facts are supported; judge the facts. Copy evidence_quote character-for-character from the source.
@@ -307,9 +374,20 @@ class FactChecker:
         self.settings = settings
         self.registry = registry
         self.evidence = evidence
+        self.derived = ""  # code-computed aggregate tables (set per check from the briefing)
+
+    def _uses_derived(self, claim: Claim) -> bool:
+        return bool(self.derived) and claim.module in DERIVED_MODULES
 
     def _evidence_for(self, claim: Claim) -> str:
-        return "\n".join(self.evidence.text.get(k, "") for k in claim.source_ids)
+        text = "\n".join(self.evidence.text.get(k, "") for k in claim.source_ids)
+        return text + ("\n" + self.derived if self._uses_derived(claim) else "")
+
+    def _source_text(self, claim: Claim, key: str) -> str | None:
+        """Text the judge may quote for this claim: its cited sources, plus DERIVED where allowed."""
+        if key == DERIVED_KEY:
+            return self.derived if self._uses_derived(claim) else None
+        return self.evidence.text.get(key, "") if key in claim.source_ids else None
 
     def _batches(self, claims: list[Claim], max_claims: int = 25, max_chars: int = 60000) -> list[list[Claim]]:
         batches: list[list[Claim]] = []
@@ -335,8 +413,13 @@ class FactChecker:
         keys = list(dict.fromkeys(k for c in batch for k in c.source_ids))
         limit = self.settings.abstract_char_limit + 600
         src_block = "\n\n".join(f"[{k}]\n{self.evidence.text[k][:limit]}" for k in keys if k in self.evidence.text)
+        if any(self._uses_derived(c) for c in batch):
+            src_block += f"\n\n[{DERIVED_KEY}] Counts computed by code over all retrieved records (context, not a citation):\n{self.derived}"
         ids = {f"C{i + 1}": c for i, c in enumerate(batch)}
-        claim_block = "\n".join(f"{cid} (cites {', '.join(c.source_ids)}): {c.text}" for cid, c in ids.items())
+        claim_block = "\n".join(
+            f"{cid} (cites {', '.join(c.source_ids)}{'; DERIVED counts available' if self._uses_derived(c) else ''}): {c.text}"
+            for cid, c in ids.items()
+        )
         out: FactCheckBatch = await self.llm.parse(
             model=self.settings.fact_check_model or self.settings.agent_model, effort=self.settings.fact_check_effort,
             output_format=FactCheckBatch, system=JUDGE_SYSTEM,
@@ -353,8 +436,8 @@ class FactChecker:
                               verdict="Cannot verify", rationale=why)
         verdict: Verdict = j.verdict
         notes = [j.rationale.strip()]
-        src_ok = j.evidence_source.strip() in c.source_ids
-        quote_ok = bool(j.evidence_quote.strip()) and src_ok and quote_in_text(j.evidence_quote, self.evidence.text.get(j.evidence_source.strip(), ""))
+        quotable = self._source_text(c, j.evidence_source.strip())
+        quote_ok = bool(j.evidence_quote.strip()) and quotable is not None and quote_in_text(j.evidence_quote, quotable)
         missing = unmatched_numbers(c.text, evidence)
         if verdict in ("Supported", "Partially supported") and j.evidence_quote.strip() and not quote_ok:
             verdict = "Cannot verify"
@@ -372,7 +455,8 @@ class FactChecker:
         claims = iter_claims(briefing, modules)
         if not claims:
             return []
-        judgeable = [c for c in claims if any(k in self.evidence.text for k in c.source_ids)]
+        self.derived = derived_tables(briefing)
+        judgeable = [c for c in claims if any(k in self.evidence.text for k in c.source_ids) or self._uses_derived(c)]
         results: dict[str, ClaimJudgement] = {}
         sem = asyncio.Semaphore(6)
 

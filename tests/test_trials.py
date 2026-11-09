@@ -154,6 +154,19 @@ def test_failed_primary_endpoint():
     assert not failed_primary_endpoint(t)  # one dose succeeded
 
 
+def test_safety_primary_endpoint_is_not_an_efficacy_failure():
+    # live-run defect: IMO-8400's p=0.06 was on a safety / tolerability primary outcome
+    t = TrialRecord(nct_id="NCT01899729", title="x", status="COMPLETED", primary_results=[
+        PrimaryResult(outcome="Number of Participants With Treatment-Emergent Adverse Events", comparison="A vs P",
+                      p_value_raw="0.06", p_value=0.06, significant=False),
+        PrimaryResult(outcome="Maximum Plasma Concentration (Cmax)", comparison="A vs P", p_value_raw="0.4", p_value=0.4, significant=False),
+    ])
+    assert not failed_primary_endpoint(t)
+    t.primary_results.append(PrimaryResult(outcome="PASI 75 response at week 12", comparison="A vs P", p_value_raw="0.31",
+                                           p_value=0.31, significant=False))
+    assert failed_primary_endpoint(t)
+
+
 def test_core_drug_name():
     assert core_drug_name("Drug: ICP-488 Tablets 6 mg") == "ICP-488"
     assert core_drug_name("Biological: Risankizumab 150 mg SC injection") == "Risankizumab"

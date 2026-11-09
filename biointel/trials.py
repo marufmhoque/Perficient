@@ -219,9 +219,22 @@ def _primary_results(raw: dict) -> list[PrimaryResult]:
     return out
 
 
+# A non-significant p-value on a safety / tolerability / PK primary outcome is not an efficacy failure
+# (often it is the desired result), so those analyses are ignored when judging failure.
+_NON_EFFICACY_OUTCOME_RE = re.compile(
+    r"\b(safety|tolerab\w*|adverse|treatment[- ]emergent|TEAEs?|SAEs?|pharmacokinetic\w*|PK|C ?max|AUC|"
+    r"plasma concentration|laboratory|vital signs?|immunogenicity|anti-drug antibod\w*)\b",
+    re.I,
+)
+
+
+def is_efficacy_outcome(outcome: str) -> bool:
+    return not _NON_EFFICACY_OUTCOME_RE.search(outcome or "")
+
+
 def failed_primary_endpoint(trial: TrialRecord) -> bool:
-    """True when every primary-endpoint analysis with a parseable p-value is non-significant."""
-    judged = [r for r in trial.primary_results if r.significant is not None]
+    """True when every efficacy primary-endpoint analysis with a parseable p-value is non-significant."""
+    judged = [r for r in trial.primary_results if r.significant is not None and is_efficacy_outcome(r.outcome)]
     return bool(judged) and not any(r.significant for r in judged)
 
 

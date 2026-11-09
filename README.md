@@ -115,7 +115,7 @@ streamlit run streamlit_app.py
 ## Tests
 
 ```bash
-pytest                                  # 83 offline tests: recorded API fixtures + fake LLM, no key needed
+pytest                                  # 89 offline tests: recorded API fixtures + fake LLM, no key needed
 python scripts/smoke.py "Plaque Psoriasis" --icd10 L40.0    # live run: real APIs + Claude, < 180 s,
                                                             # re-resolves every cited PMID / NCT ID
 python scripts/build_fixtures.py        # refresh the recorded fixtures (no site-contact data)

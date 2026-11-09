@@ -67,6 +67,58 @@ def test_unmatched_numbers():
     assert unmatched_numbers("See NCT01234567", ABSTRACT) == []  # ids are not numbers
 
 
+def test_thousands_separators():
+    # live-run false positive: source wrote "30.3 per 100 000 person years"
+    src = "incidence varied from 30.3 per 100 000 person years in Taiwan to 321.0 per 100.000 in Italy"
+    assert unmatched_numbers("30.3 per 100,000 person-years (Taiwan) to 321.0 per 100,000 (Italy)", src) == []
+    # ...while a number genuinely absent from the source is still caught (live run: '81% of countries')
+    assert unmatched_numbers("81% of countries lack data", "PROSPERO CRD42019160817. Data for 19 countries.") == ["81"]
+
+
+def test_rounded_numbers_are_accepted():
+    # live-run false positive: "brodalumab and ixekizumab near 71%" vs source 70.8% / 70.6%
+    assert unmatched_numbers("brodalumab near 71% at induction", ABSTRACT) == []
+    assert unmatched_numbers("brodalumab near 75% at induction", ABSTRACT) == ["75"]
+
+
+def test_derived_tables_back_aggregate_claims_only_where_allowed(settings):
+    from biointel.factcheck import DERIVED_KEY
+
+    fc = checker(settings)
+    fc.derived = "Sponsor ranking (active Phase 2/3 trials, all active trials): Janssen Research & Development 5, 6"
+    agg = Claim(key="k", location="module4.narrative[0]", module="module4",
+                text="Janssen leads with 5 active Ph2/3 trials.", source_ids=["P1"])
+    j = ClaimJudgement(claim_id="C1", verdict="Supported", rationale="ok", evidence_quote="Janssen Research & Development 5, 6",
+                       evidence_source=DERIVED_KEY)
+    assert fc._finalize(agg, j).verdict == "Supported"
+    other = Claim(key="k2", location="module1.overview[0]", module="module1", text=agg.text, source_ids=["P1"])
+    assert fc._finalize(other, j).verdict == "Cannot verify"  # Module 1 may not lean on code-computed tables
+
+
+def test_trial_evidence_includes_investigators_and_sites():
+    from biointel.factcheck import trial_evidence
+    from biointel.schemas import Facility, Official
+
+    t = TrialRecord(nct_id="NCT00000001", title="t", status="RECRUITING", n_sites=40,
+                    officials=[Official(name="Yuling Shi", affiliation="Shanghai Dermatology Hospital", role="PRINCIPAL_INVESTIGATOR")],
+                    facilities=[Facility(name="Arlington Dermatology", country="United States")])
+    text = trial_evidence(t)
+    assert "Yuling Shi (principal investigator, Shanghai Dermatology Hospital)" in text
+    assert "Sites (40 total, first 25): Arlington Dermatology, United States" in text
+
+
+def test_failure_claim_wording_matches_evidence():
+    from biointel.schemas import FailureRow
+
+    kw = dict(nct_id="NCT1", asset="IMO-8400", sponsor="s", phase="Ph2", comparator_summary="Placebo", takeaway="t.", stop_reason="x")
+    completed = FailureRow(status="Completed", evidence="primary endpoint p-value", failure_category="Efficacy", **kw)
+    stopped = FailureRow(status="Terminated", evidence="whyStopped", failure_category="Business / strategic", **kw)
+    from biointel.factcheck import claim_text
+
+    assert "did not meet its primary efficacy endpoint" in claim_text(completed) and "stopped" not in claim_text(completed)
+    assert "was terminated" in claim_text(stopped)
+
+
 def test_supported_with_verified_quote_stays_supported(settings):
     fc = checker(settings)
     out = fc._finalize(claim("Risankizumab reached PASI 90 in 71.6% of patients."),
