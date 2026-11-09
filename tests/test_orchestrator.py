@@ -112,6 +112,9 @@ async def test_end_to_end_with_fake_llm(settings):
     stages = {s for s, _ in events}
     assert {"resolve", "agent1", "agent2", "finalize", "aggregator", "validation", "factcheck"} <= stages
     assert ("factcheck", "complete") in events
+    # once Agent 2 reports complete, no later event flips its panel back to running
+    a2_done = events.index(("agent2", "complete"))
+    assert ("agent2", "running") not in events[a2_done:]
     assert ("validation", "complete") in events
     assert b.timings["total"] < 60 and b.queries
 

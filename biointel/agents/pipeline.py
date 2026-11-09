@@ -380,7 +380,8 @@ class PipelineAgent(Agent):
         if module2 is not None:
             unresolved = self.label_comparators(all_trials, self.soc_vocabulary(module2))
 
-        self.report("Differentiating pipeline vs SoC and mapping stakeholders with Claude…")
+        # finalize runs after Agent 2 has reported "complete": progress belongs to the finalize stage
+        self._progress("finalize", "Differentiating pipeline vs SoC and mapping stakeholders with Claude…")
         diff_task = self._differentiate(res, module2, unresolved) if module2 is not None else _none()
         narr_task = self._stakeholder_narrative(module4)
         diff, narr = await asyncio.gather(diff_task, narr_task, return_exceptions=True)
