@@ -27,15 +27,54 @@ def utcnow() -> datetime:
 
 PHASES = ["EARLY_PHASE1", "PHASE1", "PHASE2", "PHASE3", "PHASE4"]
 
+ALL_PATIENTS = "All patients"
+# "Group: value" labels keep the dropdown scannable and searchable.
+PATIENT_SEGMENTS = [
+    ALL_PATIENTS,
+    "Severity: Mild",
+    "Severity: Moderate",
+    "Severity: Severe",
+    "Severity: Mild-to-moderate",
+    "Severity: Moderate-to-severe",
+    "Severity: Refractory / treatment-resistant",
+    "Age: Pediatric (<12 y)",
+    "Age: Adolescent (12-17 y)",
+    "Age: Adult (18-64 y)",
+    "Age: Older adult (65+ y)",
+    "Treatment history: Treatment-naive",
+    "Treatment history: Inadequate response to first-line therapy",
+    "Treatment history: Biologic / advanced-therapy naive",
+    "Treatment history: Biologic / advanced-therapy experienced",
+    "Treatment history: Intolerant to standard of care",
+    "Disease course: Newly diagnosed / early disease",
+    "Disease course: Established / chronic disease",
+    "Disease course: Relapsed / recurrent",
+    "Disease course: Advanced / metastatic",
+    "Special population: Pregnant or breastfeeding",
+    "Special population: Women of childbearing potential",
+    "Special population: Renal impairment",
+    "Special population: Hepatic impairment",
+    "Special population: Immunocompromised",
+    "Special population: Significant comorbidities",
+]
+# ClinicalTrials.gov standard age groups for the age segments (used as a registry filter)
+SEGMENT_STD_AGES = {
+    "Age: Pediatric (<12 y)": "CHILD",
+    "Age: Adolescent (12-17 y)": "CHILD",
+    "Age: Adult (18-64 y)": "ADULT",
+    "Age: Older adult (65+ y)": "OLDER_ADULT",
+}
+
 
 class ConditionInput(BaseModel):
     """Union of the PRD's Agent 1 and Agent 2 input schemas."""
 
     condition_term: str = ""
-    icd10_code: str | None = None
-    mesh_id: str | None = None
+    icd10_code: str | None = None  # optional - resolved from the name when blank
+    mesh_id: str | None = None  # optional - resolved from the name when blank
     geographies: list[str] = Field(default_factory=lambda: ["US", "EU5"])
-    target_patient_segment: str | None = "Moderate-to-Severe"
+    target_patient_segment: str | None = None  # free-text description (PRD field); None = all patients
+    patient_segments: list[str] = Field(default_factory=list)  # structured picks from PATIENT_SEGMENTS
     development_phases: list[str] = Field(default_factory=lambda: ["PHASE1", "PHASE2", "PHASE3"])
     time_horizon_years: int = 5
     include_discontinued: bool = True
@@ -45,6 +84,23 @@ class ConditionInput(BaseModel):
         if self.icd10_code and self.condition_term:
             bits.append(self.icd10_code)
         return " · ".join(bits)
+
+    @property
+    def all_patients(self) -> bool:
+        picks = [s for s in self.patient_segments if s != ALL_PATIENTS]
+        return not picks and not (self.target_patient_segment or "").strip()
+
+    def segment_description(self) -> str:
+        """Human-readable segment for prompts and report headers."""
+        if self.all_patients:
+            return ALL_PATIENTS
+        picks = [s.split(": ", 1)[-1] for s in self.patient_segments if s != ALL_PATIENTS]
+        extra = (self.target_patient_segment or "").strip()
+        # older saved reports stored the segment only in target_patient_segment
+        return "; ".join(dict.fromkeys(picks + ([extra] if extra else [])))
+
+    def std_ages(self) -> list[str]:
+        return sorted({SEGMENT_STD_AGES[s] for s in self.patient_segments if s in SEGMENT_STD_AGES})
 
 
 class ResolvedCondition(BaseModel):
@@ -462,6 +518,60 @@ class ModuleError(BaseModel):
     message: str
 
 
+# ---------------------------------------------------------------------------
+# Fact check (claim-by-claim grounding + source integrity)
+# ---------------------------------------------------------------------------
+
+Verdict = Literal["Supported", "Partially supported", "Not supported", "Cannot verify"]
+
+
+class ClaimCheck(BaseModel):
+    SKIP_TEXT_SCAN: ClassVar[bool] = True
+
+    claim_key: str  # hash of the claim text (renderers look claims up by it)
+    location: str  # e.g. module1.epidemiology[3]
+    module: str
+    claim: str
+    source_ids: list[str] = Field(default_factory=list)
+    verdict: Verdict
+    rationale: str = ""
+    evidence_quote: str = ""
+    evidence_source: str = ""
+    quote_verified: bool = False
+    unmatched_numbers: list[str] = Field(default_factory=list)
+
+
+class SourceIssue(BaseModel):
+    SKIP_TEXT_SCAN: ClassVar[bool] = True
+
+    key: str
+    severity: Literal["critical", "warning", "info"]
+    issue: str
+
+
+class FactCheckReport(BaseModel):
+    SKIP_TEXT_SCAN: ClassVar[bool] = True
+
+    claims: list[ClaimCheck] = Field(default_factory=list)
+    source_issues: list[SourceIssue] = Field(default_factory=list)
+    sources_with_text: int = 0
+    model: str = ""
+    checked_at: datetime = Field(default_factory=utcnow)
+
+    def counts(self) -> dict[str, int]:
+        out = {"Supported": 0, "Partially supported": 0, "Not supported": 0, "Cannot verify": 0}
+        for c in self.claims:
+            out[c.verdict] += 1
+        return out
+
+    @property
+    def supported_share(self) -> float | None:
+        return (self.counts()["Supported"] / len(self.claims)) if self.claims else None
+
+    def by_key(self) -> dict[str, ClaimCheck]:
+        return {c.claim_key: c for c in self.claims}
+
+
 class Briefing(BaseModel):
     id: str
     created_at: datetime = Field(default_factory=utcnow)
@@ -476,6 +586,7 @@ class Briefing(BaseModel):
     sources: list[Source] = Field(default_factory=list)
     queries: list[QueryLog] = Field(default_factory=list)
     validation: ValidationReport = Field(default_factory=ValidationReport)
+    fact_check: FactCheckReport | None = None
     errors: list[ModuleError] = Field(default_factory=list)
     timings: dict[str, float] = Field(default_factory=dict)
     models: dict[str, str] = Field(default_factory=dict)

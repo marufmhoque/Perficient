@@ -23,6 +23,7 @@ from biointel.agents.pipeline import (  # noqa: E402
     StakeholderNarrative,
 )
 from biointel.config import get_settings  # noqa: E402
+from biointel.factcheck import ClaimJudgement, FactCheckBatch  # noqa: E402
 from biointel.schemas import (  # noqa: E402
     Benchmark,
     CitedStatement,
@@ -140,6 +141,16 @@ class FakeLLM:
             )
         if fmt is StakeholderNarrative:
             return StakeholderNarrative(narrative=[stmt("Industry sponsors dominate Phase 3.", t)])
+        if fmt is FactCheckBatch:
+            # quote the first words of the first cited source, so the quote check can pass
+            sources = dict(re.findall(r"^\[([PTS]\d+)\]\n(.+)$", user, re.M))
+            judgements = []
+            for cid, cites, _text in re.findall(r"^(C\d+) \(cites ([^)]*)\): (.*)$", user, re.M):
+                first = next((k.strip() for k in cites.split(",") if k.strip() in sources), "")
+                quote = " ".join(sources.get(first, "").split()[:10])
+                judgements.append(ClaimJudgement(claim_id=cid, verdict="Supported" if quote else "Cannot verify",
+                                                 rationale="Stated in the source.", evidence_quote=quote, evidence_source=first))
+            return FactCheckBatch(judgements=judgements)
         if fmt is ExecSummaryLLM:
             cands = re.findall(r"\] (NCT\d{8})", user.split("CATALYST CANDIDATES")[-1])
             return ExecSummaryLLM(

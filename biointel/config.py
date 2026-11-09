@@ -6,14 +6,20 @@ import os
 from dataclasses import dataclass, field
 
 
+def _is_placeholder(value: str | None) -> bool:
+    """Template values such as 'sk-ant-...' must never shadow a real secret."""
+    return not value or not value.strip() or value.strip().endswith("...") or value.strip() in ("<your-key>", "changeme")
+
+
 def _secret(name: str, default: str | None = None) -> str | None:
     value = os.environ.get(name)
-    if value:
+    if not _is_placeholder(value):
         return value
     try:  # Streamlit is optional (tests / CLI run without it)
         import streamlit as st
 
-        return st.secrets.get(name, default)  # type: ignore[no-any-return]
+        value = st.secrets.get(name, default)
+        return default if _is_placeholder(value) else value  # type: ignore[no-any-return]
     except Exception:
         return default
 
@@ -43,6 +49,11 @@ class Settings:
     total_budget_s: float = 170.0
     http_timeout_s: float = 25.0
     response_cache_ttl_s: float = 24 * 3600
+
+    # --- Fact check (claim-by-claim grounding against cited source text) ---
+    fact_check: bool = True
+    fact_check_model: str | None = None  # defaults to agent_model
+    fact_check_effort: str = "medium"
 
     # --- Behaviour ---
     drop_unsourced: bool = True  # drop (True) or flag (False) statements without valid citations

@@ -8,8 +8,9 @@ import pandas as pd
 import streamlit as st
 
 from ..citations import cited_keys
+from ..factcheck import claim_key
 from ..history import report_to_json
-from ..schemas import Briefing, CitedStatement, Source
+from ..schemas import Briefing, CitedStatement, ClaimCheck, Source
 from . import charts
 from .markdown import briefing_to_markdown
 
@@ -30,11 +31,74 @@ def _md_escape(text: str) -> str:
     return text.replace("$", "\\$")
 
 
+# Fact-check verdicts: status colour always paired with an icon + label (never colour alone)
+VERDICT_ICON = {"Supported": "✅", "Partially supported": "⚠️", "Not supported": "❌", "Cannot verify": "❔"}
+VERDICT_BADGE = {
+    "Partially supported": ":orange[⚠️ *partially supported*]",
+    "Not supported": ":red[❌ *not supported by cited source*]",
+    "Cannot verify": ":gray[❔ *could not verify*]",
+}
+_FC: dict[str, ClaimCheck] = {}  # claim_key -> check, for the report being rendered
+
+
+def _verdict(obj) -> ClaimCheck | None:
+    key = claim_key(obj)
+    return _FC.get(key) if key else None
+
+
+def _badge(obj) -> str:
+    chk = _verdict(obj)
+    return f" {VERDICT_BADGE[chk.verdict]}" if chk and chk.verdict in VERDICT_BADGE else ""
+
+
+def _fc_cell(obj) -> str:
+    chk = _verdict(obj)
+    return f"{VERDICT_ICON[chk.verdict]} {chk.verdict}" if chk else ""
+
+
 def statements(items: list[CitedStatement], smap: dict[str, Source], empty: str = "No supported statements.") -> None:
     if not items:
         st.caption(empty)
         return
-    st.markdown("\n".join(f"- {_md_escape(s.text)} {_cite(s.source_ids, smap)}" for s in items))
+    st.markdown("\n".join(f"- {_md_escape(s.text)} {_cite(s.source_ids, smap)}{_badge(s)}" for s in items))
+
+
+def fact_check_caption(module) -> None:
+    """One-line verdict tally for the claims in a module."""
+    if not _FC or module is None:
+        return
+    from collections import Counter
+
+    keys = {c.key for c in iter_claims_for(module)}
+    tally = Counter(_FC[k].verdict for k in keys if k in _FC)
+    if tally:
+        parts = [f"{VERDICT_ICON[v]} {tally[v]} {v.lower()}" for v in VERDICT_ICON if tally[v]]
+        st.caption("Fact check: " + " · ".join(parts) + " — details in the Fact check & Sources tab.")
+
+
+def iter_claims_for(module):
+    from ..factcheck import Claim
+
+    out = []
+
+    def walk(o):
+        from pydantic import BaseModel
+
+        if isinstance(o, BaseModel):
+            if getattr(type(o), "SKIP_TEXT_SCAN", False):
+                return
+            k = claim_key(o)
+            if k:
+                out.append(Claim(key=k, location="", module="", text="", source_ids=[]))
+                return
+            for name in type(o).model_fields:
+                walk(getattr(o, name))
+        elif isinstance(o, list):
+            for i in o:
+                walk(i)
+
+    walk(module)
+    return out
 
 
 def sources_expander(obj, smap: dict[str, Source], label: str = "Sources for this module") -> None:
@@ -63,7 +127,13 @@ def _df(rows: list[dict], **config) -> None:
     if not rows:
         st.caption("No rows.")
         return
-    st.dataframe(pd.DataFrame(rows), hide_index=True, width="stretch", column_config=config or None)
+    df = pd.DataFrame(rows)
+    if "Fact check" in df.columns:
+        if not df["Fact check"].astype(bool).any():
+            df = df.drop(columns=["Fact check"])  # report has no fact check: hide the empty column
+        else:  # verdict first so it reads as a row status
+            df = df[["Fact check"] + [c for c in df.columns if c != "Fact check"]]
+    st.dataframe(df, hide_index=True, width="stretch", column_config=config or None)
 
 
 # ---------------------------------------------------------------------------
@@ -71,7 +141,11 @@ def _df(rows: list[dict], **config) -> None:
 # ---------------------------------------------------------------------------
 
 
-def render_briefing(b: Briefing) -> None:
+def render_briefing(b: Briefing, on_fact_check=None) -> None:
+    """Render a report. ``on_fact_check(briefing)`` is called when the user asks to fact-check a
+    report that has no fact check yet (older / imported reports)."""
+    global _FC
+    _FC = b.fact_check.by_key() if b.fact_check else {}
     smap = b.source_map()
     c = b.condition
     st.header(f"🧬 {c.display_name}")
@@ -79,7 +153,7 @@ def render_briefing(b: Briefing) -> None:
         f"**MeSH** {c.mesh_heading} ({c.mesh_id})" if c.mesh_heading else "**MeSH** n/a",
         f"**ICD-10** {c.icd10_code} {c.icd10_name or ''}".strip() if c.icd10_code else "**ICD-10** n/a",
         f"**Geographies** {', '.join(b.input.geographies) or 'Global'}",
-        f"**Segment** {b.input.target_patient_segment or 'All'}",
+        f"**Patient segment** {b.input.segment_description()}",
         f"**Generated** {b.created_at:%Y-%m-%d %H:%M} UTC",
     ]
     st.markdown(" · ".join(chips))
@@ -88,19 +162,31 @@ def render_briefing(b: Briefing) -> None:
     for note in c.notes:
         st.caption(f"ℹ️ {note}")
 
-    cols = st.columns(5)
+    cols = st.columns(6)
     cols[0].metric("Active trials", f"{len(b.module3a.trials) if b.module3a else 0}",
                    help=f"{b.module3a.total_found if b.module3a else 0} found on ClinicalTrials.gov")
     cols[1].metric("Failed / discontinued", f"{len(b.module3b.failures) if b.module3b else 0}")
     cols[2].metric("PubMed sources", sum(1 for s in b.sources if s.kind == "pubmed"))
     cols[3].metric("Citations verified", f"{b.validation.ids_valid}/{b.validation.ids_checked}",
                    help="Every cited PMID / NCT ID resolves to a retrieved or live-verified record")
-    cols[4].metric("Run time", f"{b.timings.get('total', 0):.0f} s" if b.timings.get("total") else "–", help="PRD target: < 180 s")
+    share = b.fact_check.supported_share if b.fact_check else None
+    cols[4].metric("Claims supported", f"{share:.0%}" if share is not None else "–",
+                   help="Share of LLM-written claims the fact checker found fully supported by their cited sources")
+    cols[5].metric("Run time", f"{b.timings.get('total', 0):.0f} s" if b.timings.get("total") else "–", help="PRD target: < 180 s")
 
     if b.errors:
-        with st.expander(f"⚠️ {len(b.errors)} data gap(s) in this report", expanded=False):
+        st.warning(
+            f"**{len(b.errors)} part(s) of this report are missing or incomplete.** First issue: "
+            f"{b.errors[0].module} - {b.errors[0].message}", icon="⚠️",
+        )
+        with st.expander("All data gaps"):
             for e in b.errors:
                 st.markdown(f"- **{e.module}:** {e.message}")
+    if b.fact_check is None and on_fact_check is not None:
+        f1, f2 = st.columns([1, 3], vertical_alignment="center")
+        if f1.button("🔎 Fact-check this report", key=f"fc_{b.id}", width="stretch"):
+            on_fact_check(b)
+        f2.caption("This report has no fact check yet. Checking re-fetches every cited source and verifies each claim against it.")
 
     d1, d2, _ = st.columns([1, 1, 3])
     name = f"briefing_{slug(c.display_name)}_{b.created_at:%Y%m%d}"
@@ -109,20 +195,28 @@ def render_briefing(b: Briefing) -> None:
     d2.download_button("⬇️ JSON", report_to_json(b), file_name=f"{name}.json", mime="application/json", width="stretch",
                        help="Complete report data - re-import it from the Report library after an app restart")
 
-    tabs = st.tabs(["Executive Summary", "1 · Condition", "2 · SoC & MoA", "3A · Pipeline", "3B · Failures", "4 · Stakeholders", "Sources & Validation"])
+    tabs = st.tabs(["Executive Summary", "1 · Condition", "2 · SoC & MoA", "3A · Pipeline", "3B · Failures", "4 · Stakeholders",
+                    "Fact check & Sources"])
     with tabs[0]:
+        fact_check_caption(b.executive_summary)
         _exec_summary(b, smap)
     with tabs[1]:
+        fact_check_caption(b.module1)
         _module1(b, smap)
     with tabs[2]:
+        fact_check_caption(b.module2)
         _module2(b, smap)
     with tabs[3]:
+        fact_check_caption(b.module3a)
         _module3a(b, smap)
     with tabs[4]:
+        fact_check_caption(b.module3b)
         _module3b(b, smap)
     with tabs[5]:
+        fact_check_caption(b.module4)
         _module4(b, smap)
     with tabs[6]:
+        _fact_check(b, smap)
         _sources(b, smap)
 
 
@@ -148,7 +242,7 @@ def _exec_summary(b: Briefing, smap) -> None:
         statements(es.competitive_threats, smap)
     st.markdown("##### Near-term catalysts (primary completion ≤ 18 months)")
     _df(
-        [{"NCT": f"https://clinicaltrials.gov/study/{x.nct_id}", "Asset": x.asset, "Sponsor": x.sponsor, "Phase": x.phase,
+        [{"Fact check": _fc_cell(x), "NCT": f"https://clinicaltrials.gov/study/{x.nct_id}", "Asset": x.asset, "Sponsor": x.sponsor, "Phase": x.phase,
           "Primary completion": x.primary_completion, "Why it matters": x.why_it_matters} for x in es.catalysts],
         NCT=NCT_LINK,
     )
@@ -165,11 +259,11 @@ def _module1(b: Briefing, smap) -> None:
         return
     statements(m.overview, smap)
     st.markdown("#### Epidemiology & patient population sizing")
-    _df([{"Metric": e.metric, "Region": e.region, "Value": e.value, "Notes": e.population_note, "Sources": _ids(e.source_ids)} for e in m.epidemiology])
+    _df([{"Fact check": _fc_cell(e), "Metric": e.metric, "Region": e.region, "Value": e.value, "Notes": e.population_note, "Sources": _ids(e.source_ids)} for e in m.epidemiology])
     c1, c2 = st.columns(2)
     with c1:
         st.markdown("##### Severity stratification")
-        _df([{"Severity": s.severity, "Share": s.share, "Definition": s.definition, "Sources": _ids(s.source_ids)} for s in m.severity_stratification])
+        _df([{"Fact check": _fc_cell(s), "Severity": s.severity, "Share": s.share, "Definition": s.definition, "Sources": _ids(s.source_ids)} for s in m.severity_stratification])
     with c2:
         st.markdown("##### Addressable population")
         statements(m.addressable_population, smap)
@@ -186,7 +280,7 @@ def _module1(b: Briefing, smap) -> None:
         st.markdown("##### Prognosis")
         statements(m.prognosis, smap)
     st.markdown("#### Unmet needs matrix")
-    _df([{"Unmet need domain": u.domain, "Current limitation": u.current_limitation, "Clinical impact": u.clinical_impact,
+    _df([{"Fact check": _fc_cell(u), "Unmet need domain": u.domain, "Current limitation": u.current_limitation, "Clinical impact": u.clinical_impact,
           "Opportunity for novel assets": u.opportunity, "Sources": _ids(u.source_ids)} for u in m.unmet_needs])
     sources_expander(m, smap)
 
@@ -200,13 +294,13 @@ def _module2(b: Briefing, smap) -> None:
     st.markdown("#### Line-of-therapy treatment algorithm")
     if m.lines_of_therapy:
         st.graphviz_chart(charts.therapy_flowchart_dot(m), width="stretch")
-    _df([{"Line": t.line, "Setting": t.setting, "Therapies": ", ".join(t.therapies), "Rationale": t.rationale, "Sources": _ids(t.source_ids)}
+    _df([{"Fact check": _fc_cell(t), "Line": t.line, "Setting": t.setting, "Therapies": ", ".join(t.therapies), "Rationale": t.rationale, "Sources": _ids(t.source_ids)}
          for t in m.lines_of_therapy])
     st.markdown("#### Pharmacological mechanism of action")
-    _df([{"Target": x.target, "Class": x.therapy_class, "Example agents": ", ".join(x.example_agents), "Mechanism": x.mechanism,
+    _df([{"Fact check": _fc_cell(x), "Target": x.target, "Class": x.therapy_class, "Example agents": ", ".join(x.example_agents), "Mechanism": x.mechanism,
           "Downstream effects": x.downstream_effects, "Sources": _ids(x.source_ids)} for x in m.moa])
     st.markdown("#### Clinical benchmark metrics")
-    _df([{"Therapy": x.therapy, "Class": x.drug_class, "Modality": x.modality, "Primary target": x.primary_target,
+    _df([{"Fact check": _fc_cell(x), "Therapy": x.therapy, "Class": x.drug_class, "Modality": x.modality, "Primary target": x.primary_target,
           "Primary efficacy benchmark": x.efficacy_benchmark, "Major safety / boxed warnings": x.safety_warnings, "Sources": _ids(x.source_ids)}
          for x in m.benchmarks])
     sources_expander(m, smap)
@@ -256,7 +350,7 @@ def _module3a(b: Briefing, smap) -> None:
 
     if m.differentiation:
         st.markdown("#### Differentiation vs standard of care")
-        _df([{"Asset": d.asset, "Modality": d.modality, "Target / MoA": d.target_moa, "Comparator evidence": d.comparator_evidence,
+        _df([{"Fact check": _fc_cell(d), "Asset": d.asset, "Modality": d.modality, "Target / MoA": d.target_moa, "Comparator evidence": d.comparator_evidence,
               "Differentiation vs SoC": d.differentiation_vs_soc, "Advantage axes": ", ".join(d.advantage_axes),
               "Trials": ", ".join(d.nct_ids), "Sources": _ids(d.source_ids)} for d in m.differentiation])
     sources_expander(m, smap)
@@ -281,7 +375,7 @@ def _module3b(b: Briefing, smap) -> None:
     for f in m.failures:
         sec = [smap[k] for k in f.sec_source_ids if k in smap]
         rows.append({
-            "NCT": f"https://clinicaltrials.gov/study/{f.nct_id}", "Asset": f.asset, "Sponsor": f.sponsor, "Phase": f.phase, "Status": f.status,
+            "Fact check": _fc_cell(f), "NCT": f"https://clinicaltrials.gov/study/{f.nct_id}", "Asset": f.asset, "Sponsor": f.sponsor, "Phase": f.phase, "Status": f.status,
             "Comparator arm(s)": f.comparator_summary, "Reason for stoppage / failure": f.stop_reason, "Evidence": f.evidence,
             "Category": f.failure_category, "Key R&D takeaway": f.takeaway, "SEC filing": sec[0].url if sec else None,
         })
@@ -314,9 +408,55 @@ def _module4(b: Briefing, smap) -> None:
     sources_expander(m, smap)
 
 
+MODULE_LABEL = {"executive_summary": "Executive summary", "module1": "1 · Condition", "module2": "2 · SoC & MoA",
+                "module3a": "3A · Pipeline", "module3b": "3B · Failures", "module4": "4 · Stakeholders"}
+
+
+def _fact_check(b: Briefing, smap) -> None:
+    st.markdown("#### Fact check")
+    fc = b.fact_check
+    if fc is None:
+        st.info("This report has no fact check. Use **Fact-check this report** above to verify every claim against its sources.", icon="🔎")
+        return
+    counts = fc.counts()
+    cols = st.columns(4)
+    for col, verdict in zip(cols, VERDICT_ICON):
+        col.metric(f"{VERDICT_ICON[verdict]} {verdict}", counts[verdict])
+    st.caption(
+        f"{len(fc.claims)} LLM-written claims were checked against the text of the sources they cite (abstracts, registry records) "
+        f"by {fc.model}, using no outside knowledge. A 'Supported' verdict also has to pass two code checks: the supporting quote must "
+        "appear in the cited source, and every number in the claim must appear there too. Registry facts copied by code "
+        "(trial tables, rankings) are correct by construction and are not re-checked."
+    )
+    f1, f2 = st.columns([2, 2])
+    default = [v for v in VERDICT_ICON if v != "Supported"] if counts["Supported"] < len(fc.claims) else list(VERDICT_ICON)
+    verdicts = f1.multiselect("Verdict", list(VERDICT_ICON), default=default, key=f"fcv_{b.id}")
+    modules = f2.multiselect("Section", list(MODULE_LABEL.values()), key=f"fcm_{b.id}")
+    rows = []
+    for c in fc.claims:
+        label = MODULE_LABEL.get(c.module, c.module)
+        if c.verdict not in verdicts or (modules and label not in modules):
+            continue
+        quote = f"“{c.evidence_quote}” [{c.evidence_source}]" + (" ✓ found in source" if c.quote_verified else "") if c.evidence_quote else ""
+        rows.append({"Verdict": f"{VERDICT_ICON[c.verdict]} {c.verdict}", "Section": label, "Claim": c.claim,
+                     "Cited sources": _ids(c.source_ids), "Why": c.rationale, "Evidence": quote,
+                     "Numbers not in source": ", ".join(c.unmatched_numbers)})
+    _df(rows)
+
+    if fc.source_issues:
+        st.markdown("##### Source integrity")
+        sev_icon = {"critical": "⛔ Critical", "warning": "⚠️ Warning", "info": "ℹ️ Info"}
+        _df([{"Severity": sev_icon[i.severity], "Source": i.key, "Title": smap[i.key].title if i.key in smap else "",
+              "Issue": i.issue, "Link": smap[i.key].url if i.key in smap else None} for i in fc.source_issues],
+            Link=st.column_config.LinkColumn("Link", display_text="open ↗"))
+    else:
+        st.success("No retracted, corrected or unreachable sources among those cited.", icon="✅")
+
+
 def _sources(b: Briefing, smap) -> None:
     v = b.validation
-    st.markdown("#### Citation validation")
+    st.divider()
+    st.markdown("#### Citation validation (identifiers)")
     c = st.columns(4)
     c[0].metric("Citations checked", v.ids_checked)
     c[1].metric("Valid", v.ids_valid)
@@ -333,13 +473,23 @@ def _sources(b: Briefing, smap) -> None:
     f1, f2 = st.columns([2, 1])
     kinds = f1.multiselect("Source type", list(KIND_LABEL.values()), default=list(KIND_LABEL.values()), key=f"kinds_{b.id}")
     scope = f2.radio("Show", ["All", "Cited", "Consulted only"], horizontal=True, key=f"scope_{b.id}")
+    usage: dict[str, list[str]] = {}
+    for c in (b.fact_check.claims if b.fact_check else []):
+        for k in c.source_ids:
+            usage.setdefault(k, []).append(c.verdict)
     rows = []
     for s in b.sources:
         is_cited = s.key in cited
         if KIND_LABEL[s.kind] not in kinds or (scope == "Cited" and not is_cited) or (scope == "Consulted only" and is_cited):
             continue
-        rows.append({"Key": s.key, "Type": KIND_LABEL[s.kind], "ID": s.native_id.split(":")[0], "Title": s.title, "Details": s.detail,
-                     "Link": s.url, "Cited": is_cited, "Retrieved": s.retrieved_at.strftime("%Y-%m-%d %H:%M")})
+        row = {"Key": s.key, "Type": KIND_LABEL[s.kind], "ID": s.native_id.split(":")[0], "Title": s.title, "Details": s.detail,
+               "Link": s.url, "Cited": is_cited}
+        if b.fact_check:
+            v_list = usage.get(s.key, [])
+            row["Claims citing it"] = len(v_list)
+            row["…of which supported"] = sum(1 for x in v_list if x == "Supported")
+        row["Retrieved"] = s.retrieved_at.strftime("%Y-%m-%d %H:%M")
+        rows.append(row)
     _df(rows, Link=st.column_config.LinkColumn("Link", display_text="open ↗"))
 
     st.markdown("#### Search strategy")

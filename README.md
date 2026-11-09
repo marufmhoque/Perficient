@@ -19,9 +19,15 @@ failed trials, and the stakeholder landscape, and every claim is cited to a real
    Finalize: pipeline vs SoC (needs Module 2) · SoC labels for active comparators · KOL merge
                        ▼
    Citation gate #1 (analyst modules)  →  Aggregator (exec summary, catalysts, terminology)
+                       │                      ║ fact check of Modules 1–4 runs in parallel
                        ▼
-   Citation gate #2 (executive summary) → Briefing (tabs · Markdown · JSON · shared library)
+   Citation gate #2 (executive summary) → fact check of exec summary
+                       ▼
+   Briefing (tabs · Markdown · JSON · shared library)
 ```
+
+A Claude account check runs alongside condition resolution. If the account can't serve requests (no API credits,
+rejected key), the run stops within seconds with an actionable message, and no half-empty report is saved.
 
 | Path | Role |
 | --- | --- |
@@ -32,6 +38,7 @@ failed trials, and the stakeholder landscape, and every claim is cited to a real
 | `biointel/trials.py` | Deterministic trial parsing: comparator arms, p-values, failure detection |
 | `biointel/stakeholders.py` | Deterministic sponsor / center / KOL rankings |
 | `biointel/citations.py` · `validation.py` | Source registry and the zero-hallucination citation gate |
+| `biointel/factcheck.py` | Claim-by-claim fact checker against cited source text, plus source-integrity flags |
 | `biointel/history.py` | Shared in-memory history of searches and reports, JSON import/export |
 | `biointel/render/` | Markdown export, Plotly charts, Graphviz treatment flowchart, Streamlit views |
 
@@ -49,6 +56,27 @@ failed trials, and the stakeholder landscape, and every claim is cited to a real
 
   The analyst modules are validated *before* the aggregator runs, so the executive summary is never built on
   unsupported claims.
+- **Fact checker (`biointel/factcheck.py`).** The citation gate proves that sources *exist*; the fact checker
+  proves they *say what the report claims*. Every LLM-written claim is checked: statements, epidemiology, benchmark,
+  MoA and unmet-need rows, differentiation entries, failure takeaways and catalysts.
+  - **The judge.** Claude rates each claim against the **text of its cited sources only** (abstracts and registry
+    records, no outside knowledge) as Supported, Partially supported, Not supported or Cannot verify.
+  - **Two code checks keep the judge honest.** The supporting quote it gives must actually occur in the cited source,
+    and every number in the claim must appear in a cited source. A "Supported" verdict that fails either check is
+    downgraded.
+  - **Source integrity.** Retracted publications, expressions of concern, errata, and sources with no retrievable
+    text are flagged.
+  - **Where results appear.** Each claim that isn't fully supported gets an inline badge. Every table gets a
+    fact-check column, and every tab gets a verdict tally. A filterable claim table is in the **Fact check & Sources**
+    tab, and the Markdown export gets a fact-check section. Saved or imported reports can be fact-checked on demand,
+    and the cited sources are re-fetched to do it.
+- **Inputs.** Only one identifier is needed; **ICD-10 and MeSH are optional**. Blanks are resolved from the condition
+  name, and a malformed code is reported and ignored rather than failing the run. A code that doesn't match the
+  condition name is flagged.
+  **Target patient segment** is a dropdown with "All patients" or any mix of severity, age, treatment history, disease
+  course and special populations, plus a free-text box for anything else. Age segments also filter the
+  ClinicalTrials.gov search (standard age groups). All segments steer the epidemiology, standard-of-care,
+  differentiation and executive-summary analysis.
 - **Comparator arm for every trial.** Comparators are derived from the ClinicalTrials.gov arm-group types. Each trial
   is classed as placebo (or placebo plus background therapy), active comparator, sham, no treatment,
   dose-comparison, single-arm or unclear. The classifier also handles messy registry data: within-arm placebo
@@ -87,7 +115,7 @@ streamlit run streamlit_app.py
 ## Tests
 
 ```bash
-pytest                                  # 52 offline tests: recorded API fixtures + fake LLM, no key needed
+pytest                                  # 83 offline tests: recorded API fixtures + fake LLM, no key needed
 python scripts/smoke.py "Plaque Psoriasis" --icd10 L40.0    # live run: real APIs + Claude, < 180 s,
                                                             # re-resolves every cited PMID / NCT ID
 python scripts/build_fixtures.py        # refresh the recorded fixtures (no site-contact data)

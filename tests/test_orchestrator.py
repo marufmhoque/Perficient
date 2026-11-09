@@ -98,9 +98,20 @@ async def test_end_to_end_with_fake_llm(settings):
     assert b.terminology_map.get("IL-23p19") == "IL-23 (p19)"
     assert b.module2.benchmarks[0].primary_target == "IL-23 (p19)"
 
+    # Fact check covers every LLM-written claim, and still finds claims whose text the aggregator edited
+    from biointel.factcheck import claim_key, iter_claims
+
+    fc = b.fact_check
+    assert fc is not None and fc.claims
+    assert {c.key for c in iter_claims(b)} == set(fc.by_key())
+    assert claim_key(b.module2.benchmarks[0]) in fc.by_key()  # text changed by terminology fix after checking
+    assert sum(fc.counts().values()) == len(fc.claims)
+    assert {"executive_summary", "module1", "module2"} <= {c.module for c in fc.claims}
+
     # Progress reported for every stage, ending complete
     stages = {s for s, _ in events}
-    assert {"resolve", "agent1", "agent2", "finalize", "aggregator", "validation"} <= stages
+    assert {"resolve", "agent1", "agent2", "finalize", "aggregator", "validation", "factcheck"} <= stages
+    assert ("factcheck", "complete") in events
     assert ("validation", "complete") in events
     assert b.timings["total"] < 60 and b.queries
 

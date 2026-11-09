@@ -43,10 +43,13 @@ class ClinicalTrialsAdapter:
         start_since: date | None = None,
         updated_since: date | None = None,
         has_results: bool | None = None,
+        std_ages: list[str] | None = None,
     ) -> str:
         terms = ["AREA[StudyType]INTERVENTIONAL"]
         if phases:
             terms.append("AREA[Phase](" + " OR ".join(phases) + ")")
+        if std_ages:  # CHILD / ADULT / OLDER_ADULT
+            terms.append("AREA[StdAge](" + " OR ".join(std_ages) + ")")
         if start_since:
             terms.append(f"AREA[StartDate]RANGE[{start_since.isoformat()},MAX]")
         if updated_since:
@@ -66,8 +69,9 @@ class ClinicalTrialsAdapter:
         updated_since: date | None = None,
         has_results: bool | None = None,
         with_results: bool = False,
+        std_ages: list[str] | None = None,
     ) -> tuple[list[TrialRecord], int]:
-        term = self.build_term(phases, start_since, updated_since, has_results)
+        term = self.build_term(phases, start_since, updated_since, has_results, std_ages)
         params = {
             "query.cond": condition,
             "filter.overallStatus": ",".join(statuses),

@@ -14,11 +14,13 @@ import streamlit as st
 
 from biointel.config import get_settings
 from biointel.history import InMemoryHistory, report_from_json, report_to_json
-from biointel.llm import LLMError
+from biointel.factcheck import fact_check_briefing
+from biointel.llm import ClaudeLLM, LLMAccountError, LLMError
 from biointel.orchestrator import STAGES, run_briefing
 from biointel.render.markdown import briefing_to_markdown
 from biointel.render.streamlit_view import render_briefing, slug
-from biointel.schemas import PHASES, ConditionInput
+from biointel.schemas import ALL_PATIENTS, PATIENT_SEGMENTS, PHASES, ConditionInput
+from biointel.sources.resolve import valid_icd10, valid_mesh
 
 st.set_page_config(page_title="BioIntel · Clinical Strategy Intelligence", page_icon="🧬", layout="wide")
 
@@ -27,10 +29,11 @@ GEOGRAPHIES = ["Global", "US", "EU5", "UK", "Japan", "China"]
 PHASE_LABELS = {"EARLY_PHASE1": "Early Phase 1", "PHASE1": "Phase 1", "PHASE2": "Phase 2", "PHASE3": "Phase 3", "PHASE4": "Phase 4"}
 FORM_DEFAULTS = {
     "f_condition": "Plaque Psoriasis",
-    "f_icd10": "L40.0",
-    "f_mesh": "",
+    "f_icd10": "",  # optional: resolved from the name when blank
+    "f_mesh": "",  # optional: resolved from the name when blank
     "f_geo": ["US", "EU5"],
-    "f_segment": "Moderate-to-Severe",
+    "f_segments": [ALL_PATIENTS],
+    "f_segment_notes": "",
     "f_phases": ["PHASE1", "PHASE2", "PHASE3"],
     "f_horizon": 5,
     "f_discontinued": True,
@@ -66,16 +69,46 @@ st.session_state.setdefault("current_report_id", None)
 
 
 def fill_form(inp: ConditionInput) -> None:
+    segments = [s for s in inp.patient_segments if s in PATIENT_SEGMENTS]
     st.session_state.update(
         f_condition=inp.condition_term,
         f_icd10=inp.icd10_code or "",
         f_mesh=inp.mesh_id or "",
         f_geo=[g for g in inp.geographies if g in GEOGRAPHIES],
-        f_segment=inp.target_patient_segment or "",
+        f_segments=segments or ([] if inp.target_patient_segment else [ALL_PATIENTS]),
+        f_segment_notes=inp.target_patient_segment or "",
         f_phases=[p for p in inp.development_phases if p in PHASES],
         f_horizon=inp.time_horizon_years,
         f_discontinued=inp.include_discontinued,
     )
+
+
+def build_input() -> tuple[ConditionInput | None, list[str]]:
+    """Read the form; return (input, problems). ICD-10 and MeSH are optional but must be well-formed if given."""
+    ss = st.session_state
+    problems = []
+    icd = ss.f_icd10.strip().upper()
+    mesh = ss.f_mesh.strip().upper()
+    if icd and not valid_icd10(icd):
+        problems.append(f"ICD-10 code “{icd}” isn't a valid format (e.g. L40.0, E11, E11.65). Fix it or leave the field blank.")
+    if mesh and not valid_mesh(mesh):
+        problems.append(f"MeSH ID “{mesh}” isn't a valid format (e.g. D011565). Fix it or leave the field blank.")
+    if not (ss.f_condition.strip() or icd or mesh):
+        problems.append("Enter a condition name, or an ICD-10 code / MeSH ID.")
+    picks = [s for s in ss.f_segments if s != ALL_PATIENTS] if ALL_PATIENTS not in ss.f_segments or len(ss.f_segments) > 1 else []
+    if problems:
+        return None, problems
+    return ConditionInput(
+        condition_term=ss.f_condition.strip(),
+        icd10_code=icd or None,
+        mesh_id=mesh or None,
+        geographies=ss.f_geo,
+        patient_segments=picks or [ALL_PATIENTS],
+        target_patient_segment=ss.f_segment_notes.strip() or None,
+        development_phases=ss.f_phases or ["PHASE1", "PHASE2", "PHASE3"],
+        time_horizon_years=int(ss.f_horizon),
+        include_discontinued=bool(ss.f_discontinued),
+    ), []
 
 
 def open_report(report_id: str) -> None:
@@ -135,16 +168,48 @@ def run_with_progress(inp: ConditionInput):
     return asyncio.run(run_briefing(inp, settings=settings, progress=progress))
 
 
+def fact_check_existing(briefing) -> None:
+    """Fact-check a saved / imported report that has none yet, then save the result to the library."""
+    llm = ClaudeLLM(settings)
+
+    async def go():
+        await llm.preflight()
+        return await fact_check_briefing(briefing, settings, llm)
+
+    with st.spinner("Re-fetching every cited source and checking each claim against it (about 30-60 s)…"):
+        try:
+            report = asyncio.run(go())
+        except LLMAccountError as exc:
+            st.error(f"**The fact check couldn't run:** {exc}", icon="💳")
+            return
+        except Exception as exc:
+            st.error(f"Fact check failed: {exc}")
+            return
+    updated = briefing.model_copy(deep=True)
+    updated.fact_check = report
+    history.save_report(updated)
+    st.rerun()
+
+
 def briefing_page() -> None:
     with st.sidebar:
         st.markdown("### 🔎 New briefing")
         with st.form("query"):
             st.text_input("Condition / disease", key="f_condition", placeholder="e.g. Plaque Psoriasis")
             c1, c2 = st.columns(2)
-            c1.text_input("ICD-10 (optional)", key="f_icd10", placeholder="L40.0")
-            c2.text_input("MeSH ID (optional)", key="f_mesh", placeholder="D011565")
+            c1.text_input("ICD-10 · optional", key="f_icd10", placeholder="e.g. L40.0",
+                          help="Leave blank to resolve it from the condition name. Enter a code to pin the exact condition.")
+            c2.text_input("MeSH ID · optional", key="f_mesh", placeholder="e.g. D011565",
+                          help="Leave blank to resolve it from the condition name. Enter an ID to pin the literature search.")
             st.multiselect("Geographies", GEOGRAPHIES, key="f_geo")
-            st.text_input("Target patient segment", key="f_segment")
+            st.multiselect(
+                "Target patient segment", PATIENT_SEGMENTS, key="f_segments", placeholder="All patients",
+                help="Pick one or more segments, or “All patients”. Age segments also filter the trial registry search; "
+                     "the others focus the epidemiology, standard-of-care and differentiation analysis.",
+            )
+            st.text_input("Other segment details · optional", key="f_segment_notes",
+                          placeholder="e.g. scalp-predominant disease, HLA-B27+, post-MI",
+                          help="Free text for any segment not in the list; combined with the selections above.")
             st.multiselect("Development phases", PHASES, key="f_phases", format_func=lambda p: PHASE_LABELS.get(p, p))
             st.slider("Time horizon (years)", 1, 15, key="f_horizon")
             st.checkbox("Include discontinued / failed trials", key="f_discontinued")
@@ -162,21 +227,19 @@ def briefing_page() -> None:
     )
 
     if submitted:
-        inp = ConditionInput(
-            condition_term=st.session_state.f_condition.strip(),
-            icd10_code=st.session_state.f_icd10.strip() or None,
-            mesh_id=st.session_state.f_mesh.strip() or None,
-            geographies=st.session_state.f_geo,
-            target_patient_segment=st.session_state.f_segment.strip() or None,
-            development_phases=st.session_state.f_phases or ["PHASE1", "PHASE2", "PHASE3"],
-            time_horizon_years=int(st.session_state.f_horizon),
-            include_discontinued=bool(st.session_state.f_discontinued),
-        )
-        if not (inp.condition_term or inp.icd10_code or inp.mesh_id):
-            st.error("Enter a condition name, an ICD-10 code or a MeSH ID.")
+        inp, problems = build_input()
+        if problems:
+            for p in problems:
+                st.error(p, icon="✏️")
             return
+        if ALL_PATIENTS in st.session_state.f_segments and len(st.session_state.f_segments) > 1:
+            st.caption("“All patients” was combined with specific segments - the specific segments were used.")
         try:
             briefing = run_with_progress(inp)
+        except LLMAccountError as exc:
+            st.error(f"**The briefing couldn't run:** {exc}", icon="💳")
+            st.caption("Nothing was saved. Retrieval stops before any work when the Claude account can't serve requests.")
+            return
         except LLMError as exc:
             st.error(str(exc))
             return
@@ -190,7 +253,7 @@ def briefing_page() -> None:
 
     current = history.get_report(st.session_state["current_report_id"]) if st.session_state["current_report_id"] else None
     if current:
-        render_briefing(current)
+        render_briefing(current, on_fact_check=fact_check_existing if settings.anthropic_api_key else None)
         return
 
     st.info("Enter a condition in the sidebar and click **Generate briefing** (typically 1–3 minutes), or open a saved report.", icon="👈")

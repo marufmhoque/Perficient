@@ -29,8 +29,20 @@ class Refs:
         return (" " + " ".join(out)) if out else " *(unsourced)*"
 
 
+_FC: dict = {}
+_MARK = {"Partially supported": " ⚠️ *(partially supported)*", "Not supported": " ❌ *(not supported by cited source)*",
+         "Cannot verify": " ❔ *(could not verify)*"}
+
+
+def _fc_mark(obj) -> str:
+    from ..factcheck import claim_key
+
+    chk = _FC.get(claim_key(obj) or "")
+    return _MARK.get(chk.verdict, "") if chk else ""
+
+
 def _stmts(items: list[CitedStatement], refs: Refs) -> list[str]:
-    return [f"- {_esc(s.text)}{refs.mark(s.source_ids)}" for s in items]
+    return [f"- {_esc(s.text)}{refs.mark(s.source_ids)}{_fc_mark(s)}" for s in items]
 
 
 def _table(headers: list[str], rows: list[list[str]]) -> list[str]:
@@ -42,17 +54,24 @@ def _table(headers: list[str], rows: list[list[str]]) -> list[str]:
 
 
 def briefing_to_markdown(b: Briefing) -> str:
+    global _FC
+    _FC = b.fact_check.by_key() if b.fact_check else {}
     refs = Refs(b.source_map())
     c = b.condition
+    fc_line = ""
+    if b.fact_check and b.fact_check.claims:
+        n = b.fact_check.counts()
+        fc_line = (f" Fact check: {n['Supported']} supported, {n['Partially supported']} partially supported, "
+                   f"{n['Not supported']} not supported, {n['Cannot verify']} could not be verified (of {len(b.fact_check.claims)} claims).")
     md: list[str] = [
         f"# Strategic Intelligence Briefing: {c.display_name}",
         "",
         f"*Generated {b.created_at:%Y-%m-%d %H:%M UTC} · MeSH: {c.mesh_heading or 'n/a'} ({c.mesh_id or '-'}) · "
         f"ICD-10: {c.icd10_code or 'n/a'} · Geographies: {', '.join(b.input.geographies) or 'Global'} · "
-        f"Segment: {b.input.target_patient_segment or 'All'}*",
+        f"Patient segment: {b.input.segment_description()}*",
         "",
         f"> Citation check: {b.validation.ids_valid}/{b.validation.ids_checked} citations verified against retrieved records; "
-        f"{b.validation.statements_dropped} unsupported items removed. Models: {b.models.get('agents', '?')} (agents), "
+        f"{b.validation.statements_dropped} unsupported items removed.{fc_line} Models: {b.models.get('agents', '?')} (agents), "
         f"{b.models.get('aggregator', '?')} (aggregator).",
         "",
     ]
@@ -142,6 +161,16 @@ def briefing_to_markdown(b: Briefing) -> str:
 
     if b.errors:
         md += ["## Data gaps", "", *[f"- **{e.module}:** {_esc(e.message)}" for e in b.errors], ""]
+
+    if b.fact_check:
+        flagged = [x for x in b.fact_check.claims if x.verdict != "Supported"]
+        md += ["## Fact check", "",
+               f"Every LLM-written claim was checked against the text of its cited sources by {b.fact_check.model}. "
+               "Claims below were not fully supported.", ""]
+        md += _table(["Verdict", "Claim", "Cited", "Why"],
+                     [[x.verdict, x.claim, ", ".join(x.source_ids), x.rationale] for x in flagged]) if flagged else ["_All checked claims were supported._", ""]
+        if b.fact_check.source_issues:
+            md += ["**Source integrity**", ""] + [f"- [{i.key}] {i.severity}: {_esc(i.issue)}" for i in b.fact_check.source_issues] + [""]
 
     # References ------------------------------------------------------------
     smap = b.source_map()

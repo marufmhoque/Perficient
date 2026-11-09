@@ -149,12 +149,13 @@ class AggregatorAgent(Agent):
     stage = "aggregator"
 
     async def run(
-        self, cond: ResolvedCondition, m1, m2, m3a, m3b, m4
+        self, cond: ResolvedCondition, m1, m2, m3a, m3b, m4, segment: str = "All patients"
     ) -> tuple[ExecutiveSummary, dict[str, str]]:
         candidates = catalyst_candidates(m3a.trials if m3a else [])
         terms = collect_terms(m2, m3a)
         user = (
-            build_digest(cond, m1, m2, m3a, m3b, m4)
+            f"TARGET PATIENT SEGMENT: {segment}\n"
+            + build_digest(cond, m1, m2, m3a, m3b, m4)
             + "\n\nCATALYST CANDIDATES (Phase 2/3, primary completion within ~18 months):\n"
             + ("\n".join(format_trial_line(t) for t in candidates) or "(none)")
             + "\n\nTERMS:\n" + "\n".join(f"- {t}" for t in terms)

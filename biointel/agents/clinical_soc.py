@@ -125,8 +125,11 @@ class ClinicalSoCAgent(Agent):
         if cond.icd10_code:
             lines.append(f"ICD-10: {cond.icd10_code} {cond.icd10_name or ''}".strip())
         lines.append(f"Geographies of interest: {', '.join(inp.geographies) or 'Global'}")
-        if inp.target_patient_segment:
-            lines.append(f"Target patient segment: {inp.target_patient_segment}")
+        segment = inp.segment_description()
+        if inp.all_patients:
+            lines.append("Target patient segment: all patients - cover the full population and note how it splits by severity, age and line of therapy.")
+        else:
+            lines.append(f"Target patient segment: {segment} - prioritise evidence for this segment and say when a figure applies to a broader population.")
         return "\n".join(lines)
 
     async def run(self, cond: ResolvedCondition, inp: ConditionInput) -> ClinicalSoCResult:

@@ -170,14 +170,18 @@ class PipelineAgent(Agent):
         phases = inp.development_phases or ["PHASE1", "PHASE2", "PHASE3"]
         late = [p for p in phases if p in ("PHASE2", "PHASE3")] or ["PHASE2", "PHASE3"]
         term = cond.trial_query_term
+        ages = inp.std_ages()  # age segments become a registry filter; other segments steer the analysis
+        self.segment = inp.segment_description()
 
-        self.report(f'Querying ClinicalTrials.gov for "{term}" (active, stopped, completed-with-results)…')
-        tasks = [self.ct.search(term, ACTIVE_STATUSES, "Agent 2 · active pipeline", s.ctgov_active_max, phases=phases, start_since=since)]
+        age_note = f" · ages {', '.join(a.replace('_', ' ').lower() for a in ages)}" if ages else ""
+        self.report(f'Querying ClinicalTrials.gov for "{term}"{age_note} (active, stopped, completed-with-results)…')
+        tasks = [self.ct.search(term, ACTIVE_STATUSES, "Agent 2 · active pipeline", s.ctgov_active_max, phases=phases,
+                                start_since=since, std_ages=ages)]
         if inp.include_discontinued:
             tasks.append(self.ct.search(term, STOPPED_STATUSES, "Agent 2 · terminated / suspended / withdrawn", s.ctgov_stopped_max,
-                                        phases=phases, updated_since=since))
+                                        phases=phases, updated_since=since, std_ages=ages))
             tasks.append(self.ct.search(term, ["COMPLETED"], "Agent 2 · completed with results (endpoint check)", s.ctgov_results_max,
-                                        phases=late, updated_since=since, has_results=True, with_results=True))
+                                        phases=late, updated_since=since, has_results=True, with_results=True, std_ages=ages))
         results = await asyncio.gather(*tasks, return_exceptions=True)
 
         active_res = results[0]
@@ -435,6 +439,7 @@ class PipelineAgent(Agent):
                 f"comparators: {comps} | trials: {', '.join(f'{t.nct_id} [{t.source_key}]' for t in ts)}"
             )
         user = (
+            f"TARGET PATIENT SEGMENT: {getattr(self, 'segment', 'All patients')} - weigh differentiation for this segment.\n\n"
             "CURRENT STANDARD OF CARE (from Module 2, with source keys):\n" + "\n".join(soc_lines)
             + "\n\nSOURCES - PIPELINE ASSETS (trial keys in brackets):\n" + "\n".join(asset_lines)
             + "\n\nACTIVE-COMPARATOR AGENTS TO LABEL (SoC or not):\n"

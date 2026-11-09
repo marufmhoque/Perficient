@@ -100,11 +100,41 @@ def _candidates(name: str) -> list[str]:
     return seen
 
 
+ICD10_RE = re.compile(r"^[A-Z][0-9][0-9A-Z](\.[0-9A-Z]{1,4})?$")  # includes U-codes (e.g. U07.1)
+MESH_RE = re.compile(r"^[DC]\d{6,9}$")
+_GENERIC_WORDS = {"disease", "disorder", "disorders", "syndrome", "unspecified", "other", "type", "with", "without",
+                  "acute", "chronic", "primary", "secondary", "the", "and", "of", "in"}
+
+
+def valid_icd10(code: str) -> bool:
+    return bool(ICD10_RE.match(code.strip().upper()))
+
+
+def valid_mesh(mesh_id: str) -> bool:
+    return bool(MESH_RE.match(mesh_id.strip().upper()))
+
+
+def _shares_words(a: str, b: str) -> bool:
+    def words(s: str) -> set[str]:
+        return {w for w in re.findall(r"[a-z0-9]+", s.lower()) if len(w) >= 3 and w not in _GENERIC_WORDS}
+
+    return bool(words(a) & words(b))
+
+
 async def resolve_condition(inp: ConditionInput, http: Http, settings: Settings) -> ResolvedCondition:
+    """Name, ICD-10 and MeSH are each optional: any one is enough; blanks are resolved automatically."""
     notes: list[str] = []
     name = (inp.condition_term or "").strip()
     icd_code = (inp.icd10_code or "").strip().upper() or None
     icd_name: str | None = None
+    mesh_input = (inp.mesh_id or "").strip().upper() or None
+    if icd_code and not valid_icd10(icd_code):
+        notes.append(f"'{icd_code}' is not a valid ICD-10 code format, so it was ignored.")
+        icd_code = None
+    if mesh_input and not valid_mesh(mesh_input):
+        notes.append(f"'{mesh_input}' is not a valid MeSH ID (expected e.g. D011565), so it was ignored.")
+        mesh_input = None
+    user_icd = icd_code is not None
 
     if icd_code:
         try:
@@ -124,9 +154,12 @@ async def resolve_condition(inp: ConditionInput, http: Http, settings: Settings)
         except SourceError:
             pass
 
+    if user_icd and icd_name and name and not _shares_words(name, icd_name):
+        notes.append(f"ICD-10 {icd_code} ({icd_name}) may not match '{name}'. Searches used the condition name; check the code.")
+
     mesh_uid: str | None = None
-    if inp.mesh_id:
-        mesh_uid = mesh_id_to_uid(inp.mesh_id)
+    if mesh_input:
+        mesh_uid = mesh_id_to_uid(mesh_input)
     else:
         for cand in _candidates(name or icd_name or ""):
             try:
@@ -149,8 +182,10 @@ async def resolve_condition(inp: ConditionInput, http: Http, settings: Settings)
             mesh_id = doc.get("ds_meshui") or mesh_uid_to_id(mesh_uid)
     if not mesh_heading:
         notes.append("MeSH heading could not be resolved; PubMed searches use free-text terms.")
+    elif mesh_input and name and not _shares_words(name, mesh_heading):
+        notes.append(f"MeSH {mesh_id} ({mesh_heading}) may not match '{name}'. Literature searches used this MeSH heading; check the ID.")
 
-    display = name or icd_name or mesh_heading or (inp.icd10_code or inp.mesh_id or "Unknown condition")
+    display = name or icd_name or mesh_heading or (icd_code or mesh_input or "Unknown condition")
     trial_term = name or icd_name or mesh_heading or display
     return ResolvedCondition(
         display_name=display,

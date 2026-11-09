@@ -17,19 +17,30 @@ from .config import Settings, get_settings
 from .llm import LLM, ClaudeLLM
 from .schemas import Briefing, ConditionInput, ModuleError
 from .sources import ClinicalTrialsAdapter, Http, PubMedAdapter, SecEdgarAdapter, resolve_condition
+from .citations import cited_keys
+from .factcheck import EvidenceStore, FactChecker, rekey
+from .llm import LLMAccountError
 from .validation import ANALYST_MODULES, CitationValidator
 
 # progress(stage, message, state) where state in {"running", "complete", "error"}
 Progress = Callable[[str, str, str], None]
 
 STAGES = {
-    "resolve": "Resolve condition (ICD-10 / MeSH)",
+    "resolve": "Resolve condition (ICD-10 / MeSH) · check Claude account",
     "agent1": "Agent 1 · Clinical & SoC Specialist",
     "agent2": "Agent 2 · Pipeline & Failure Analyst",
     "finalize": "Differentiation vs SoC & stakeholder mapping",
-    "aggregator": "Aggregator · Executive Briefing Synthesizer",
     "validation": "Citation validation",
+    "aggregator": "Aggregator · Executive Briefing Synthesizer",
+    "factcheck": "Fact check · every claim vs its cited sources",
 }
+
+
+def _raise_if_fatal(llm) -> None:
+    """Billing / auth failures make every later call fail: stop instead of saving a hollow report."""
+    fatal = getattr(llm, "fatal", None)
+    if fatal is not None:
+        raise fatal
 
 
 class BriefingTimeout(RuntimeError):
@@ -65,9 +76,19 @@ async def run_briefing(
 
     try:
         # 1. Resolve ------------------------------------------------------
-        report("resolve", "Normalizing condition…", "running")
+        report("resolve", "Normalizing condition and checking the Claude account…", "running")
         s = time.monotonic()
-        cond = await asyncio.wait_for(resolve_condition(inp, http, settings), timeout=30)
+        steps = [asyncio.wait_for(resolve_condition(inp, http, settings), timeout=30)]
+        if hasattr(llm, "preflight"):
+            steps.append(asyncio.wait_for(llm.preflight(), timeout=30))
+        results = await asyncio.gather(*steps, return_exceptions=True)
+        for res in results[1:]:  # account problems first: they are the actionable ones
+            if isinstance(res, BaseException):
+                report("resolve", str(res), "error")
+                raise res
+        if isinstance(results[0], BaseException):
+            raise results[0]
+        cond = results[0]
         timings["resolve"] = time.monotonic() - s
         bits = [cond.display_name]
         if cond.mesh_heading:
@@ -90,6 +111,7 @@ async def run_briefing(
         report("agent1", "Starting…", "running")
         report("agent2", "Starting…", "running")
         r1, r2 = await asyncio.gather(timed("agent1", a1.run(cond, inp)), timed("agent2", a2.run(cond, inp)), return_exceptions=True)
+        _raise_if_fatal(llm)
 
         if isinstance(r1, BaseException):
             msg = "timed out" if isinstance(r1, asyncio.TimeoutError) else str(r1)
@@ -126,6 +148,7 @@ async def run_briefing(
             timings["finalize"] = time.monotonic() - s
         else:
             report("finalize", "Skipped (no pipeline data)", "error")
+        _raise_if_fatal(llm)
 
         briefing = Briefing(
             id=uuid.uuid4().hex[:12], input=inp, condition=cond,
@@ -141,13 +164,31 @@ async def run_briefing(
         await _validate(validator, briefing, ANALYST_MODULES, timeout=min(25.0, remaining(reserve=30)))
         timings["validation"] = time.monotonic() - s
 
-        # 5. Aggregator ----------------------------------------------------
+        # 5a. Fact check of analyst modules runs concurrently with the aggregator --------
+        checker: FactChecker | None = None
+        module_fc: asyncio.Task | None = None
+        fc_start = time.monotonic()
+        if settings.fact_check:
+            evidence = EvidenceStore()
+            evidence.add_articles(r1.articles)
+            if isinstance(r2, PipelineResult):
+                evidence.add_trials(r2.active + r2.failures)
+            try:  # sources not held in memory: SEC filing metadata, PMIDs the citation gate verified live
+                await asyncio.wait_for(evidence.fill_missing(cited_keys(briefing), registry, http, settings), timeout=15)
+            except Exception:
+                pass  # missing text only makes the affected claims 'Cannot verify'
+            checker = FactChecker(llm, settings, registry, evidence)
+            report("factcheck", "Checking module claims against their cited sources…", "running")
+            module_fc = asyncio.create_task(checker.check(briefing, ANALYST_MODULES))
+
+        # 5b. Aggregator ---------------------------------------------------
         if any([briefing.module1, briefing.module2, briefing.module3a, briefing.module3b]):
             s = time.monotonic()
             agg = AggregatorAgent(llm, settings, agent_progress)
             try:
                 summary, mapping = await asyncio.wait_for(
-                    agg.run(cond, briefing.module1, briefing.module2, briefing.module3a, briefing.module3b, briefing.module4),
+                    agg.run(cond, briefing.module1, briefing.module2, briefing.module3a, briefing.module3b, briefing.module4,
+                            segment=inp.segment_description()),
                     timeout=remaining(reserve=8),
                 )
                 briefing.executive_summary, briefing.terminology_map = summary, mapping
@@ -160,6 +201,10 @@ async def run_briefing(
         else:
             report("aggregator", "Skipped (no module content)", "error")
 
+        if getattr(llm, "fatal", None) is not None and module_fc is not None:
+            module_fc.cancel()
+        _raise_if_fatal(llm)
+
         # 6. Citation gate on the executive summary ------------------------
         report("validation", "Verifying executive-summary citations…", "running")
         s = time.monotonic()
@@ -168,6 +213,25 @@ async def run_briefing(
         briefing.validation = validator.report
         v = briefing.validation
         report("validation", f"{v.ids_valid}/{v.ids_checked} citations valid · {v.statements_dropped} unsupported items removed", "complete")
+
+        # 7. Fact check: executive summary, then merge with the module results -------------
+        if checker is not None and module_fc is not None:
+            try:
+                exec_checks = await asyncio.wait_for(checker.check(briefing, ("executive_summary",)), timeout=remaining(reserve=2))
+                module_checks = await asyncio.wait_for(module_fc, timeout=remaining())
+                checks = rekey(module_checks + exec_checks, briefing)  # terminology fixes may have edited claim text
+                briefing.fact_check = checker.report(checks, cited_keys(briefing))
+                c = briefing.fact_check.counts()
+                report("factcheck", f"{c['Supported']} supported · {c['Partially supported']} partially · "
+                                    f"{c['Not supported']} not supported · {c['Cannot verify']} unverifiable", "complete")
+            except Exception as exc:
+                module_fc.cancel()
+                if isinstance(exc, LLMAccountError):
+                    raise
+                msg = "timed out" if isinstance(exc, asyncio.TimeoutError) else str(exc)
+                errors.append(ModuleError(module="Fact check", message=f"Fact check unavailable: {msg}"))
+                report("factcheck", f"Failed: {msg}", "error")
+            timings["factcheck"] = time.monotonic() - fc_start
 
         briefing.sources = registry.all()
         briefing.queries = registry.queries

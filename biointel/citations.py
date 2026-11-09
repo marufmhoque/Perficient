@@ -40,6 +40,18 @@ class SourceRegistry:
         self._by_native[(kind, native)] = key
         return src
 
+    @classmethod
+    def from_sources(cls, sources: Iterable[Source]) -> "SourceRegistry":
+        """Rebuild a registry from a saved briefing (keys are preserved)."""
+        reg = cls()
+        for s in sources:
+            reg._by_key[s.key] = s
+            reg._by_native[(s.kind, s.native_id)] = s.key
+            prefix, num = s.key[0], s.key[1:]
+            if num.isdigit():
+                reg._counters[prefix] = max(reg._counters.get(prefix, 0), int(num))
+        return reg
+
     def log_query(self, source: str, purpose: str, query: str, url: str, n_results: int) -> None:
         self.queries.append(QueryLog(source=source, purpose=purpose, query=query, url=url, n_results=n_results))
 
