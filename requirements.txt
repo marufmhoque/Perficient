@@ -1,1 +1,6 @@
-streamlit>=1.40
+streamlit>=1.67
+anthropic>=2.7
+httpx>=0.28
+pydantic>=2.10
+plotly>=6.0
+pandas>=2.2

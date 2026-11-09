@@ -5,13 +5,18 @@ __pycache__/
 .venv/
 venv/
 env/
+.pytest_cache/
 
 # Streamlit secrets (never commit)
 .streamlit/secrets.toml
 
-# Environment / IDE / OS
+# Local test artifacts (fake-LLM reports are never shipped as samples)
+samples/_*
+
+# Environment / IDE / OS / local tool config
 .env
 .vscode/
 .idea/
+.claude/
 .DS_Store
 Thumbs.db

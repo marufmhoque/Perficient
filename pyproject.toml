@@ -1,0 +1,14 @@
+[project]
+name = "biointel"
+version = "0.1.0"
+description = "Biomedical & Clinical Strategy Intelligence Platform - agentic CI briefings (Streamlit)"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+filterwarnings = ["ignore::DeprecationWarning:streamlit.*"]
+
+[tool.ruff]
+line-length = 140
