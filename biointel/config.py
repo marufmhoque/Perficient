@@ -6,22 +6,79 @@ import os
 from dataclasses import dataclass, field
 
 
+def _clean(value) -> str | None:
+    """Strip whitespace and stray quotes that often sneak in when pasting a key into a secrets box."""
+    if value is None or not isinstance(value, (str, int, float)):
+        return None
+    return str(value).strip().strip('"').strip("'").strip() or None
+
+
 def _is_placeholder(value: str | None) -> bool:
     """Template values such as 'sk-ant-...' must never shadow a real secret."""
-    return not value or not value.strip() or value.strip().endswith("...") or value.strip() in ("<your-key>", "changeme")
+    v = _clean(value)
+    return not v or v.endswith("...") or v in ("<your-key>", "changeme")
+
+
+# Accepted spellings per secret (case-insensitive; "section.key" = a key inside a [section] table)
+_ALIASES: dict[str, tuple[str, ...]] = {
+    "ANTHROPIC_API_KEY": ("anthropic_api_key", "anthropic.api_key", "anthropic.anthropic_api_key", "claude_api_key",
+                          "claude.api_key", "api_keys.anthropic", "api_keys.anthropic_api_key"),
+}
+
+
+def _flat_streamlit_secrets() -> dict[str, object]:
+    """st.secrets flattened to lower-case 'name' and 'section.name' keys. Raises if secrets can't be read."""
+    import streamlit as st
+
+    flat: dict[str, object] = {}
+    for key in st.secrets.keys():
+        value = st.secrets[key]
+        if hasattr(value, "keys"):  # a [section] table
+            for sub in value.keys():
+                flat[f"{key}.{sub}".lower()] = value[sub]
+        else:
+            flat[key.lower()] = value
+    return flat
 
 
 def _secret(name: str, default: str | None = None) -> str | None:
-    value = os.environ.get(name)
-    if not _is_placeholder(value):
-        return value
+    for env_name in (name, name.lower()):
+        value = os.environ.get(env_name)
+        if not _is_placeholder(value):
+            return _clean(value)
     try:  # Streamlit is optional (tests / CLI run without it)
-        import streamlit as st
-
-        value = st.secrets.get(name, default)
-        return default if _is_placeholder(value) else value  # type: ignore[no-any-return]
+        flat = _flat_streamlit_secrets()
     except Exception:
         return default
+    for candidate in (name.lower(), *_ALIASES.get(name, ())):
+        if not _is_placeholder(flat.get(candidate)):
+            return _clean(flat[candidate])
+    return default
+
+
+def secrets_diagnostic(name: str = "ANTHROPIC_API_KEY") -> str:
+    """Explain why a secret wasn't found, naming what *is* configured. Never reveals values."""
+    env = os.environ.get(name)
+    if env is not None and _is_placeholder(env):
+        return f"The environment variable {name} is set to a placeholder ('{_clean(env) or 'empty'}'), and no real key was found."
+    try:
+        flat = _flat_streamlit_secrets()
+    except Exception as exc:
+        msg = str(exc)
+        if "pars" in msg.lower():  # Streamlit reports invalid TOML with the same "not found" exception type
+            where = msg[msg.rfind(":") + 1:].strip() if ":" in msg else ""
+            return ("The secrets could not be parsed as TOML" + (f" - {where}" if where else "") + ". "
+                    "The usual cause is a key pasted without quotes: write ANTHROPIC_API_KEY = \"sk-ant-...\".")
+        if isinstance(exc, FileNotFoundError):
+            return "No secrets are configured for this app (no secrets.toml locally / nothing saved under Settings -> Secrets)."
+        return f"The app's secrets could not be read ({type(exc).__name__})."
+    if not flat:
+        return "The secrets store is empty: nothing has been saved under Settings -> Secrets."
+    for candidate in (name.lower(), *_ALIASES.get(name, ())):
+        if candidate in flat:
+            return f"A secret named '{candidate}' exists but its value is empty or a placeholder."
+    names = ", ".join(sorted(flat))
+    return f"Secrets were found ({names}), but none is named {name}."
 
 
 @dataclass(frozen=True)

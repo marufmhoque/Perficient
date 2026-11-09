@@ -12,7 +12,7 @@ from pathlib import Path
 
 import streamlit as st
 
-from biointel.config import get_settings
+from biointel.config import get_settings, secrets_diagnostic
 from biointel.history import InMemoryHistory, report_from_json, report_to_json
 from biointel.factcheck import fact_check_briefing
 from biointel.llm import ClaudeLLM, LLMAccountError, LLMError
@@ -217,7 +217,14 @@ def briefing_page() -> None:
                 "Generate briefing", type="primary", width="stretch", disabled=not settings.anthropic_api_key
             )
         if not settings.anthropic_api_key:
-            st.warning("`ANTHROPIC_API_KEY` is not configured, so new briefings are disabled. Saved and example reports still open.", icon="🔑")
+            st.warning(
+                "`ANTHROPIC_API_KEY` is not configured, so new briefings are disabled. Saved and example reports still open.\n\n"
+                f"**Why:** {secrets_diagnostic()}\n\n"
+                "**Fix:** on Streamlit Cloud open **⋮ → Settings → Secrets**, paste the line below (with the quotes), "
+                "click **Save**, then **⋮ → Reboot app**. Locally, put it in `.streamlit/secrets.toml`.\n\n"
+                '`ANTHROPIC_API_KEY = "sk-ant-..."`',
+                icon="🔑",
+            )
     history_sidebar()
 
     st.title("Biomedical & Clinical Strategy Intelligence")

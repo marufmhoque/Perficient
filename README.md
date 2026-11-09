@@ -1,5 +1,12 @@
 # Perficient · Biomedical & Clinical Strategy Intelligence Platform
 
+### ▶ Live app: **[perficient-5wcjdk8yoddmsi8fktthd5.streamlit.app](https://perficient-5wcjdk8yoddmsi8fktthd5.streamlit.app/)**
+
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://perficient-5wcjdk8yoddmsi8fktthd5.streamlit.app/)
+
+Open the bundled **Plaque Psoriasis** example report to see a complete, fact-checked briefing instantly, or generate a new
+one from the sidebar (about 1.5 minutes).
+
 Interview Building Challenge: an agentic workflow that turns a medical condition (name, ICD-10 or MeSH) into an
 executive **competitive-intelligence briefing**. It covers epidemiology, standard of care, the active pipeline,
 failed trials, and the stakeholder landscape, and every claim is cited to a real PubMed or ClinicalTrials.gov record.

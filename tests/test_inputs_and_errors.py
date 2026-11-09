@@ -22,6 +22,47 @@ def test_placeholder_keys_are_ignored():
     assert not _is_placeholder("sk-ant-api03-realLookingKey")
 
 
+@pytest.mark.parametrize(
+    "secrets,expected",
+    [
+        ({"anthropic_api_key": "sk-ant-real-1"}, "sk-ant-real-1"),  # name lower-cased
+        ({"anthropic.api_key": "sk-ant-real-2"}, "sk-ant-real-2"),  # [anthropic] section
+        ({"anthropic_api_key": ' "sk-ant-real-3" '}, "sk-ant-real-3"),  # stray quotes / spaces
+        ({"anthropic_api_key": "sk-ant-..."}, None),  # template placeholder
+        ({"openai_key": "x"}, None),
+    ],
+)
+def test_secret_lookup_variants(monkeypatch, secrets, expected):
+    import biointel.config as cfg
+
+    monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
+    monkeypatch.delenv("anthropic_api_key", raising=False)
+    monkeypatch.setattr(cfg, "_flat_streamlit_secrets", lambda: secrets)
+    assert cfg._secret("ANTHROPIC_API_KEY") == expected
+
+
+def test_secrets_diagnostic_names_what_exists_but_never_values(monkeypatch):
+    import biointel.config as cfg
+
+    monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
+    monkeypatch.setattr(cfg, "_flat_streamlit_secrets", lambda: {"anthropic_key": "sk-ant-secret-value"})
+    msg = cfg.secrets_diagnostic()
+    assert "anthropic_key" in msg and "none is named ANTHROPIC_API_KEY" in msg
+    assert "sk-ant-secret-value" not in msg
+
+    def bad_toml():
+        raise FileNotFoundError("Error parsing secrets file at /x/secrets.toml: Invalid value (at line 1, column 21)")
+
+    monkeypatch.setattr(cfg, "_flat_streamlit_secrets", bad_toml)
+    assert "without quotes" in cfg.secrets_diagnostic() and "line 1, column 21" in cfg.secrets_diagnostic()
+
+    def missing():
+        raise FileNotFoundError("No secrets found.")
+
+    monkeypatch.setattr(cfg, "_flat_streamlit_secrets", missing)
+    assert "No secrets are configured" in cfg.secrets_diagnostic()
+
+
 def test_billing_and_auth_errors_are_account_errors():
     import anthropic
 
