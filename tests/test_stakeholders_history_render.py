@@ -57,6 +57,13 @@ def test_person_key_and_generic_officials():
     assert person_key("Dr. Jane A. Smith") == "smith j"
     assert person_key("Medical Director") is None
     assert person_key("Pfizer CT.gov Call Center") is None
+    for corporate in ["UCB Cares", "Bristol-Myers Squibb", "Janssen Research & Development", "Acme Therapeutics"]:
+        assert person_key(corporate) is None, corporate
+
+
+def test_sponsor_named_official_is_not_a_kol():
+    t = trial(1, "Zenith Dermatology Group", ["PHASE3"], officials=["Zenith Dermatology Group", "Kristian Reich, MD"])
+    assert [k.name for k in rank_officials([t]).values()] == ["Kristian Reich"]
 
 
 def test_kols_merge_trials_and_publications():

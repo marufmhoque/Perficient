@@ -23,7 +23,9 @@ _GENERIC_OFFICIAL_RE = re.compile(
     r"(call center|medical director|study director|clinical trial|clinical development|clinical research|"
     r"clinical operations|clinical program|sponsor|medical monitor|central contact|global|ct\.gov|information|"
     r"medical lead|medical affairs|\bteam\b|\bdirector\b|use central|trial manager|clinical science|\binc\b|\bltd\b|"
-    r"pharmaceutical|corporation|\bgmbh\b)",
+    r"pharmaceutical|corporation|\bgmbh\b|\bcares\b|therapeutics|biosciences?|biopharma|laborator|\bllc\b|\bco\.|"
+    r"research (&|and) development|\bR&D\b|bristol|janssen|novartis|pfizer|lilly|abbvie|amgen|sanofi|takeda|"
+    r"\bucb\b|merck|boehringer|astrazeneca|glaxo|roche|genentech|celgene|regeneron)",
     re.I,
 )
 _TITLE_RE = re.compile(r"^(dr\.?|prof\.?|professor|mr\.?|mrs\.?|ms\.?)\s+", re.I)
@@ -90,10 +92,12 @@ def person_key(name: str) -> str | None:
 
 def rank_officials(trials: list[TrialRecord]) -> dict[str, KOL]:
     people: dict[str, KOL] = {}
+    organisations = {_norm(t.sponsor) for t in trials} | {_norm(c) for t in trials for c in t.collaborators}
     for t in trials:
         for o in t.officials:
             key = person_key(o.name)
-            if not key:
+            # registry "officials" are sometimes the sponsor itself (e.g. "UCB Cares"): not a person
+            if not key or _norm(o.name.split(",")[0]) in organisations:
                 continue
             kol = people.get(key)
             if kol is None:
