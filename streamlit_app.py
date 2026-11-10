@@ -13,7 +13,7 @@ from pathlib import Path
 import streamlit as st
 
 from biointel.config import get_settings, secrets_diagnostic
-from biointel.history import InMemoryHistory, report_from_json, report_to_json
+from biointel.history import InMemoryHistory, new_state, report_from_json, report_to_json
 from biointel.factcheck import fact_check_briefing
 from biointel.llm import ClaudeLLM, LLMAccountError, LLMError
 from biointel.orchestrator import STAGES, run_briefing
@@ -41,13 +41,18 @@ FORM_DEFAULTS = {
 
 
 @st.cache_resource
+def get_history_state() -> dict:
+    """One library per app process, shared by every viewer.
+
+    Only plain data is cached: Streamlit Cloud reloads changed modules without restarting the
+    process, and cached model instances or methods from the old code then clash with the new
+    classes (pydantic ValidationError). The facade below is rebuilt from current code every run."""
+    return new_state()
+
+
 def get_history() -> InMemoryHistory:
-    """One library per app process, shared by every viewer."""
-    settings = get_settings()
-    history = InMemoryHistory(max_reports=settings.history_max_reports, max_searches=settings.history_max_searches)
-    history.example_files = {}  # sample file name -> modified time already loaded
-    history.example_errors = {}  # sample file name -> load error (shown in the Report library)
-    return history
+    s = get_settings()
+    return InMemoryHistory(max_reports=s.history_max_reports, max_searches=s.history_max_searches, state=get_history_state())
 
 
 def load_examples(history: InMemoryHistory) -> None:
